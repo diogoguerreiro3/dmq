@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DMQ</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Players in the room:</h1>
+        <ul id="#content">
+            {% for p in players %} 
+                <li>{{p}}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('room') }}" class="btn">Room</a>
+        <a href="{{ url_for('close') }}" class="btn_red">Leave</a>
+
+        <br>
+        <h1>Movies available:</h1>
+        <ul>
+            {% for movie in movies %} 
+                <li>{{movie}}</li> 
+            {% endfor %}
+        </ul>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            var list = document.getElementById('#content');
+            function refreshPlayers() {
+                $.get('/get_players', function(data) {
+                    list.innerHTML = '';
+                    data.forEach(function (element) {
+                    var li = document.createElement('li');
+                    li.appendChild(document.createTextNode(element)); 
+                    list.appendChild(li);
+                });
+                    setTimeout(refreshPlayers, 1000); // Update each 1 second (1000 ms)
+                });
+            }
+            $(document).ready(function() {
+                refreshPlayers();
+            });
+        </script>
+    </div>
+</body>
+</html>

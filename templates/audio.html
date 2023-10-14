@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DMQ</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Playlist Shuffle</h1>
+        <audio id="audio-player" controls>
+            <source src="{{ url_for('play') }}" type="audio/mpeg">
+            Seu navegador não suporta a tag de áudio.
+        </audio>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        socket.emit('play_audio', { command: 'play' });
+
+        // Controlar a reprodução do áudio
+        document.querySelector('#audio-player').addEventListener('play', function() {
+            socket.emit('play_audio', { command: 'play' });
+        });
+
+        socket.on('audio_played', function(data) {
+            if (data.command === 'play') {
+                document.querySelector('#audio-player').play();
+            }
+        });
+    </script>
+
+</body>
+</html>
