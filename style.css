@@ -32,3 +32,25 @@
     border: 1px solid #640202; /* Cor da borda ao passar o mouse */
 }
 
+.container {
+    display: flex;
+    align-items: center;
+}
+
+#sugestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+  
+  #sugestions li {
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  #sugestions li:hover {
+    background-color: #f0f0f0;
+  }

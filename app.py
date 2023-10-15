@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, send_file, Response, redirect, url_for
 from pytube import YouTube, Playlist
 from googleapiclient.discovery import build
-import random, requests, re, os, threading, time, json
+import random, requests, re, os, threading, time, json, threading
 from flask_socketio import SocketIO
+from pydub import AudioSegment
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -13,6 +14,13 @@ movies = [movie for movie in os.listdir(path_to_music) if os.path.isdir(os.path.
 player_json_filename = 'players.json'
 
 currents_players = []
+
+room_thread = None
+current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarfs\Disney Snow White Soundtrack - 01 - Overture.mp3"
+current_random_time = 0
+song_duration = 20
+number_of_songs = 20
+is_playing_music = False
 
 def verify_player_exists(way="", input=""):
     with open(player_json_filename, 'r') as playersdb:
@@ -39,14 +47,11 @@ def index():
     player = verify_player_exists("ip", ip)
     if player != None:
         print("Found player", player)
-
         if player["username"] not in currents_players:
             currents_players.append(player["username"])
-
         return redirect(url_for('lobby'))
 
-    # Retorna a página HTML
-    return render_template("index.html")
+    return render_template("index.html", movies=movies)
 
 @app.route('/processar', methods=['POST'])
 def processar():
@@ -64,7 +69,7 @@ def processar():
         return redirect(url_for('lobby'))
     
     mensagem = f"The username {username} already exists. Try again."
-    return mensagem
+    return render_template("index.html", msg=mensagem)
 
 @app.route("/lobby")
 def lobby():
@@ -75,7 +80,49 @@ def lobby():
 
 @app.route("/room")
 def room():
+    global room_thread
+    if room_thread is None:
+        print("Create Room Thread!")
+        room_thread = threading.Thread(target=main_room_thread)
+        room_thread.start()
     return render_template("audio.html")
+
+def main_room_thread():
+    global current_random_time
+    for i in range(15,0,-1):
+        socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...", broadcast=True)
+        time.sleep(1)
+        print(f'Counter for wait: {i}')
+    socketio.emit('title_refresh', f'Listen Carefully! ({song_duration})', broadcast=True)
+    for n in range (1,number_of_songs):
+        choose_random_music()
+        for i in range(song_duration,0,-1):
+            current_time = current_random_time + song_duration - i
+            socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
+            socketio.emit('title_refresh', f"Listen Carefully! ({i})", broadcast=True)
+            time.sleep(1)
+            print(f'Counter for song {n}: {i}')
+        socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
+        for i in range(10,0,-1):
+            socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...", broadcast=True)
+            time.sleep(1)
+            print(f'Counter for wait for song {n}: {i}')
+
+def choose_random_music():
+    global current_random_music, current_random_time
+
+    random.shuffle(movies)
+    random_movie = movies[0]
+    musics = os.listdir(os.path.join(path_to_music, random_movie))
+    random.shuffle(musics)
+    random_music = musics[0]
+    current_random_music = os.path.abspath(os.path.join(path_to_music, random_movie, random_music))
+    
+    audio = AudioSegment.from_file(current_random_music, format="mp3")
+    duration = int(len(audio) / 1000) # seconds
+    current_random_time = random.randint(1, duration - song_duration)
+    
+    print(current_random_music,"(",current_random_time,"sec)")
 
 @app.route("/close")
 def close():
@@ -86,23 +133,41 @@ def close():
 
 @app.route("/play")
 def play():
-    random.shuffle(movies)
-    random_movie = movies[0]
-    musics = os.listdir(os.path.join(path_to_music, random_movie))
-    random.shuffle(musics)
-    random_music = musics[0]
-    print(os.path.join(path_to_music, random_movie, random_music))
-    return send_file(os.path.join(path_to_music, random_movie, random_music), as_attachment=False)
+    global current_random_music
+    print("play:",current_random_music)
+    return send_file(current_random_music, as_attachment=False)
+
+@app.route("/song")
+def song():
+    url = request.args.get('url')
+    print(url)
+    return send_file(url, as_attachment=False)
 
 @socketio.on('play_audio')
-def play_audio(data):
+def play_audio():
     print("triggered play_audio")
-    # Reproduza o áudio quando receber um comando "play_audio" do cliente
-    socketio.emit('audio_played', data, broadcast=True)
+    # Play the audio with the command "play_audio" of client
+    socketio.emit('audio_played', "{ command: 'play' }", broadcast=True)
 
 @app.route('/get_players')
 def get_players():
+    global currents_players
     return currents_players
+
+@app.route('/is_playing_music')
+def is_playing_music():
+    global is_playing_music
+    return is_playing_music
+
+@app.route('/get_current_time')
+def get_current_time():
+    global current_random_time
+    return current_random_time
+
+@app.route('/get_movies', methods=['GET'])
+def get_movies():
+    global movies
+    return movies
 
 @app.route('/favicon.ico')
 def favicon():

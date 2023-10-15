@@ -1,0 +1,2 @@
+. quando um dispositivo entra a meio, se entrou tarde, a musica tem de continuar no tempo certo
+. Fazer barra com auto complete
