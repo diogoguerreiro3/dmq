@@ -99,7 +99,6 @@
         });
 
         /* Send the reply movie to server */
-        var list_users = document.getElementById('content');
         document.getElementById("form_reply").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent the default form redirection
             var formulario = new FormData(this); // Obtém os dados do formulário
@@ -109,14 +108,15 @@
         });
 
         /* Update the color of users verifying the reply movies */
+        var list_users = document.getElementById('content');
         function refreshPlayers() {
-            $.get('/get_replys', function(data) {
+            $.get('/get_replys_and_points', function(data) {
                 list_users.innerHTML = '';
                 data.forEach(function (element) {
                     var element_json = element;
                     var username = element_json.username
                     var li = document.createElement('li');
-                    li.appendChild(document.createTextNode(username)); 
+                    li.appendChild(document.createTextNode('[' + element_json.points + '] ' + username));
                     if(element_json.correct == "false") {
                         li.style.color = "red";
                     } else if(element_json.correct == "true") {

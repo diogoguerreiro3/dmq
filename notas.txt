@@ -1,3 +1,2 @@
 . melhorar barra de autocomplete
-. pontos no jogo
-. pontos globais
+. bloquear user se entrar a meio, mas pode ouvir musica

@@ -9,9 +9,6 @@
     <div>
         <h1>Players in the room:</h1>
         <ul id="content">
-            {% for p in players %} 
-                <li>{{p}}</li>
-            {% endfor %}
         </ul>
 
         <a href="{{ url_for('room') }}" class="btn" style="margin-right:10px">Room</a>
@@ -29,11 +26,12 @@
         <script>
             var list = document.getElementById('content');
             function refreshPlayers() {
-                $.get('/get_players', function(data) {
+                $.get('/get_all_players', function(data) {
                     list.innerHTML = '';
                     data.forEach(function (element) {
                         var li = document.createElement('li');
-                        li.appendChild(document.createTextNode(element)); 
+                        console.log(element)
+                        li.appendChild(document.createTextNode('[' + element.points + '] ' + element.username)); 
                         list.appendChild(li);
                     });
                     setTimeout(refreshPlayers, 1000); // Update each 1 second (1000 ms)

@@ -14,20 +14,29 @@ movies = [movie for movie in os.listdir(path_to_music) if os.path.isdir(os.path.
 player_json_filename = 'players.json'
 
 currents_players = []
+all_players = None
 
 room_thread = None
-current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarfs\Disney Snow White Soundtrack - 01 - Overture.mp3"
+current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
 current_random_music_name = "Snow White Soundtrack - 01 - Overture"
 current_random_movie = ""
 current_random_time = 0
 initial_waiting_duration = 3
 waiting_duration = 5
-song_duration = 20
-number_of_songs = 5
+song_duration = 7
+number_of_songs = 3
 
-current_replys_room = []
+current_replys_and_points_room = []
+
+
 
 ### Auxiliar Functions ###
+
+def update_playersdb():
+    global all_players
+    with open(player_json_filename, 'r') as playersdb:
+        players = json.load(playersdb)
+    all_players = players
 
 def verify_player_exists(way="", input=""):
     with open(player_json_filename, 'r') as playersdb:
@@ -45,6 +54,18 @@ def create_player(ip, username):
     with open(player_json_filename, 'w') as playersdb:
         json.dump(current_data, playersdb, indent=4)
     return player_data
+
+def add_points_player():
+    global current_replys_and_points_room
+    with open(player_json_filename, 'r') as playersdbread:
+        players = json.load(playersdbread)
+        if(len(players) > 0):
+            for player in players:
+                for reply in current_replys_and_points_room:
+                    if reply["username"] == player["username"]:
+                        player["points"] += reply["points"]
+    with open(player_json_filename, 'w') as playersdbwrite:            
+        json.dump(players, playersdbwrite, indent=4)
 
 ### Index ###
 
@@ -102,6 +123,7 @@ def room():
 
 def main_room_thread():
     global current_random_time, room_thread, current_random_music
+    clean_points()
     for i in range(initial_waiting_duration+1,0,-1):
         clean_replys()
         socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...", broadcast=True)
@@ -124,6 +146,7 @@ def main_room_thread():
             time.sleep(1)
             #print(f'Counter for wait for song {n}: {i}')
     socketio.emit('title_refresh', f"Acabou!", broadcast=True)
+    add_points_player()
     room_thread = None
 
 def choose_random_music():
@@ -147,30 +170,46 @@ def choose_random_music():
     print(current_random_music,"(",current_random_time,"sec )")
 
 def update_replys(username, reply_movie):
-    global current_replys_room
-    for reply in current_replys_room:
+    global current_replys_and_points_room
+    for reply in current_replys_and_points_room:
         if reply["username"] == username:
             reply["movie"] = reply_movie
             break
 
 def clean_replys():
-    global current_replys_room
-    global currents_players
-    current_replys_room = []
+    global current_replys_and_points_room, currents_players
     for player in currents_players:
-        current_replys_room.append({"username" : player, "movie" : "", "correct" : ""})
+        existPlayer = False
+        for reply in current_replys_and_points_room:
+            if player == reply["username"]:
+                reply["movie"] = ""
+                reply["correct"] = ""
+                existPlayer = True
+                break
+        if not existPlayer:
+            current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0})
+
+def clean_points():
+    global current_replys_and_points_room, currents_players
+    current_replys_and_points_room = []
+    for player in currents_players:
+        current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0})   
 
 def verify_replys():
-    global current_replys_room
-    global current_random_movie
-    for reply in current_replys_room:
+    global current_replys_and_points_room, current_random_movie
+    for reply in current_replys_and_points_room:
         print("Movie Reply:",reply["movie"])
         print("Correct Movie:",current_random_movie)
         if reply["movie"] == current_random_movie:
             reply["correct"] = "true"
+            update_player_point(reply["username"])
         else:
             reply["correct"] = "false"
-        
+
+def update_player_point(username):
+    for player in current_replys_and_points_room:
+        if username == player["username"]:
+            player["points"] += 1
 
 @socketio.on("/send_movie")
 def send_movie(intput):
@@ -202,6 +241,17 @@ def close():
 
 ### Gets ###
 
+@app.route('/get_all_players')
+def get_all_players():
+    update_playersdb()
+    global all_players, currents_players
+    current_players_points = []
+    for player in currents_players:
+        for player_in_all in all_players:
+            if player == player_in_all["username"]:
+                current_players_points.append(player_in_all)
+    return current_players_points
+
 @app.route('/get_players')
 def get_players():
     global currents_players
@@ -217,10 +267,10 @@ def get_movies():
     global movies
     return movies
 
-@app.route('/get_replys')
+@app.route('/get_replys_and_points')
 def get_replys():
-    global current_replys_room
-    return current_replys_room
+    global current_replys_and_points_room
+    return current_replys_and_points_room
 
 @app.route('/favicon.ico')
 def favicon():
