@@ -8,7 +8,7 @@
 <body>
     <div>
         <h2 id="audio_info"></h2>
-        <audio id="audio-player" controls>
+        <audio id="audio-player" style="display: none;" controls>
             <!-- style="display: none;" -->
             <source id="audio-src" src="{{ url_for('play') }}" type="audio/mpeg">
             Your browser doesn't support this audio tag.
@@ -19,25 +19,35 @@
         </div>
         <br>
 
-        <input type="text" id="reply_text" placeholder="Write the movie...">
-        <ul id="sugestions"></ul>
+        <form id="form_reply">
+            <input type="text" id="reply_text" name="input" placeholder="Write the movie...">
+            <ul id="sugestions"></ul>
+            <br>
+            <button type="submit" class="btn">Reply</button>
+        </form>
         <br>
-        
-        <a href="{{ url_for('index') }}" class="btn">Come Back</a>
+
+        <ul id="content" style="list-style-type: none">
+        </ul>
+        <br>
+
+        <a href="{{ url_for('index') }}" class="btn_red">Come Back</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        
         var socket = io.connect('http://' + document.domain + ':' + location.port);
         var audio_info = document.getElementById('audio_info');
         var audio_player = document.getElementById('audio-player');
         var volume_slider = document.getElementById('volume-slider');
 
+        /* Event to change the title sent by server */
         socket.on('title_refresh', function(data) {
             audio_info.innerHTML = data;
         });
 
+        /* Event for when the server tell to client to play music  */
         socket.on('audio_play', function(data) {
             var data_json = JSON.parse(data);
             if(audio_player.paused && data_json.command === 'play') {
@@ -51,23 +61,21 @@
         });
 
         
-        /*Volume Control*/
+        /* Volume Control */
         volume_slider.addEventListener('input', function() {
             audio_player.volume = volume_slider.value;
         });
-
         audio_player.volume = volume_slider.value;
 
 
-        /* Autocomplete text */
+        /* Autocomplete input text */
         var reply_text = document.getElementById("reply_text");
         var sugestions = document.getElementById("sugestions");
-
         reply_text.addEventListener("input", function() {
             var movie_texted = reply_text.value.toLowerCase();
-            sugestions.innerHTML = ""; // Limpa a lista de sugestões
+            sugestions.innerHTML = ""; // Clean the list
 
-            // Fazer uma solicitação AJAX para obter a lista de palavras do servidor Flask
+            // AJAX to get the list of word of server
             fetch('/get_movies')
                 .then(function(response) {
                     return response.json();
@@ -76,39 +84,57 @@
                     movies_list.forEach(function(movie) {
                         console.log(movie + " " + movie_texted)
                         if (movie.toLowerCase().startsWith(movie_texted)) {
-                            console.log(movie)
+                            console.log(movie);
                             var item = document.createElement("li");
                             item.textContent = movie;
                             sugestions.appendChild(item);
 
                             item.addEventListener("click", function() {
                                 reply_text.value = movie;
-                                sugestions.innerHTML = ""; // Limpa a lista de sugestões ao selecionar uma sugestão
+                                sugestions.innerHTML = ""; // Clean the list when select a sugestion
                             });
                         }
                     });
                 });
         });
 
-        /*var count = 5;
-        while (count > 0) {
-            counter.innerHTML = "Wait " + count + " seconds ...";
-            setTimeout(refreshPlayers, 1000);
-            count--;
-        }
-        
+        /* Send the reply movie to server */
+        var list_users = document.getElementById('content');
+        document.getElementById("form_reply").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form redirection
+            var formulario = new FormData(this); // Obtém os dados do formulário
 
-        function play_music() {
-            $.get('/get_players', function(data) {
-                list.innerHTML = '';
+            var input = this.elements["input"].value;
+            socket.emit('/send_movie', input);
+        });
+
+        /* Update the color of users verifying the reply movies */
+        function refreshPlayers() {
+            $.get('/get_replys', function(data) {
+                list_users.innerHTML = '';
                 data.forEach(function (element) {
+                    var element_json = element;
+                    var username = element_json.username
                     var li = document.createElement('li');
-                    li.appendChild(document.createTextNode(element)); 
-                    
+                    li.appendChild(document.createTextNode(username)); 
+                    if(element_json.correct == "false") {
+                        li.style.color = "red";
+                    } else if(element_json.correct == "true") {
+                        li.style.color = "green";
+                    } else if(element_json.movie == "") {
+                        li.style.color = "";
+                    } else if(element_json.movie != "") {
+                        li.style.color = "orange";
+                    }
+                    list_users.appendChild(li);
                 });
-                setTimeout(refreshPlayers, 1000); // Update each 1 second (1000 ms)
+                setTimeout(refreshPlayers, 500); // Update each 1 second (1000 ms)
             });
-        }*/
+        }
+        $(document).ready(function() {
+            refreshPlayers();
+        });
+
 
         //socket.emit('play_audio', { command: 'play' });
 
