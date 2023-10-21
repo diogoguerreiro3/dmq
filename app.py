@@ -17,9 +17,10 @@ currents_players = []
 
 room_thread = None
 current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarfs\Disney Snow White Soundtrack - 01 - Overture.mp3"
+current_random_music_name = "Snow White Soundtrack - 01 - Overture"
 current_random_movie = ""
 current_random_time = 0
-initial_waiting_duration = 15
+initial_waiting_duration = 3
 waiting_duration = 5
 song_duration = 20
 number_of_songs = 5
@@ -100,7 +101,7 @@ def room():
     return render_template("audio.html")
 
 def main_room_thread():
-    global current_random_time, room_thread
+    global current_random_time, room_thread, current_random_music
     for i in range(initial_waiting_duration+1,0,-1):
         clean_replys()
         socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...", broadcast=True)
@@ -119,29 +120,30 @@ def main_room_thread():
         socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
         verify_replys()
         for i in range(waiting_duration+1,0,-1):
-            socketio.emit('title_refresh', current_random_movie, broadcast=True)
+            socketio.emit('title_refresh', current_random_music_name, broadcast=True)
             time.sleep(1)
             #print(f'Counter for wait for song {n}: {i}')
     socketio.emit('title_refresh', f"Acabou!", broadcast=True)
     room_thread = None
 
 def choose_random_music():
-    global current_random_music, current_random_time, current_random_movie
+    global current_random_music, current_random_time, current_random_movie, current_random_music_name
 
     random.shuffle(movies)
     current_random_movie = movies[0]
     musics = os.listdir(os.path.join(path_to_music, current_random_movie))
     random.shuffle(musics)
-    random_music = musics[0]
-    current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, random_music))
+    current_random_music_name = musics[0]
+    current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
     
     audio = AudioSegment.from_file(current_random_music, format="mp3")
     duration = int(len(audio) / 1000) # seconds
+    print("Duration:",duration)
     if duration <= 20:
         current_random_time = 0
     else:
         current_random_time = random.randint(1, duration - song_duration)
-    
+    print("current_random_time:",current_random_time)
     print(current_random_music,"(",current_random_time,"sec )")
 
 def update_replys(username, reply_movie):
@@ -162,8 +164,8 @@ def verify_replys():
     global current_replys_room
     global current_random_movie
     for reply in current_replys_room:
-        print(reply["movie"])
-        print(current_random_movie)
+        print("Movie Reply:",reply["movie"])
+        print("Correct Movie:",current_random_movie)
         if reply["movie"] == current_random_movie:
             reply["correct"] = "true"
         else:
