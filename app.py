@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, send_file, Response, redirect, url_for
 from pytube import YouTube, Playlist
 from googleapiclient.discovery import build
-import random, requests, re, os, threading, time, json, threading
+import random, requests, re, os, threading, time, json, threading, copy
 from flask_socketio import SocketIO
 from pydub import AudioSegment
 
@@ -21,10 +21,10 @@ current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarf
 current_random_music_name = "Snow White Soundtrack - 01 - Overture"
 current_random_movie = ""
 current_random_time = 0
-initial_waiting_duration = 3
-waiting_duration = 5
-song_duration = 7
-number_of_songs = 3
+initial_waiting_duration = 15
+waiting_duration = 7
+song_duration = 20
+number_of_songs = 10
 
 current_replys_and_points_room = []
 
@@ -81,7 +81,7 @@ def index():
             currents_players.append(player["username"])
         return redirect(url_for('lobby'))
 
-    return render_template("index.html", movies=movies)
+    return render_template("index.html")
 
 @app.route('/processar', methods=['POST'])
 def processar():
@@ -150,10 +150,11 @@ def main_room_thread():
     room_thread = None
 
 def choose_random_music():
-    global current_random_music, current_random_time, current_random_movie, current_random_music_name
+    global current_random_music, current_random_time, current_random_movie, current_random_music_name, random_movies
 
-    random.shuffle(movies)
-    current_random_movie = movies[0]
+    random_movies = copy.deepcopy(movies)
+    random.shuffle(random_movies)
+    current_random_movie = random_movies[0]
     musics = os.listdir(os.path.join(path_to_music, current_random_movie))
     random.shuffle(musics)
     current_random_music_name = musics[0]

@@ -116,7 +116,11 @@
                     var element_json = element;
                     var username = element_json.username
                     var li = document.createElement('li');
-                    li.appendChild(document.createTextNode('[' + element_json.points + '] ' + username));
+                    var text = '[' + element_json.points + '] ' + username;
+                    if (element_json.correct != "") {
+                        text = text + ' | ' + element_json.movie;
+                    }
+                    li.appendChild(document.createTextNode(text));
                     if(element_json.correct == "false") {
                         li.style.color = "red";
                     } else if(element_json.correct == "true") {
