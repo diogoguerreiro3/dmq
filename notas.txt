@@ -1,2 +1,3 @@
+. auto complete a detetar palavras pelo meio
 . melhorar barra de autocomplete
 . bloquear user se entrar a meio, mas pode ouvir musica

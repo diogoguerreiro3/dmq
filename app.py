@@ -201,7 +201,7 @@ def verify_replys():
     for reply in current_replys_and_points_room:
         print("Movie Reply:",reply["movie"])
         print("Correct Movie:",current_random_movie)
-        if reply["movie"] == current_random_movie:
+        if reply["movie"].lower() == current_random_movie.lower():
             reply["correct"] = "true"
             update_player_point(reply["username"])
         else:
