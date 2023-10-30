@@ -38,9 +38,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         var socket = io.connect('http://' + document.domain + ':' + location.port);
+
         var audio_info = document.getElementById('audio_info');
         var audio_player = document.getElementById('audio-player');
         var volume_slider = document.getElementById('volume-slider');
+        var reply_text = document.getElementById("reply_text");
+        var sugestions = document.getElementById("sugestions");
 
         /* Event to change the title sent by server */
         socket.on('title_refresh', function(data) {
@@ -55,6 +58,7 @@
                 audio_player.load();
                 audio_player.currentTime = data_json.time;
                 audio_player.play();
+                reply_text.value = "";
             } else if (!audio_player.paused && data_json.command === 'pause') {
                 audio_player.pause();
             }
@@ -69,8 +73,6 @@
 
 
         /* Autocomplete input text */
-        var reply_text = document.getElementById("reply_text");
-        var sugestions = document.getElementById("sugestions");
         reply_text.addEventListener("input", function() {
             var movie_texted = reply_text.value.toLowerCase();
             sugestions.innerHTML = ""; // Clean the list
@@ -82,8 +84,7 @@
                 })
                 .then(function(movies_list) {
                     movies_list.forEach(function(movie) {
-                        console.log(movie + " " + movie_texted)
-                        if (movie.toLowerCase().startsWith(movie_texted)) {
+                        if (movie.toLowerCase().indexOf(movie_texted) != -1) {
                             console.log(movie);
                             var item = document.createElement("li");
                             item.textContent = movie;
