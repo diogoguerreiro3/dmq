@@ -8,17 +8,18 @@ from pydub import AudioSegment
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-path_to_music = './music/'
+path_to_music = "./music/"
 movies = [movie for movie in os.listdir(path_to_music) if os.path.isdir(os.path.join(path_to_music, movie))]
 
-player_json_filename = 'players.json'
+player_json_filename = "players.json"
+musics_json_filename = "musics.json"
 
 currents_players = []
 all_players = None
 
 room_thread = None
 current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
-current_random_music_name = "Snow White Soundtrack - 01 - Overture"
+current_random_music_name = "Snow White Soundtrack - 01 - Overture.mp3"
 current_random_movie = ""
 current_random_time = 0
 initial_waiting_duration = 15
@@ -141,6 +142,7 @@ def main_room_thread():
             #print(f'Counter for song {n}: {i}')
         socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
         verify_replys()
+        calculate_difficulty()
         for i in range(waiting_duration+1,0,-1):
             socketio.emit('title_refresh', current_random_music_name, broadcast=True)
             time.sleep(1)
@@ -211,6 +213,47 @@ def update_player_point(username):
     for player in current_replys_and_points_room:
         if username == player["username"]:
             player["points"] += 1
+
+def calculate_difficulty():
+    global current_random_movie, current_random_music_name, current_replys_and_points_room
+
+    with open(musics_json_filename, 'r') as musicdb:
+        current_data = json.load(musicdb)
+
+    for key_movie, value_movie in enumerate(current_data):
+        if value_movie["movie"] == current_random_movie:
+            for key_music, value_music in enumerate(current_data[key_movie]["musics"]):
+                if value_music["name"] == current_random_music_name:
+                    old_count = copy.deepcopy(current_data[key_movie]["musics"][key_music]["count"])
+                    old_correct_count = old_count * copy.deepcopy(current_data[key_movie]["musics"][key_music]["difficulty"]) / 100.0
+
+                    current_correct_count = 0
+                    for reply in current_replys_and_points_room:
+                        if reply["correct"] == "true":
+                            current_correct_count+=1
+                    new_difficulty = (old_correct_count + current_correct_count) / (old_count + len(current_replys_and_points_room)) * 100
+                    
+                    print("Difficulty = ", new_difficulty)
+
+                    current_data[key_movie]["musics"][key_music]["count"] += len(current_replys_and_points_room)
+                    current_data[key_movie]["musics"][key_music]["difficulty"] = new_difficulty
+
+    with open(musics_json_filename, 'w') as musicdb:
+        json.dump(current_data, musicdb, indent=4)
+
+def create_music_json():
+    data = []
+    for movie in movies:
+        musics_json = []
+        musics = os.listdir(os.path.join(path_to_music, movie))
+        for music in musics:
+            music_json = {"name" : music, "count" : 0, "difficulty" : 0, "difficulty_defualt" : "hard"}
+            musics_json.append(music_json)
+        movie_json = {"movie" : movie, "musics" : musics_json}
+        data.append(movie_json)
+
+    with open(musics_json_filename, 'w') as musicsdb:
+        json.dump(data, musicsdb, indent=4)
 
 @socketio.on("/send_movie")
 def send_movie(intput):
@@ -393,4 +436,5 @@ def test():
 #     app.run(host="0.0.0.0", debug=True)
 
 if __name__ == '__main__':
+    #create_music_json()
     socketio.run(app, port=44444, host='0.0.0.0', debug=True)

@@ -1,4 +1,4 @@
-. percentagem de dificuldade de musicas
+. Interface para escolher as dificuldades
 . melhorar barra de autocomplete
 . bloquear user se entrar a meio, mas pode ouvir musica
 . colocar winnie the pooh 2011
