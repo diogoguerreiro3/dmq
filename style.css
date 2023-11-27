@@ -1,3 +1,19 @@
+/* Dark Mode and main things */
+body {
+    background-color: #1e1e1e; /* Cinza escuro */
+    color: white;
+    font-size: 22px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: white;
+}
+
+a {
+    color: #bb86fc; /* Roxo claro para links */
+    text-decoration: underline;
+}
+
 /* Estilo para o botão */
 .btn {
     display: inline-block;

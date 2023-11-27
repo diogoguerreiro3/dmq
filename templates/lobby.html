@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>DMQ</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/nouislider@14.6.4/distribute/nouislider.min.css">
 </head>
 <body>
     <div>
@@ -11,8 +12,60 @@
         <ul id="content">
         </ul>
 
-        <a href="{{ url_for('room') }}" class="btn" style="margin-right:10px">Room</a>
-        <a href="{{ url_for('close') }}" class="btn_red" style="margin-left:10px">Leave</a>
+        <h3>Difficulty:</h3>
+
+        <!-- 
+        . Pre Defined
+            [easy, medium, hard]
+        . Percentage Difficulty
+            . Custom (%) [slice %]
+            . Range (%) [easy, medium, hard] 
+        -->
+
+        <form action="/room" method="post">
+            <div id="percentage_div">
+                <input type="checkbox" id="percentage" name="percentage" uncheck>
+                <label for="percentage">Percentage</label>
+            </div>
+            <div id="default_div">
+                <input type="checkbox" id="default" name="default">
+                <label for="default">Pre Defined</label>
+            </div>
+
+            <div style="margin-left: 3%;">
+                <div id="custom_div" style="display: none;">
+                    <input type="checkbox" id="custom" name="custom" uncheck>
+                    <label for="custom">Custom (%)</label>
+                </div>
+                <div id="range_div" style="display: none;">
+                    <input type="checkbox" id="range" name="range" uncheck>
+                    <label for="range">Range (%)</label>
+                </div>
+            
+                <div id="difficulties_standarts_div" style="display: none;">
+                    <input type="checkbox" id="easy" name="easy">
+                    <label for="easy">Easy</label>
+                    <input type="checkbox" id="medium" name="medium">
+                    <label for="medium">Medium</label>
+                    <input type="checkbox" id="hard" name="hard">
+                    <label for="hard">Hard</label>
+                </div>
+
+                <div id="difficulties_div" style="display: none">
+                    <div id="slider" style="width: 30%; margin-top: 10px;"></div>
+                    <span id="min-value"></span>% to <span id="max-value"></span>%
+                    <input type="hidden" id="sliderValue" name="sliderValue">
+                </div>
+
+            </div>
+            
+            
+
+            <br><br>
+            <!-- <a href="{{ url_for('room') }}" class="btn" style="margin-right:10px">Room</a> -->
+            <input class="btn" style="margin-right:10px" type="submit" value="Room">
+            <a href="{{ url_for('close') }}" class="btn_red" style="margin-left:10px">Leave</a>
+        </form>
 
         <br>
         <h1>Movies available:</h1>
@@ -23,7 +76,9 @@
         </ul>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://unpkg.com/nouislider@14.6.4/distribute/nouislider.min.js"></script>
         <script>
+            /* Get all players */
             var list = document.getElementById('content');
             function refreshPlayers() {
                 $.get('/get_all_players', function(data) {
@@ -40,6 +95,121 @@
             $(document).ready(function() {
                 refreshPlayers();
             });
+
+            /* Checkboxs events */
+
+            var percentage_div = document.getElementById('percentage_div');
+            var default_div = document.getElementById('default_div');
+            var custom_div = document.getElementById('custom_div');
+            var range_div = document.getElementById('range_div');
+            var difficulties_standarts_div = document.getElementById('difficulties_standarts_div');
+            var difficulties_div = document.getElementById('difficulties_div');
+
+            var percentageCheckbox = document.getElementById('percentage');
+            var defaultCheckbox = document.getElementById('default');
+            var customCheckbox = document.getElementById('custom');
+            var rangeCheckbox = document.getElementById('range');
+            var easyCheckbox = document.getElementById('easy');
+            var mediumCheckbox = document.getElementById('medium');
+            var hardCheckbox = document.getElementById('hard');
+
+            percentageCheckbox.addEventListener('change', function () {
+                if (percentageCheckbox.checked) {
+                    custom_div.style.display = 'block';
+                    range_div.style.display = 'block';
+                    default_div.style.display = 'none';
+                } else {
+                    custom_div.style.display = 'none';
+                    range_div.style.display = 'none';
+                    default_div.style.display = 'block';
+                    difficulties_standarts_div.style.display = 'none';
+                    difficulties_div.style.display = 'none';
+                    customCheckbox.checked = false;
+                    rangeCheckbox.checked = false;
+                    easyCheckbox.checked = false;
+                    mediumCheckbox.checked = false;
+                    hardCheckbox.checked = false;
+                }
+            });
+
+            customCheckbox.addEventListener('change', function () {
+                if (customCheckbox.checked) {
+                    range_div.style.display = 'none';
+                    difficulties_div.style.display = 'block';
+                } else {
+                    range_div.style.display = 'block';
+                    difficulties_div.style.display = 'none';
+                }
+            });
+
+            rangeCheckbox.addEventListener('change', function () {
+                if (rangeCheckbox.checked) {
+                    custom_div.style.display = 'none';
+                    difficulties_standarts_div.style.display = 'block';
+                } else {
+                    custom_div.style.display = 'block';
+                    difficulties_standarts_div.style.display = 'none';
+                }
+            });
+
+            defaultCheckbox.addEventListener('change', function () {
+                if (defaultCheckbox.checked) {
+                    percentage_div.style.display = 'none';
+                    difficulties_standarts_div.style.display = 'block';
+                } else {
+                    percentage_div.style.display = 'block';
+                    difficulties_standarts_div.style.display = 'none';
+                    difficulties_div.style.display = 'none';
+                    easyCheckbox.checked = false;
+                    mediumCheckbox.checked = false;
+                    hardCheckbox.checked = false;
+                }
+            });
+
+            /*Slider*/
+            var slider = document.getElementById('slider');
+            noUiSlider.create(slider, {
+                start: [20, 80], // initial values
+                connect: true, // connect the two inputs
+                range: {
+                    'min': 0,
+                    'max': 100
+                },
+                step: 1
+            });
+            // Add the event to update values
+            var minValueElement = document.getElementById('min-value');
+            var maxValueElement = document.getElementById('max-value');
+            var sliderValueInput = document.getElementById('sliderValue');
+            slider.noUiSlider.on('update', function (values) {
+                values[0] = parseInt(values[0]);
+                values[1] = parseInt(values[1]);
+                minValueElement.textContent = values[0];
+                maxValueElement.textContent = values[1];
+                sliderValueInput.value = values;
+            });
+
+            // /* Room */
+            // var easyCheckbox = document.getElementById('easy');
+            // var mediumCheckbox = document.getElementById('medium');
+            // var hardCheckbox = document.getElementById('hard');
+            // function room() {
+            //     // Use AJAX to send data to flask server
+            //     var xhr = new XMLHttpRequest();
+            //     xhr.open("POST", "url_for('room')", true);
+            //     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+            //     var dados = {
+            //         percentage: percentageCheckbox.checked,
+            //         default: defaultCheckbox.checked,
+            //         percentageSlider: slider.noUiSlider.get(),
+            //         easy: easyCheckbox.checked,
+            //         medium: mediumCheckbox.checked,
+            //         hard: hardCheckbox.checked
+            //     };
+
+            //     xhr.send(JSON.stringify(dados));
+            // }
         </script>
     </div>
 </body>

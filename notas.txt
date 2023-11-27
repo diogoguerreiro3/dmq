@@ -1,4 +1,8 @@
-. Interface para escolher as dificuldades
+. nas deficuldades com percentagem, se o filme não tiver essa percentagem devemos procurar outro, mas não podmeos estar sempre a procurar, pensar numa maneira melhor para isso. 
+. colocar no audio.html as estatisticas da musica
+. colocar a dificuldade e imagem quando mostram a musica correta
+. skip song quando todos já responderam bem
+. validar se ou percentagem ou default estão selecionados antes de ser creado um room
 . melhorar barra de autocomplete
 . bloquear user se entrar a meio, mas pode ouvir musica
-. colocar winnie the pooh 2011
+. se toda a gente sair da sala, a thread acaba.

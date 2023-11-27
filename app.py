@@ -21,11 +21,15 @@ room_thread = None
 current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
 current_random_music_name = "Snow White Soundtrack - 01 - Overture.mp3"
 current_random_movie = ""
+
 current_random_time = 0
 initial_waiting_duration = 15
 waiting_duration = 7
 song_duration = 20
-number_of_songs = 10
+number_of_songs = 20
+
+default_mode = percentage_mode = easy = medium = hard = False
+current_percentage_range = []
 
 current_replys_and_points_room = []
 
@@ -113,11 +117,19 @@ def lobby():
 
 ### Main Room / Main Game ###
 
-@app.route("/room")
+@app.route("/room", methods=['POST'])
 def room():
-    global room_thread
+    global room_thread, default_mode, percentage_mode, easy, medium, hard, current_percentage_range
     if room_thread is None:
         print("Create Room Thread!")
+        default_mode = request.form.get('default')
+        percentage_mode = request.form.get('percentage')
+        easy = request.form.get('easy')
+        medium = request.form.get('medium')
+        hard = request.form.get('hard')
+        slider_values_str = request.form.get('sliderValue')
+        current_percentage_range = list(map(int, slider_values_str.split(',')))
+        print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; current_percentage_range: {current_percentage_range}")
         room_thread = threading.Thread(target=main_room_thread)
         room_thread.start()
     return render_template("audio.html")
@@ -134,6 +146,8 @@ def main_room_thread():
     for n in range(1,number_of_songs+1):
         clean_replys()
         choose_random_music()
+        if current_random_music == "":
+            break
         for i in range(song_duration+1,0,-1):
             current_time = current_random_time + song_duration - i
             socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
@@ -152,25 +166,76 @@ def main_room_thread():
     room_thread = None
 
 def choose_random_music():
-    global current_random_music, current_random_time, current_random_movie, current_random_music_name, random_movies
+    global current_random_music, current_random_time, current_random_movie, current_random_music_name, random_movies, default_mode, percentage_mode
 
     random_movies = copy.deepcopy(movies)
     random.shuffle(random_movies)
     current_random_movie = random_movies[0]
+    print("current_random_movie", current_random_movie)
     musics = os.listdir(os.path.join(path_to_music, current_random_movie))
+    if default_mode == "on":
+        musics = choose_random_music_by_default_mode(musics)
+    elif percentage_mode == "on":
+        musics = choose_random_music_by_percentage_mode(musics)
     random.shuffle(musics)
-    current_random_music_name = musics[0]
-    current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
-    
-    audio = AudioSegment.from_file(current_random_music, format="mp3")
-    duration = int(len(audio) / 1000) # seconds
-    print("Duration:",duration)
-    if duration <= 20:
-        current_random_time = 0
+    if len(musics) > 0:
+        current_random_music_name = musics[0]
+        current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
+        
+        audio = AudioSegment.from_file(current_random_music, format="mp3")
+        duration = int(len(audio) / 1000) # seconds
+        print("Duration:",duration)
+        if duration <= 20:
+            current_random_time = 0
+        else:
+            current_random_time = random.randint(1, duration - song_duration)
+        print("current_random_time:",current_random_time)
+        print(current_random_music,"(",current_random_time,"sec )")
     else:
-        current_random_time = random.randint(1, duration - song_duration)
-    print("current_random_time:",current_random_time)
-    print(current_random_music,"(",current_random_time,"sec )")
+        print("THERE ARE NO SONGS FOR THAT PERCENTAGE OR DIFFICULTY")
+        current_random_music = ""
+
+def choose_random_music_by_default_mode(musics):
+    global easy, medium, hard, current_random_movie
+    with open(musics_json_filename, 'r') as musicdb:
+        music_data = json.load(musicdb)
+    current_data_movie_musics = {}
+    for key_movie, value_movie in enumerate(music_data):
+        if value_movie["movie"] == current_random_movie:
+            current_data_movie_musics = music_data[key_movie]["musics"]
+    musics_by_mode = []
+    for music in musics:
+        for key_data_music, value_data_music in enumerate(current_data_movie_musics):
+            if easy == "on" and value_data_music["name"] == music and value_data_music["difficulty_defualt"] == "easy":
+                musics_by_mode.append(music)
+            elif medium == "on" and value_data_music["name"] == music and value_data_music["difficulty_defualt"] == "medium":
+                musics_by_mode.append(music)
+            elif hard == "on" and value_data_music["name"] == music and value_data_music["difficulty_defualt"] == "hard":
+                musics_by_mode.append(music)
+    return musics_by_mode
+
+def choose_random_music_by_percentage_mode(musics):
+    global easy, medium, hard, current_random_movie
+    with open(musics_json_filename, 'r') as musicdb:
+        music_data = json.load(musicdb)
+    current_data_movie_musics = {}
+    for key_movie, value_movie in enumerate(music_data):
+        if value_movie["movie"] == current_random_movie:
+            current_data_movie_musics = music_data[key_movie]["musics"]
+    musics_by_mode = []
+    for music in musics:
+        for key_data_music, value_data_music in enumerate(current_data_movie_musics):
+            if easy == "on" or medium == "on" or hard == "on":
+                if easy == "on" and value_data_music["name"] == music and value_data_music["difficulty"] >= 75:
+                    musics_by_mode.append(music)
+                elif medium == "on" and value_data_music["name"] == music and value_data_music["difficulty"] > 35 and value_data_music["difficulty"] < 75:
+                    musics_by_mode.append(music)
+                elif hard == "on" and value_data_music["name"] == music and value_data_music["difficulty"] <= 35:
+                    musics_by_mode.append(music)
+            else:
+                if value_data_music["name"] == music and value_data_music["difficulty"] >= current_percentage_range[0] and value_data_music["difficulty"] <= current_percentage_range[1]:
+                    musics_by_mode.append(music)
+    return musics_by_mode
 
 def update_replys(username, reply_movie):
     global current_replys_and_points_room
