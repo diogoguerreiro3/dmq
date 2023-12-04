@@ -75,3 +75,11 @@ a {
 #sugestions li:hover {
     background-color: #f0f0f0;
 }
+
+li {
+    background-color: #1e1e1e;
+}
+
+li.focused {
+    background-color: #3d3d00; /* Amarelo claro */
+}

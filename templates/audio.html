@@ -8,6 +8,7 @@
 <body>
     <div>
         <h2 id="audio_info"></h2>
+        <h3 id="difficulty_text"></h3>
         <audio id="audio-player" style="display: none;" controls>
             <!-- style="display: none;" -->
             <source id="audio-src" src="{{ url_for('play') }}" type="audio/mpeg">
@@ -50,6 +51,17 @@
             audio_info.innerHTML = data;
         });
 
+        /* Event to add content of reply music */
+        var difficulty_text = document.getElementById('difficulty_text');
+        socket.on('music_content', function(data) {
+            var data_json = JSON.parse(data);
+            if(data_json.current_difficulty == "") {
+                difficulty_text.innerHTML = "";
+            } else {
+                difficulty_text.innerHTML = data_json.current_difficulty + "% [" + data_json.current_default_difficulty + "]";
+            }
+        });
+
         /* Event for when the server tell to client to play music  */
         socket.on('audio_play', function(data) {
             var data_json = JSON.parse(data);
@@ -83,9 +95,8 @@
                     return response.json();
                 })
                 .then(function(movies_list) {
-                    movies_list.forEach(function(movie) {
+                    movies_list.forEach(function(movie, index) {
                         if (movie.toLowerCase().indexOf(movie_texted) != -1) {
-                            console.log(movie);
                             var item = document.createElement("li");
                             item.textContent = movie;
                             sugestions.appendChild(item);
@@ -96,7 +107,59 @@
                             });
                         }
                     });
+
+                    var firstItem = sugestions.childNodes[0];
+                    firstItem.focus();
+                    firstItem.classList.add('focused');
                 });
+        });
+
+        /* Eventos para as setas para a barra de pesquisa */
+        document.addEventListener("keydown", function(e) {
+            var focusedItem = sugestions.querySelector('li.focused');
+            var items = sugestions.querySelectorAll('li');
+
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                console.log(focusedItem);
+                console.log(items);
+                if (!focusedItem) {
+                    items[0].classList.add('focused');
+                } else {
+                    var nextItem = focusedItem.nextElementSibling || items[0];
+                    if (nextItem) {
+                        focusedItem.classList.remove('focused');
+                        nextItem.classList.add('focused');
+                        nextItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    }
+                }
+            } else if (e.key === "ArrowUp") {
+                e.preventDefault();
+                if (!focusedItem) {
+                    items[items.length - 1].classList.add('focused');
+                } else {
+                    var prevItem = focusedItem.previousElementSibling || items[items.length - 1];
+                    if (prevItem) {
+                        focusedItem.classList.remove('focused');
+                        prevItem.classList.add('focused');
+                        prevItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    }
+                }
+            } else if (e.key === "Enter" && focusedItem) {
+                e.preventDefault();
+                reply_text.value = focusedItem.textContent;
+                sugestions.innerHTML = ""; // Clean the list when a movie is selected
+            }
+        });
+
+        /* When click in other place than the list of suggestions, the focus is removed from the lsit */
+        document.addEventListener('click', function(e) {
+            if (!sugestions.contains(e.target)) {
+                var items = sugestions.querySelectorAll('li');
+                items.forEach(function(item) {
+                    item.classList.remove('focused');
+                });
+            }
         });
 
         /* Send the reply movie to server */

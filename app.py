@@ -30,6 +30,8 @@ number_of_songs = 20
 
 default_mode = percentage_mode = easy = medium = hard = False
 current_percentage_range = []
+current_difficulty = None
+current_default_difficulty = None
 
 current_replys_and_points_room = []
 
@@ -135,7 +137,7 @@ def room():
     return render_template("audio.html")
 
 def main_room_thread():
-    global current_random_time, room_thread, current_random_music
+    global current_random_time, room_thread, current_random_music, current_difficulty, current_default_difficulty
     clean_points()
     for i in range(initial_waiting_duration+1,0,-1):
         clean_replys()
@@ -148,6 +150,7 @@ def main_room_thread():
         choose_random_music()
         if current_random_music == "":
             break
+        socketio.emit('music_content', '{"current_difficulty" : "", "current_default_difficulty" : ""}', broadcast=True)
         for i in range(song_duration+1,0,-1):
             current_time = current_random_time + song_duration - i
             socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
@@ -159,6 +162,7 @@ def main_room_thread():
         calculate_difficulty()
         for i in range(waiting_duration+1,0,-1):
             socketio.emit('title_refresh', current_random_music_name, broadcast=True)
+            socketio.emit('music_content', '{"current_difficulty" : "'+str(round(current_difficulty, 2))+'", "current_default_difficulty" : "'+str(current_default_difficulty)+'"}', broadcast=True)
             time.sleep(1)
             #print(f'Counter for wait for song {n}: {i}')
     socketio.emit('title_refresh', f"Acabou!", broadcast=True)
@@ -280,7 +284,7 @@ def update_player_point(username):
             player["points"] += 1
 
 def calculate_difficulty():
-    global current_random_movie, current_random_music_name, current_replys_and_points_room
+    global current_random_movie, current_random_music_name, current_replys_and_points_room, current_difficulty, current_default_difficulty
 
     with open(musics_json_filename, 'r') as musicdb:
         current_data = json.load(musicdb)
@@ -302,6 +306,9 @@ def calculate_difficulty():
 
                     current_data[key_movie]["musics"][key_music]["count"] += len(current_replys_and_points_room)
                     current_data[key_movie]["musics"][key_music]["difficulty"] = new_difficulty
+
+                    current_difficulty = current_data[key_movie]["musics"][key_music]["difficulty"]
+                    current_default_difficulty = current_data[key_movie]["musics"][key_music]["difficulty_defualt"]
 
     with open(musics_json_filename, 'w') as musicdb:
         json.dump(current_data, musicdb, indent=4)
