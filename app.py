@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, Response, redirect, url_for
+from flask import Flask, render_template, request, send_file, Response, redirect, url_for, jsonify
 from pytube import YouTube, Playlist
 from googleapiclient.discovery import build
 import random, requests, re, os, threading, time, json, threading, copy
@@ -15,6 +15,7 @@ player_json_filename = "players.json"
 musics_json_filename = "musics.json"
 
 currents_players = []
+leader = ""
 all_players = None
 
 room_thread = None
@@ -34,6 +35,7 @@ current_difficulty = None
 current_default_difficulty = None
 
 current_replys_and_points_room = []
+players_ready = []
 
 
 
@@ -74,10 +76,14 @@ def add_points_player():
     with open(player_json_filename, 'w') as playersdbwrite:            
         json.dump(players, playersdbwrite, indent=4)
 
+
+
 ### Index ###
 
 @app.route("/")
 def index():
+    global currents_players, leader
+
     ip = request.remote_addr
     print(ip,"entrou no DMQ!")
     
@@ -85,6 +91,8 @@ def index():
     if player != None:
         print("Found player", player)
         if player["username"] not in currents_players:
+            if len(currents_players) == 0:
+                leader = player["username"]
             currents_players.append(player["username"])
         return redirect(url_for('lobby'))
 
@@ -108,6 +116,8 @@ def processar():
     mensagem = f"The username {username} already exists. Try again."
     return render_template("index.html", msg=mensagem)
 
+
+
 ### Lobby ###
 
 @app.route("/lobby")
@@ -115,12 +125,20 @@ def lobby():
     ip = request.remote_addr
     player = verify_player_exists("ip", ip)
     if player["username"] not in currents_players: return redirect(url_for('index'))
-    return render_template("lobby.html", movies=movies, players=currents_players)
+    return render_template("lobby.html", movies=movies)
+
+
 
 ### Main Room / Main Game ###
 
-@app.route("/room", methods=['POST'])
+@app.route("/room")
 def room():
+    if room_thread is None:
+        return redirect(url_for('lobby'))
+    return render_template("audio.html")
+
+@app.route("/room", methods=['POST'])
+def room_post():
     global room_thread, default_mode, percentage_mode, easy, medium, hard, current_percentage_range
     if room_thread is None:
         print("Create Room Thread!")
@@ -134,7 +152,8 @@ def room():
         print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; current_percentage_range: {current_percentage_range}")
         room_thread = threading.Thread(target=main_room_thread)
         room_thread.start()
-    return render_template("audio.html")
+        socketio.emit('go_to_room', "", broadcast=True)
+    return redirect(url_for('room'))
 
 def main_room_thread():
     global current_random_time, room_thread, current_random_music, current_difficulty, current_default_difficulty
@@ -168,6 +187,10 @@ def main_room_thread():
     socketio.emit('title_refresh', f"Acabou!", broadcast=True)
     add_points_player()
     room_thread = None
+
+
+
+### Choose Music ###
 
 def choose_random_music():
     global current_random_music, current_random_time, current_random_movie, current_random_music_name, random_movies, default_mode, percentage_mode
@@ -241,6 +264,10 @@ def choose_random_music_by_percentage_mode(musics):
                     musics_by_mode.append(music)
     return musics_by_mode
 
+
+
+### Replies and Points ###
+
 def update_replys(username, reply_movie):
     global current_replys_and_points_room
     for reply in current_replys_and_points_room:
@@ -282,6 +309,10 @@ def update_player_point(username):
     for player in current_replys_and_points_room:
         if username == player["username"]:
             player["points"] += 1
+
+
+
+### Difficulties ###
 
 def calculate_difficulty():
     global current_random_movie, current_random_music_name, current_replys_and_points_room, current_difficulty, current_default_difficulty
@@ -327,6 +358,10 @@ def create_music_json():
     with open(musics_json_filename, 'w') as musicsdb:
         json.dump(data, musicsdb, indent=4)
 
+
+
+### Music Player ###
+
 @socketio.on("/send_movie")
 def send_movie(intput):
     ip = request.remote_addr
@@ -346,6 +381,8 @@ def song():
     print(url)
     return send_file(url, as_attachment=False)
 
+
+
 ### Close ###
 
 @app.route("/close")
@@ -355,17 +392,25 @@ def close():
     currents_players.remove(player["username"])
     return render_template("bye.html")
 
+
+
 ### Gets ###
 
 @app.route('/get_all_players')
 def get_all_players():
     update_playersdb()
-    global all_players, currents_players
-    current_players_points = []
+
+    ip = request.remote_addr
+    player = verify_player_exists("ip", ip)
+
+    global all_players, currents_players, leader
+    current_players_points = [[], "", player["username"], []]
     for player in currents_players:
         for player_in_all in all_players:
             if player == player_in_all["username"]:
-                current_players_points.append(player_in_all)
+                current_players_points[0].append(player_in_all)
+    current_players_points[1] = leader
+    current_players_points[3] = players_ready
     return current_players_points
 
 @app.route('/get_players')
@@ -398,114 +443,18 @@ def style():
 
 
 
+### Sets ###
+
+@app.route('/receive_ready', methods=['POST'])
+def receive_ready():
+    global players_ready
+    player_ready = request.json.get("user")
+    print(player_ready,"ready!")
+    if player_ready not in players_ready:
+        players_ready.append(player_ready)
+    return jsonify({'status': 'Message receive with success'})
 
 
-
-
-
-
-
-
-# @app.route("/stream")
-# def stream():
-#     # Inicia uma thread para reproduzir a música.
-#     thread = threading.Thread(target=play_music)
-#     thread.daemon = True
-#     thread.start()
-
-#     # Retorna uma resposta vazia para indicar que a solicitação foi bem-sucedida.
-#     return ""
-
-# # Função que reproduz a música.
-# def play_music():
-#     # Abre o arquivo de música.
-#     with open(path_to_music, "rb") as f:
-#         # Obtém o conteúdo do arquivo de música.
-#         music_data = f.read()
-
-#     # Inicia a reprodução da música.
-#     print("Iniciando a reprodução da música.")
-#     #flask.current_app.logger.info("Iniciando a reprodução da música.")
-#     flask.streaming.stream_response(music_data, mimetype="audio/mp3")
-
-# @app.route("/wav")
-def streamwav():
-    def generate():
-        with open(path_to_music, "rb") as fwav:
-            data = fwav.read(1024)
-            while data:
-                yield data
-                data = fwav.read(1024)
-    return Response(generate(), mimetype="audio/mpeg")
-
-
-# Chave da API do YouTube (substitua pela sua própria chave)
-YOUTUBE_API_KEY = 'AIzaSyBT2171JBehaT6EFm24iYkG3Cx6LfbQ8Iw'
-
-# @app.route("/test")
-def test():
-
-    # URL da playlist do YouTube
-    playlist_url = 'https://www.youtube.com/playlist?list=PLBqEHXu79cdu3VA-lVrLNOVU551e3MO5n'
-
-    # Extrai o ID da playlist do URL
-    playlist_id_match = re.search(r'[?&]list=([^&]+)', playlist_url)
-
-    if playlist_id_match:
-        PLAYLIST_ID = playlist_id_match.group(1)
-    else:
-        raise ValueError("Não foi possível extrair o ID da playlist do URL")
-
-    youtube = build('youtube', 'v3', developerKey=YOUTUBE_API_KEY)
-
-    # Obtém a lista de vídeos da playlist
-    playlist_items = youtube.playlistItems().list(playlistId=PLAYLIST_ID, part='snippet').execute()
-    videos = [item['snippet']['resourceId']['videoId'] for item in playlist_items['items']]
-
-    print("videos:",videos)
-    
-    # Embaralha a ordem dos vídeos
-    random.shuffle(videos)
-
-    videos[0] = "tgTJUUBEBS8"
-
-    playlist = [
-        'https://www.youtube.com/watch?v=' + videos[0],
-        'https://www.youtube.com/watch?v=' + videos[1],
-        'https://www.youtube.com/watch?v=' + videos[2],
-        # Adicione mais URLs conforme necessário
-    ]
-
-    
-
-    # Embaralhar a ordem dos áudios
-    random.shuffle(playlist)
-
-
-    # audios = [
-    #     {'title': 'Áudio 1', 'video_id': "tgTJUUBEBS8"},
-    #     {'title': 'Áudio 2', 'video_id': videos[1]},
-    #     {'title': 'Áudio 3', 'video_id': videos[2]}
-    # ]
-
-    # # Embaralhar a ordem dos áudios
-    # random.shuffle(audios)
-
-    # Retorna a página HTML
-    return render_template("test.html", audios=videos)
-
-
-
-
-
-
-
-
-
-
-
-# if __name__ == "__main__":
-#     app.run(host="0.0.0.0", debug=True)
 
 if __name__ == '__main__':
     #create_music_json()

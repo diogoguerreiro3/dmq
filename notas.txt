@@ -9,12 +9,14 @@
 . validar se ou percentagem ou default estão selecionados antes de ser creado um room
 . melhorar barra de autocomplete
 . bloquear user se entrar a meio, mas pode ouvir musica
-. se toda a gente sair da sala, a thread acaba.
+. se toda a gente sair da sala, a thread acaba. Se um sair, não contar os pontos dessse, fazer um array de ativos na room
 . resolver problema do chromium
 . mudar brother bear para versão inglesa
 . limite de caracters
 . implementar os nomes em portugues também
 . melhorar randomizer
+. há dois fors no random default percentage e percentage normal, temos de colocar apenas 1, não vale a pena verificar se os nomes são iguais.
+. começar a colocar as sequelas
 
 Erros:
 . se não alterar o volume , a musica não reproduz

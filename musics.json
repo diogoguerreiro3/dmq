@@ -1187,8 +1187,8 @@
             },
             {
                 "name": "Beauty and the Beast - Transformation.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             }
         ]
@@ -1968,8 +1968,8 @@
             },
             {
                 "name": "Cars - 05. Customers.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -2171,8 +2171,8 @@
             },
             {
                 "name": "Cars 2 - 02 - It's Finn McMissile!.mp3",
-                "count": 8,
-                "difficulty": 50.0,
+                "count": 10,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2643,8 +2643,8 @@
         "musics": [
             {
                 "name": "Chicken Little - Chase To Cornfield.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -3664,8 +3664,8 @@
             },
             {
                 "name": "Elemental - Grand Redux.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -3718,8 +3718,8 @@
             },
             {
                 "name": "Elemental - Pipe Blows.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -4428,8 +4428,8 @@
             },
             {
                 "name": "Finding Dory - Two Lefts and a Right.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -5109,8 +5109,8 @@
             },
             {
                 "name": "Frozen 2 - Christophe Beck - Ghosts of Arendelle Past (From _Frozen 2_Score_Audio Only).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -5932,8 +5932,8 @@
             },
             {
                 "name": "Lady And The Tramp - He's a Tramp.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -6679,8 +6679,8 @@
             },
             {
                 "name": "Luca - Mina - Tintarella di luna.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -8494,7 +8494,7 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Can You Leave Tonight -  - Arduous Trek - Any News, Colonel - I Want the Job Done.mp3",
-                "count": 2,
+                "count": 4,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
@@ -9121,8 +9121,8 @@
             },
             {
                 "name": "Pinocchio - Monstro Awakens.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -10770,8 +10770,8 @@
             },
             {
                 "name": "Sleeping Beauty - Forbidden Mountain.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -11803,8 +11803,8 @@
             },
             {
                 "name": "Tarzan - Mark Mancina - Kerchak\u2019s Speech.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -12107,8 +12107,8 @@
         "musics": [
             {
                 "name": "The Aristocats - Alley Cat - Sleep Kitten.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -12389,8 +12389,8 @@
             },
             {
                 "name": "The Aristocats - Where Are My Cats.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             }
         ]
@@ -12985,8 +12985,8 @@
             },
             {
                 "name": "The Good Dinosaur - Chores.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -14400,8 +14400,8 @@
             },
             {
                 "name": "The Little Mermaid - Part of Your World (Reprise) - Ursula Plots.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -14543,8 +14543,8 @@
             },
             {
                 "name": "The Many Adventures of Winnie the Pooh 7 - Blustery Day.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -16657,8 +16657,8 @@
             },
             {
                 "name": "Treasure Planet - 28 - Doppler and Amelia.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard"
             },
             {
@@ -16884,8 +16884,8 @@
             },
             {
                 "name": "Turning Red - Temple Duties.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {

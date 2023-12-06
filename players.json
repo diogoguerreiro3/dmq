@@ -48,5 +48,15 @@
         "ip": "109.48.106.179",
         "username": "Sephas",
         "points": 28
+    },
+    {
+        "ip": "192.168.1.180",
+        "username": "Shizuka",
+        "points": 0
+    },
+    {
+        "ip": "127.0.0.1",
+        "username": "Nobita",
+        "points": 0
     }
 ]

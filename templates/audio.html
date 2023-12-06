@@ -75,7 +75,6 @@
                 audio_player.pause();
             }
         });
-
         
         /* Volume Control */
         volume_slider.addEventListener('input', function() {
@@ -95,7 +94,7 @@
                     return response.json();
                 })
                 .then(function(movies_list) {
-                    movies_list.forEach(function(movie, index) {
+                    movies_list.forEach(function(movie) {
                         if (movie.toLowerCase().indexOf(movie_texted) != -1) {
                             var item = document.createElement("li");
                             item.textContent = movie;

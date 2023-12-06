@@ -12,17 +12,9 @@
         <ul id="content">
         </ul>
 
-        <h3>Difficulty:</h3>
+        <form id="form_room" action="/room" method="post">
+            <h3>Difficulty:</h3>
 
-        <!-- 
-        . Pre Defined
-            [easy, medium, hard]
-        . Percentage Difficulty
-            . Custom (%) [slice %]
-            . Range (%) [easy, medium, hard] 
-        -->
-
-        <form action="/room" method="post">
             <div id="percentage_div">
                 <input type="checkbox" id="percentage" name="percentage" uncheck>
                 <label for="percentage">Percentage</label>
@@ -56,17 +48,17 @@
                     <span id="min-value"></span>% to <span id="max-value"></span>%
                     <input type="hidden" id="sliderValue" name="sliderValue">
                 </div>
-
             </div>
-            
-            
 
             <br><br>
             <!-- <a href="{{ url_for('room') }}" class="btn" style="margin-right:10px">Room</a> -->
-            <input class="btn" style="margin-right:10px" type="submit" value="Room">
-            <a href="{{ url_for('close') }}" class="btn_red" style="margin-left:10px">Leave</a>
+            <input class="btn" style="margin-right:10px" type="submit" value="Room">    
         </form>
-
+        
+        <br>
+        <a onclick="sendReadyServer()" class="btn" id="ready_btn">Ready</a>
+        <a href="{{ url_for('close') }}" class="btn_red" id="leave_btn">Leave</a>
+        
         <br>
         <h1>Movies available:</h1>
         <ul>
@@ -76,19 +68,44 @@
         </ul>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
         <script src="https://unpkg.com/nouislider@14.6.4/distribute/nouislider.min.js"></script>
         <script>
+            var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+            var current_user = "";
+            var current_status = false;
+
             /* Get all players */
             var list = document.getElementById('content');
+            var ready_btn = document.getElementById('ready_btn');
+            var leave_btn = document.getElementById('leave_btn');
+            var form_room = document.getElementById('form_room');
             function refreshPlayers() {
                 $.get('/get_all_players', function(data) {
                     list.innerHTML = '';
-                    data.forEach(function (element) {
+                    console.log(data)
+                    var all_players = data[0];
+                    var leader = data[1];
+                    current_user = data[2];
+                    players_ready = data[3];
+                    all_players.forEach(function (element) {
                         var li = document.createElement('li');
-                        console.log(element)
                         li.appendChild(document.createTextNode('[' + element.points + '] ' + element.username)); 
+                        if(element.username == leader) {
+                            li.style.color = "green";
+                        } else if (players_ready.includes(element.username)) {
+                            li.style.color = "yellow";
+                        }
                         list.appendChild(li);
                     });
+                    if(current_user == leader) {
+                        ready_btn.style.display = 'none';
+                    } else {
+                        form_room.style.display = 'none';
+                        leave_btn.style.marginLeft = '10px';
+                    }
+
                     setTimeout(refreshPlayers, 1000); // Update each 1 second (1000 ms)
                 });
             }
@@ -189,27 +206,35 @@
                 sliderValueInput.value = values;
             });
 
-            // /* Room */
-            // var easyCheckbox = document.getElementById('easy');
-            // var mediumCheckbox = document.getElementById('medium');
-            // var hardCheckbox = document.getElementById('hard');
-            // function room() {
-            //     // Use AJAX to send data to flask server
-            //     var xhr = new XMLHttpRequest();
-            //     xhr.open("POST", "url_for('room')", true);
-            //     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            /* Ready function to send message to the server */
+            function sendReadyServer() {
+                var msg = {user: current_user};
 
-            //     var dados = {
-            //         percentage: percentageCheckbox.checked,
-            //         default: defaultCheckbox.checked,
-            //         percentageSlider: slider.noUiSlider.get(),
-            //         easy: easyCheckbox.checked,
-            //         medium: mediumCheckbox.checked,
-            //         hard: hardCheckbox.checked
-            //     };
+                fetch("/receive_ready", {method: 'POST', headers: { 'Content-Type': 'application/json'}, body: JSON.stringify(msg)})
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Error sending the message.');
+                })
+                .then(data => {
+                    console.log('Response of server:', data);
+                    if(data.status == "Message receive with success") {
+                        current_status = true;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
 
-            //     xhr.send(JSON.stringify(dados));
-            // }
+            /* Message listener from the server to go to room when is ready */
+            socket.on('go_to_room', function(data) {
+                console.log("current_status " + current_status);
+                if(current_status) {
+                    window.location.href = "{{ url_for('room') }}";
+                }
+            });
         </script>
     </div>
 </body>
