@@ -286,8 +286,8 @@
             },
             {
                 "name": "A Bug's Life - 48 - End Credits (Time Of Your Life).mp3",
-                "count": 10,
-                "difficulty": 30.0,
+                "count": 11,
+                "difficulty": 27.27272727272727,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -369,8 +369,8 @@
             },
             {
                 "name": "Aladdin - Finale.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -513,7 +513,7 @@
             },
             {
                 "name": "Aladdin - Prince Ali (Reprise).mp3",
-                "count": 2,
+                "count": 4,
                 "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
@@ -650,8 +650,8 @@
             },
             {
                 "name": "Alice in Wonderland 16 - The Mad Tea Party - The Unbirthday Song.mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 7,
+                "difficulty": 28.57142857142857,
                 "difficulty_defualt": "easy"
             },
             {
@@ -674,8 +674,8 @@
             },
             {
                 "name": "Alice in Wonderland 2 - Pay Attention - In a World of My Own.mp3",
-                "count": 5,
-                "difficulty": 80.0,
+                "count": 7,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "easy"
             },
             {
@@ -972,8 +972,8 @@
             },
             {
                 "name": "Bambi 13 - Looking for Romance (I Bring You a Song).mp3",
-                "count": 5,
-                "difficulty": 0.0,
+                "count": 8,
+                "difficulty": 37.5,
                 "difficulty_defualt": "easy"
             },
             {
@@ -1008,8 +1008,8 @@
             },
             {
                 "name": "Bambi 4 - Little April Shower.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 4,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -1175,8 +1175,8 @@
             },
             {
                 "name": "Beauty and the Beast - The Mob Song.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -1198,7 +1198,7 @@
         "musics": [
             {
                 "name": "Big Hero 6 - 01 - Tadashii Roboto No Tsukurinata.mp3",
-                "count": 4,
+                "count": 6,
                 "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
@@ -1300,8 +1300,8 @@
             },
             {
                 "name": "Big Hero 6 - 18 - Upgrades.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -1408,8 +1408,8 @@
             },
             {
                 "name": "Big Hero 6 - 36 - Immortals - Fall Out Boy.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -1562,14 +1562,14 @@
             },
             {
                 "name": "Brave - Into The Open Air.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 7,
+                "difficulty": 42.857142857142854,
                 "difficulty_defualt": "easy"
             },
             {
                 "name": "Brave - Learn Me Right.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -1662,16 +1662,10 @@
         "movie": "Brother Bear",
         "musics": [
             {
-                "name": "Brother Bear - 12 Les peintures.mp3",
+                "name": "Brother Bear - Rock Painting.mp3",
                 "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium"
-            },
-            {
-                "name": "Brother Bear - 20 Transformation [Reprise] _ Les grands esprits [Reprise] _ Final.mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
-                "difficulty_defualt": "easy"
             },
             {
                 "name": "Brother Bear - Argument.mp3",
@@ -1783,8 +1777,8 @@
             },
             {
                 "name": "Brother Bear - Great Spirits.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -1807,8 +1801,8 @@
             },
             {
                 "name": "Brother Bear - Look Through My Eyes.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -1867,8 +1861,8 @@
             },
             {
                 "name": "Brother Bear - On My Way.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -1911,6 +1905,18 @@
                 "name": "Brother Bear - Welcome (Blind Boys of Alabama).mp3",
                 "count": 0,
                 "difficulty": 0,
+                "difficulty_defualt": "easy"
+            },
+            {
+                "name": "Brother Bear - Great Spirits (Reprise).mp3",
+                "count": 3,
+                "difficulty": 66.66666666666666,
+                "difficulty_defualt": "easy"
+            },
+            {
+                "name": "Brother Bear - Transformation (Reprise).mp3",
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -2148,8 +2154,8 @@
             },
             {
                 "name": "Cars - Real Gone.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2171,8 +2177,8 @@
             },
             {
                 "name": "Cars 2 - 02 - It's Finn McMissile!.mp3",
-                "count": 10,
-                "difficulty": 40.0,
+                "count": 12,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2201,8 +2207,8 @@
             },
             {
                 "name": "Cars 2 - 07 - You Might Think - Weezer.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2441,8 +2447,8 @@
             },
             {
                 "name": "Cars 2 - 47 - Collision Of Worlds - Robbie Williams; & Brad Paisley.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2494,8 +2500,8 @@
             },
             {
                 "name": "Cars 3 - Brad Paisley - Truckaroo.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -2632,8 +2638,8 @@
             },
             {
                 "name": "Cars 3 - ZZ Ward - Ride ft - Gary Clark Jr..mp3",
-                "count": 4,
-                "difficulty": 0.0,
+                "count": 6,
+                "difficulty": 16.666666666666664,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -2715,8 +2721,8 @@
             },
             {
                 "name": "Chicken Little - Wannabe.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2732,8 +2738,8 @@
         "musics": [
             {
                 "name": "Cinderella - A Dream Is a Wish Your Heart Makes.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2906,8 +2912,8 @@
             },
             {
                 "name": "Cinderella - The Music Lesson - Oh, Sing Sweet Nightingale - Bad Boy Lucifer  - A Message From His Majesty.mp3",
-                "count": 2,
-                "difficulty": 0.0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2924,8 +2930,8 @@
             },
             {
                 "name": "Cinderella - Where Did I Put That Thing - Bibbidi-Bobbidi-Boo (The Magic Song).mp3",
-                "count": 6,
-                "difficulty": 66.66666666666666,
+                "count": 7,
+                "difficulty": 71.42857142857143,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -3163,7 +3169,7 @@
             },
             {
                 "name": "Coco - Remember Me (Lullaby).mp3",
-                "count": 2,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -3223,8 +3229,8 @@
             },
             {
                 "name": "Coco - The World Es Mi Familia.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -3235,8 +3241,8 @@
             },
             {
                 "name": "Coco - Un Poco Loco-2.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -3408,8 +3414,8 @@
             },
             {
                 "name": "Dinosaur - 26 - It Comes With A Pool.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -3461,8 +3467,8 @@
             },
             {
                 "name": "Dumbo 11 - Hiccups Firewater Bubbles Did You See That Pink Elephants on Parade.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -3473,8 +3479,8 @@
             },
             {
                 "name": "Dumbo 13 - When I See an Elephant Fly.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -3515,8 +3521,8 @@
             },
             {
                 "name": "Dumbo 3 - Loading the Train Casey Junior Stork On a Cloud Straight From Heaven.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -3551,8 +3557,8 @@
             },
             {
                 "name": "Dumbo 9 - No Longer an Elephant Dumbo's Sadness A Visit in the Night Baby Mine.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -3754,8 +3760,8 @@
             },
             {
                 "name": "Elemental - Steal The Show.mp3",
-                "count": 16,
-                "difficulty": 68.75,
+                "count": 17,
+                "difficulty": 70.58823529411765,
                 "difficulty_defualt": "easy"
             },
             {
@@ -3837,7 +3843,7 @@
             },
             {
                 "name": "Encanto - Colombia, Mi Encanto.mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -4142,8 +4148,8 @@
             },
             {
                 "name": "Fantasia - The Nutcracker Suite, Op. 71A, Chinese Dance (Irwin Kostal Re-Record 1982).mp3",
-                "count": 11,
-                "difficulty": 27.27272727272727,
+                "count": 18,
+                "difficulty": 38.888888888888886,
                 "difficulty_defualt": "easy"
             },
             {
@@ -4189,7 +4195,7 @@
         "musics": [
             {
                 "name": "Fantasia 2000 - 01 - Symphony No - 5.mp3",
-                "count": 2,
+                "count": 4,
                 "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
@@ -4213,8 +4219,8 @@
             },
             {
                 "name": "Fantasia 2000 - 05 - Carnival Of The Animals, Finale.mp3",
-                "count": 14,
-                "difficulty": 78.57142857142857,
+                "count": 16,
+                "difficulty": 81.25,
                 "difficulty_defualt": "easy"
             },
             {
@@ -4225,8 +4231,8 @@
             },
             {
                 "name": "Fantasia 2000 - 07 - Pomp and Circumstance, Marches #1, 2, 3, & 4.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -4242,7 +4248,7 @@
         "musics": [
             {
                 "name": "Finding Dory - -O, We're Going Home-.mp3",
-                "count": 3,
+                "count": 5,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
@@ -4266,8 +4272,8 @@
             },
             {
                 "name": "Finding Dory - Everything About You.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -4422,8 +4428,8 @@
             },
             {
                 "name": "Finding Dory - Three Hearts (End Title).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -4691,8 +4697,8 @@
             },
             {
                 "name": "Finding Nemo OST - 40 - Beyond The Sea.mp3",
-                "count": 5,
-                "difficulty": 80.0,
+                "count": 7,
+                "difficulty": 85.71428571428574,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -4726,8 +4732,8 @@
             },
             {
                 "name": "Frozen - Do You Want to Build a Snowman- (From -Frozen-Soundtrack Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -4750,14 +4756,14 @@
             },
             {
                 "name": "Frozen - Fixer Upper (From -Frozen-Soundtrack Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
                 "name": "Frozen - For the First Time in Forever (Demo).mp3",
-                "count": 2,
-                "difficulty": 0.0,
+                "count": 4,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -4834,14 +4840,14 @@
             },
             {
                 "name": "Frozen - Let It Go (From -Frozen-Soundtrack Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
                 "name": "Frozen - Let It Go (Instrumental Karaoke).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -5211,8 +5217,8 @@
             },
             {
                 "name": "Frozen 2 - Idina Menzel, AURORA - Into the Unknown (From _Frozen 2_).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -5223,14 +5229,14 @@
             },
             {
                 "name": "Frozen 2 - Idina Menzel, Evan Rachel Wood - Show Yourself (From _Frozen 2_ Sing-Along).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
                 "name": "Frozen 2 - Idina Menzel, Evan Rachel Wood - Show Yourself (From _Frozen 2_Lyric Video).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -5402,8 +5408,8 @@
             },
             {
                 "name": "Fun and Fancy Free - Fe Fi Fo Fum.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 6,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "easy"
             },
             {
@@ -5593,8 +5599,8 @@
             },
             {
                 "name": "Hercules 3 - The Gospel Truth II.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -5694,8 +5700,8 @@
             },
             {
                 "name": "Home on the Range - Little Patch of Heaven.mp3",
-                "count": 7,
-                "difficulty": 42.857142857142854,
+                "count": 8,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -5789,14 +5795,14 @@
             },
             {
                 "name": "Inside Out - First Day of School.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
                 "name": "Inside Out - Free Skating.mp3",
-                "count": 13,
-                "difficulty": 61.53846153846153,
+                "count": 16,
+                "difficulty": 62.5,
                 "difficulty_defualt": "easy"
             },
             {
@@ -5902,7 +5908,7 @@
             },
             {
                 "name": "Lady And The Tramp - Bella Notte.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -5980,8 +5986,8 @@
             },
             {
                 "name": "Lady And The Tramp - La-La-Lu.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 6,
+                "difficulty": 16.666666666666664,
                 "difficulty_defualt": "medium"
             },
             {
@@ -6093,8 +6099,8 @@
             },
             {
                 "name": "Lightyear - 03 - Lightyear.mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 10,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -6255,8 +6261,8 @@
             },
             {
                 "name": "Lightyear - 30 - Infinite MOEtion.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -6595,8 +6601,8 @@
             },
             {
                 "name": "Luca - Edoardo Benatto - Il gatto e la volpe.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -6673,8 +6679,8 @@
             },
             {
                 "name": "Luca - Mina - Citt\u00e1 Vuota.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -6793,8 +6799,8 @@
             },
             {
                 "name": "Luca - Vespa \u00e8 Libert\u00e0.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -6876,8 +6882,8 @@
             },
             {
                 "name": "Make Mine Music - Make Mine Music.mp3",
-                "count": 11,
-                "difficulty": 27.27272727272727,
+                "count": 12,
+                "difficulty": 24.999999999999996,
                 "difficulty_defualt": "easy"
             },
             {
@@ -6953,8 +6959,8 @@
             },
             {
                 "name": "Meet the Robinsons - Little Wonders.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -7042,8 +7048,8 @@
             },
             {
                 "name": "Melody Time - Bumble Boogie.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 7,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "easy"
             },
             {
@@ -7072,8 +7078,8 @@
             },
             {
                 "name": "Melody Time - Melody Time.mp3",
-                "count": 6,
-                "difficulty": 83.33333333333334,
+                "count": 8,
+                "difficulty": 75.00000000000001,
                 "difficulty_defualt": "easy"
             },
             {
@@ -7095,8 +7101,8 @@
         "musics": [
             {
                 "name": "Moana - An Innocent Warrior (From MoanaAudio Only).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -7113,8 +7119,8 @@
             },
             {
                 "name": "Moana - Know Who You Are (From MoanaAudio Only).mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -7460,7 +7466,7 @@
             },
             {
                 "name": "Monsters University - 08 - Off To College.mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
@@ -7532,8 +7538,8 @@
             },
             {
                 "name": "Monsters University - 20 - Focus.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -7664,8 +7670,8 @@
             },
             {
                 "name": "Monsters University - 42 - Can't Go Back To Jail.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -7801,8 +7807,8 @@
         "musics": [
             {
                 "name": "Monsters, Inc - 01 - Main Title (Film Edit).mp3",
-                "count": 10,
-                "difficulty": 80.0,
+                "count": 12,
+                "difficulty": 83.33333333333334,
                 "difficulty_defualt": "easy"
             },
             {
@@ -8184,8 +8190,8 @@
             },
             {
                 "name": "Mulan - 13 - Blossoms.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -8316,7 +8322,7 @@
             },
             {
                 "name": "Mulan - A Girl Worth Fighting For.mp3",
-                "count": 4,
+                "count": 6,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -8441,8 +8447,8 @@
             },
             {
                 "name": "Oliver & Company - Streets of Gold - Oliver & Company.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 4,
+                "difficulty": 24.999999999999996,
                 "difficulty_defualt": "easy"
             },
             {
@@ -8465,8 +8471,8 @@
             },
             {
                 "name": "Oliver & Company - Why Should I Worry - Oliver & Company.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -8524,8 +8530,8 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Dalmatian Plantation - Finale.mp3",
-                "count": 2,
-                "difficulty": 100.0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -8572,8 +8578,8 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Overture.mp3",
-                "count": 9,
-                "difficulty": 55.55555555555556,
+                "count": 11,
+                "difficulty": 63.63636363636363,
                 "difficulty_defualt": "easy"
             },
             {
@@ -8661,8 +8667,8 @@
             },
             {
                 "name": "Onward - Carried Me With You.mp3",
-                "count": 12,
-                "difficulty": 16.666666666666664,
+                "count": 13,
+                "difficulty": 15.384615384615383,
                 "difficulty_defualt": "easy"
             },
             {
@@ -8888,7 +8894,7 @@
         "musics": [
             {
                 "name": "Peter Pan 1 - Main Title (The Second Star to the Right) - All This Has Happened Before.mp3",
-                "count": 6,
+                "count": 8,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
@@ -8960,8 +8966,8 @@
             },
             {
                 "name": "Peter Pan 20 - Home Again - Mermaids, Pirates, and Indians - Finale.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -8984,8 +8990,8 @@
             },
             {
                 "name": "Peter Pan 4 - You Can Fly! You Can Fly! You Can Fly!.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 7,
+                "difficulty": 71.42857142857143,
                 "difficulty_defualt": "easy"
             },
             {
@@ -9002,8 +9008,8 @@
             },
             {
                 "name": "Peter Pan 7 - The Legend of the Croc - Double the Powder and Shorten the Fuse - Follow Tinker.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -9024,199 +9030,151 @@
         "movie": "Pinocchio",
         "musics": [
             {
-                "name": "Pinocchio - 8 years of magic.mp3",
+                "name": "Pinocchio 01 - When You Wish Upon A Star.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "easy"
             },
             {
-                "name": "Pinocchio - A Real Boy.mp3",
+                "name": "Pinocchio 02 - Little Wooden Head.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "medium"
             },
             {
-                "name": "Pinocchio - Angry Cricket.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - As I Was Sayin' to the Duchess.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Clock Sequence.mp3",
+                "name": "Pinocchio 03 - Clock Sequence.mp3",
                 "count": 2,
-                "difficulty": 100.0,
+                "difficulty": 100,
                 "difficulty_defualt": "medium"
             },
             {
-                "name": "Pinocchio - Deep Ripples.mp3",
+                "name": "Pinocchio 04 - Kitten Theme.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - Desolation Theme.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Give a Little Whistle.mp3",
+                "name": "Pinocchio 05 - The Blue Fairy.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "medium"
             },
             {
-                "name": "Pinocchio - Hi-Diddle-Dee-Dee (An Actor's Life for Me).mp3",
+                "name": "Pinocchio 06 - Give A Little Whistle.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium"
+            },
+            {
+                "name": "Pinocchio 07 - Old Geppetto.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard"
+            },
+            {
+                "name": "Pinocchio 08 - Off To School.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard"
+            },
+            {
+                "name": "Pinocchio 09 - Hi-Diddle-Dee-Dee (An Actor's Life For Me).mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "easy"
             },
             {
-                "name": "Pinocchio - I'm No Fool (On a Bike).mp3",
+                "name": "Pinocchio 10 - So Sorry.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "medium"
+                "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - I've Got No Strings.mp3",
+                "name": "Pinocchio 11 - I've Got No Strings.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "easy"
             },
             {
-                "name": "Pinocchio - Kitten Theme.mp3",
+                "name": "Pinocchio 12 - Sinister Stromboli.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - Lesson in Lies.mp3",
+                "name": "Pinocchio 13 - Sad Reunion.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - Little Wooden Head.mp3",
+                "name": "Pinocchio 14 - Lesson in Lies.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - Message from the Blue Fairy.mp3",
+                "name": "Pinocchio 15 - Turn On The Old Music Box.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - Mickey Mouse Club Book Song.mp3",
+                "name": "Pinocchio 16 - Coach to Pleasure Island.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium"
+            },
+            {
+                "name": "Pinocchio 17 - Angry Cricket.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - Monstro Awakens.mp3",
+                "name": "Pinocchio 18 - Transformation.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard"
+            },
+            {
+                "name": "Pinocchio 19 - Message From the Blue Fairy.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard"
+            },
+            {
+                "name": "Pinocchio 20 - To the Rescue.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard"
+            },
+            {
+                "name": "Pinocchio 21 - Deep Ripples.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard"
+            },
+            {
+                "name": "Pinocchio 22 - Desolation Theme.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard"
+            },
+            {
+                "name": "Pinocchio 23 - Monstro Awakens.mp3",
                 "count": 2,
-                "difficulty": 0.0,
-                "difficulty_defualt": "medium"
-            },
-            {
-                "name": "Pinocchio - No Strings.mp3",
-                "count": 4,
-                "difficulty": 25.0,
-                "difficulty_defualt": "medium"
-            },
-            {
-                "name": "Pinocchio - Off to School.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Old Geppetto.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Rolling Along to Pleasure Island.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Sad Reunion.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Safety First _ I'm No Fool (In Water).mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Sinister Stromboli.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - So Sorry.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Stop, Look and Listen _ I'm No Fool (As a Pedestrian).mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - The Blue Fairy.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - The Coach to Pleasure Island.mp3",
-                "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "medium"
             },
             {
-                "name": "Pinocchio - To the Rescue.mp3",
+                "name": "Pinocchio 24 - Whale Chase.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard"
             },
             {
-                "name": "Pinocchio - Transformation.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Turn on the Old Music Box.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - Whale Chase.mp3",
-                "count": 0,
-                "difficulty": 0,
-                "difficulty_defualt": "hard"
-            },
-            {
-                "name": "Pinocchio - You (Are a Human Animal).mp3",
+                "name": "Pinocchio 25 - A Real Boy.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "medium"
@@ -9467,8 +9425,8 @@
             },
             {
                 "name": "Ralph Breaks the Internet - A Place Called Slaughter Race.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -9659,8 +9617,8 @@
             },
             {
                 "name": "Ralph Breaks the Internet - Zero.mp3",
-                "count": 9,
-                "difficulty": 44.44444444444444,
+                "count": 10,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -9892,8 +9850,8 @@
             },
             {
                 "name": "Ratatouille - Le Festin (OST Version).mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 8,
+                "difficulty": 75.00000000000001,
                 "difficulty_defualt": "easy"
             },
             {
@@ -10335,8 +10293,8 @@
             },
             {
                 "name": "Raya and the Last Dragon - Oshins - What a World We Live In.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -10365,8 +10323,8 @@
             },
             {
                 "name": "Raya and the Last Dragon - Search for the Last Dragon.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -10448,8 +10406,8 @@
             },
             {
                 "name": "Robin Hood - Enter the Sheriff.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -10520,8 +10478,8 @@
             },
             {
                 "name": "Robin Hood - Oo De Lally.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -10580,8 +10538,8 @@
             },
             {
                 "name": "Robin Hood - Whistle Stop.mp3",
-                "count": 10,
-                "difficulty": 70.0,
+                "count": 12,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -10645,8 +10603,8 @@
             },
             {
                 "name": "Saludos Amigos - Main Titles (Saludos Amigos).mp3",
-                "count": 4,
-                "difficulty": 75.0,
+                "count": 6,
+                "difficulty": 83.33333333333334,
                 "difficulty_defualt": "easy"
             },
             {
@@ -10764,8 +10722,8 @@
             },
             {
                 "name": "Sleeping Beauty - Finale.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -10854,8 +10812,8 @@
             },
             {
                 "name": "Sleeping Beauty - Woodland Symphony - Once Upon a Dream.mp3",
-                "count": 7,
-                "difficulty": 0.0,
+                "count": 8,
+                "difficulty": 12.5,
                 "difficulty_defualt": "easy"
             }
         ]
@@ -10877,8 +10835,8 @@
             },
             {
                 "name": "Snow White Soundtrack - 03 - I'm Wishing_One Song.mp3",
-                "count": 7,
-                "difficulty": 28.57142857142857,
+                "count": 9,
+                "difficulty": 44.44444444444444,
                 "difficulty_defualt": "easy"
             },
             {
@@ -11056,8 +11014,8 @@
             },
             {
                 "name": "Soul - Jon Batiste - Bigger Than Us.mp3",
-                "count": 7,
-                "difficulty": 42.857142857142854,
+                "count": 9,
+                "difficulty": 55.55555555555556,
                 "difficulty_defualt": "easy"
             },
             {
@@ -11068,8 +11026,8 @@
             },
             {
                 "name": "Soul - Jon Batiste - Born to Play.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -11672,8 +11630,8 @@
             },
             {
                 "name": "Tangled - I See the Light.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -11917,8 +11875,8 @@
             },
             {
                 "name": "Tarzan - Strangers Like Me.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -11965,8 +11923,8 @@
             },
             {
                 "name": "Tarzan - Two Worlds.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -12149,8 +12107,8 @@
             },
             {
                 "name": "The Aristocats - Ev'rybody Wants to Be a Cat (Finale).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -12335,7 +12293,7 @@
             },
             {
                 "name": "The Aristocats - The Aristocats.mp3",
-                "count": 6,
+                "count": 9,
                 "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             },
@@ -12454,7 +12412,7 @@
             },
             {
                 "name": "The Black Cauldron - End Credits.mp3",
-                "count": 18,
+                "count": 20,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
@@ -12795,7 +12753,7 @@
             },
             {
                 "name": "The Emperor's New Groove - Tom Jones - A Perfect World [Reprise] [BONUS].mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -13051,8 +13009,8 @@
             },
             {
                 "name": "The Good Dinosaur - Make Your Mark.mp3",
-                "count": 11,
-                "difficulty": 27.27272727272727,
+                "count": 14,
+                "difficulty": 21.428571428571423,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13212,8 +13170,8 @@
             },
             {
                 "name": "The Great Mouse Detective - Let me be good to you.mp3",
-                "count": 3,
-                "difficulty": 33.33333333333333,
+                "count": 4,
+                "difficulty": 24.999999999999996,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13236,8 +13194,8 @@
             },
             {
                 "name": "The Great Mouse Detective - The Worl'd Greatest Criminal Mi.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13289,8 +13247,8 @@
             },
             {
                 "name": "The Hunchback of Notre Dame - Draussen (From the Musical -Der Gl\u00f6ckner von Notre Dame-Remastered 2021).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13498,8 +13456,8 @@
             },
             {
                 "name": "The Incredibles - 02 - The Glory Days.mp3",
-                "count": 11,
-                "difficulty": 72.72727272727273,
+                "count": 12,
+                "difficulty": 75.00000000000001,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13582,8 +13540,8 @@
             },
             {
                 "name": "The Incredibles - 16 - Life's Incredible Again.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13899,8 +13857,8 @@
             },
             {
                 "name": "The Incredibles 2 - 27 - Here Comes The Elastigirl - Elastigirl's Theme.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 7,
+                "difficulty": 71.42857142857143,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13994,8 +13952,8 @@
             },
             {
                 "name": "The Jungle Book - I Wan'na Be Like You (The Monkey Song).mp3",
-                "count": 4,
-                "difficulty": 75.0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -14054,8 +14012,8 @@
             },
             {
                 "name": "The Jungle Book - The Bare Necessities.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -14101,20 +14059,20 @@
             },
             {
                 "name": "The Lion King - Can You Feel The Love Tonight Elton John.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
                 "name": "The Lion King - Can You Feel The Love Tonight.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
                 "name": "The Lion King - Circle Of Life Elton John.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -14143,7 +14101,7 @@
             },
             {
                 "name": "The Lion King - Hakuna Matata.mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -14376,8 +14334,8 @@
             },
             {
                 "name": "The Little Mermaid - Les Poissons.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -14406,8 +14364,8 @@
             },
             {
                 "name": "The Little Mermaid - Part of Your World.mp3",
-                "count": 4,
-                "difficulty": 75.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -14472,8 +14430,8 @@
             },
             {
                 "name": "The Little Mermaid - Under the Sea.mp3",
-                "count": 4,
-                "difficulty": 100.0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -14549,7 +14507,7 @@
             },
             {
                 "name": "The Many Adventures of Winnie the Pooh 8 - The Wonderful Thing About Tiggers.mp3",
-                "count": 1,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -14566,8 +14524,8 @@
         "musics": [
             {
                 "name": "The Princess and the Frog - Almost There.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -14632,8 +14590,8 @@
             },
             {
                 "name": "The Princess and the Frog - Ray Laid Low.mp3",
-                "count": 8,
-                "difficulty": 0.0,
+                "count": 10,
+                "difficulty": 20.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -14679,8 +14637,8 @@
             },
             {
                 "name": "The Rescuers - Auntie Medusa_Someone's Waiting For You_Prayer.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -14769,14 +14727,14 @@
             },
             {
                 "name": "The Rescuers - Rescue Aid Society (Reprise).mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium"
             },
             {
                 "name": "The Rescuers - Rescue Aid Society.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15097,8 +15055,8 @@
             },
             {
                 "name": "The Sword in the Stone - Higitus Figitus.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15163,8 +15121,8 @@
             },
             {
                 "name": "The Sword in the Stone - The Legend of the Sword in the Stone.mp3",
-                "count": 5,
-                "difficulty": 80.0,
+                "count": 7,
+                "difficulty": 85.71428571428574,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15234,8 +15192,8 @@
             },
             {
                 "name": "The Three Caballeros - Ba\u00eda - Nestor Amaral.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15360,8 +15318,8 @@
             },
             {
                 "name": "The Three Caballeros - Song of the Aracuan.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15695,8 +15653,8 @@
             },
             {
                 "name": "Toy Story - You've Got a Friend in Me.mp3",
-                "count": 9,
-                "difficulty": 44.44444444444444,
+                "count": 11,
+                "difficulty": 54.54545454545454,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15862,8 +15820,8 @@
             },
             {
                 "name": "Toy Story 2 - When She Loved Me.mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15886,8 +15844,8 @@
             },
             {
                 "name": "Toy Story 2 - Woody's Roundup.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15969,8 +15927,8 @@
             },
             {
                 "name": "Toy Story 3 - Chute.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -16311,14 +16269,14 @@
             },
             {
                 "name": "Toy Story 3 - You Were Lucky.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
                 "name": "Toy Story 3 - You've Got A Friend In Me (Para el Buzz Espa\u00f1ol).mp3",
-                "count": 6,
-                "difficulty": 83.33333333333334,
+                "count": 7,
+                "difficulty": 85.71428571428574,
                 "difficulty_defualt": "easy"
             },
             {
@@ -16376,8 +16334,8 @@
             },
             {
                 "name": "Toy Story 4 - I Can't Let You Throw Yourself Away.mp3",
-                "count": 5,
-                "difficulty": 80.0,
+                "count": 7,
+                "difficulty": 85.71428571428574,
                 "difficulty_defualt": "easy"
             },
             {
@@ -16448,14 +16406,14 @@
             },
             {
                 "name": "Toy Story 4 - The Ballad of the Lonesome Cowboy (Soundtrack Version).mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 4,
+                "difficulty": 75.0,
                 "difficulty_defualt": "medium"
             },
             {
                 "name": "Toy Story 4 - The Ballad of the Lonesome Cowboy.mp3",
-                "count": 8,
-                "difficulty": 62.5,
+                "count": 10,
+                "difficulty": 70.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -16729,8 +16687,8 @@
             },
             {
                 "name": "Treasure Planet - I'm Still Here.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             },
             {
@@ -16866,8 +16824,8 @@
             },
             {
                 "name": "Turning Red - Pandas Unite  Nobody Like U (Reprise).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -16908,8 +16866,8 @@
             },
             {
                 "name": "Turning Red - Turning Red.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -16926,14 +16884,14 @@
             },
             {
                 "name": "Turning Red - U Know What's Up (The Panda Hustle Version).mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
                 "name": "Turning Red - U Know What's Up.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -16967,8 +16925,8 @@
             },
             {
                 "name": "Up - 04 - We're in the Club Now.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -17416,7 +17374,7 @@
             },
             {
                 "name": "WALL-E - First Date.mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -17458,8 +17416,8 @@
             },
             {
                 "name": "WALL-E - La Vie En Rose.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -17673,8 +17631,8 @@
             },
             {
                 "name": "Winnie the Pooh - It's Gonna Be Great.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 6,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "easy"
             },
             {
@@ -17798,8 +17756,8 @@
             },
             {
                 "name": "Wreck-It Ralph - Life In The Arcade.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium"
             },
             {
@@ -17834,8 +17792,8 @@
             },
             {
                 "name": "Wreck-It Ralph - Sugar Rush (From Wreck-It RalphSoundtrack Version).mp3",
-                "count": 9,
-                "difficulty": 55.55555555555556,
+                "count": 10,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -17864,8 +17822,8 @@
             },
             {
                 "name": "Wreck-It Ralph - When Can I See You Again (From Wreck-It RalphSoundtrack Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 4,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
             {

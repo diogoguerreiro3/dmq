@@ -54,7 +54,7 @@ a {
 }
 
 #reply_text {
-    width: 50%;
+    width: 30%;
 }
 
 #sugestions {
@@ -63,7 +63,7 @@ a {
     margin: 0;
     border: 1px solid #ccc;
     max-height: 100px;
-    width: 50%;
+    width: 30%;
     overflow-y: auto;
 }
   

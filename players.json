@@ -1,18 +1,13 @@
 [
     {
+        "ip": "192.168.1.219",
+        "username": "Narutoshi",
+        "points": 462
+    },
+    {
         "ip": "192.168.1.213",
         "username": "Narutoshi3",
         "points": 0
-    },
-    {
-        "ip": "192.168.1.219",
-        "username": "Luffy",
-        "points": 0
-    },
-    {
-        "ip": "94.63.236.234",
-        "username": "Narutoshi",
-        "points": 342
     },
     {
         "ip": "81.193.187.59",
@@ -22,7 +17,7 @@
     {
         "ip": "77.54.205.198",
         "username": "Pombo",
-        "points": 236
+        "points": 273
     },
     {
         "ip": "85.139.224.28",

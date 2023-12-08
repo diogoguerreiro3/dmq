@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, Response, redirect, url_for, jsonify
+from flask import Flask, render_template, request, send_file, Response, redirect, url_for, jsonify, Blueprint, send_from_directory
 from pytube import YouTube, Playlist
 from googleapiclient.discovery import build
 import random, requests, re, os, threading, time, json, threading, copy
@@ -19,12 +19,13 @@ leader = ""
 all_players = None
 
 room_thread = None
-current_random_music = "C:\dev\programs\dmq\music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
+stop_thread = False
+current_random_music = "music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
 current_random_music_name = "Snow White Soundtrack - 01 - Overture.mp3"
-current_random_movie = ""
+current_random_movie = "Snow White and the Seven Dwarfs"
 
 current_random_time = 0
-initial_waiting_duration = 15
+initial_waiting_duration = 10
 waiting_duration = 7
 song_duration = 20
 number_of_songs = 20
@@ -33,9 +34,11 @@ default_mode = percentage_mode = easy = medium = hard = False
 current_percentage_range = []
 current_difficulty = None
 current_default_difficulty = None
+current_count = None
 
 current_replys_and_points_room = []
 players_ready = []
+
 
 
 
@@ -124,7 +127,7 @@ def processar():
 def lobby():
     ip = request.remote_addr
     player = verify_player_exists("ip", ip)
-    if player["username"] not in currents_players: return redirect(url_for('index'))
+    if player is None or player["username"] not in currents_players: return redirect(url_for('index'))
     return render_template("lobby.html", movies=movies)
 
 
@@ -156,7 +159,8 @@ def room_post():
     return redirect(url_for('room'))
 
 def main_room_thread():
-    global current_random_time, room_thread, current_random_music, current_difficulty, current_default_difficulty
+    global current_random_time, room_thread, stop_thread, current_random_music, current_difficulty, current_default_difficulty, current_count, players_ready
+    stop_thread = False
     clean_points()
     for i in range(initial_waiting_duration+1,0,-1):
         clean_replys()
@@ -181,11 +185,16 @@ def main_room_thread():
         calculate_difficulty()
         for i in range(waiting_duration+1,0,-1):
             socketio.emit('title_refresh', current_random_music_name, broadcast=True)
-            socketio.emit('music_content', '{"current_difficulty" : "'+str(round(current_difficulty, 2))+'", "current_default_difficulty" : "'+str(current_default_difficulty)+'"}', broadcast=True)
+            socketio.emit('music_content', '{"current_difficulty" : "'+str(round(current_difficulty, 2))+'", "current_default_difficulty" : "'+str(current_default_difficulty)+'", "count" : "' + str(current_count) + '"}', broadcast=True)
             time.sleep(1)
             #print(f'Counter for wait for song {n}: {i}')
+        if stop_thread:
+            break
     socketio.emit('title_refresh', f"Acabou!", broadcast=True)
+    time.sleep(2)
+    socketio.emit('go_to_lobby', "", broadcast=True)
     add_points_player()
+    players_ready = []
     room_thread = None
 
 
@@ -276,8 +285,14 @@ def update_replys(username, reply_movie):
             break
 
 def clean_replys():
-    global current_replys_and_points_room, currents_players
+    global current_replys_and_points_room, currents_players, players_ready
+    players_in_game = []
     for player in currents_players:
+        if player == leader:
+            players_in_game.append(player)
+        elif player in players_ready:
+            players_in_game.append(player)
+    for player in players_in_game:
         existPlayer = False
         for reply in current_replys_and_points_room:
             if player == reply["username"]:
@@ -291,7 +306,13 @@ def clean_replys():
 def clean_points():
     global current_replys_and_points_room, currents_players
     current_replys_and_points_room = []
+    players_in_game = []
     for player in currents_players:
+        if player == leader:
+            players_in_game.append(player)
+        elif player in players_ready:
+            players_in_game.append(player)
+    for player in players_in_game:
         current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0})   
 
 def verify_replys():
@@ -315,7 +336,7 @@ def update_player_point(username):
 ### Difficulties ###
 
 def calculate_difficulty():
-    global current_random_movie, current_random_music_name, current_replys_and_points_room, current_difficulty, current_default_difficulty
+    global current_random_movie, current_random_music_name, current_replys_and_points_room, current_difficulty, current_default_difficulty, current_count
 
     with open(musics_json_filename, 'r') as musicdb:
         current_data = json.load(musicdb)
@@ -328,6 +349,7 @@ def calculate_difficulty():
                     old_correct_count = old_count * copy.deepcopy(current_data[key_movie]["musics"][key_music]["difficulty"]) / 100.0
 
                     current_correct_count = 0
+                    print("Calculate Difficulty with", current_replys_and_points_room)
                     for reply in current_replys_and_points_room:
                         if reply["correct"] == "true":
                             current_correct_count+=1
@@ -340,6 +362,7 @@ def calculate_difficulty():
 
                     current_difficulty = current_data[key_movie]["musics"][key_music]["difficulty"]
                     current_default_difficulty = current_data[key_movie]["musics"][key_music]["difficulty_defualt"]
+                    current_count = current_data[key_movie]["musics"][key_music]["count"]
 
     with open(musics_json_filename, 'w') as musicdb:
         json.dump(current_data, musicdb, indent=4)
@@ -355,7 +378,7 @@ def create_music_json():
         movie_json = {"movie" : movie, "musics" : musics_json}
         data.append(movie_json)
 
-    with open(musics_json_filename, 'w') as musicsdb:
+    with open("_musics.json", 'w') as musicsdb:
         json.dump(data, musicsdb, indent=4)
 
 
@@ -372,7 +395,7 @@ def send_movie(intput):
 @app.route("/play")
 def play():
     global current_random_music
-    print("play:", current_random_music)
+    print("Play:", current_random_music)
     return send_file(current_random_music, as_attachment=False)
 
 @app.route("/song")
@@ -380,6 +403,17 @@ def song():
     url = request.args.get('url')
     print(url)
     return send_file(url, as_attachment=False)
+
+
+### Images ###
+
+@app.route('/img/<path:filename>')
+def img(filename):
+    return send_from_directory('img', filename)
+
+@app.route('/image', methods=['POST'])
+def image():
+    return jsonify({'status': 'Message receive with success', 'url' : 'img/' + current_random_movie + '.jpg'})
 
 
 
@@ -452,6 +486,24 @@ def receive_ready():
     print(player_ready,"ready!")
     if player_ready not in players_ready:
         players_ready.append(player_ready)
+    return jsonify({'status': 'Message receive with success'})
+
+@app.route('/return_lobby', methods=['POST'])
+def return_lobby():
+    global players_ready, room_thread, stop_thread
+
+    ip = request.remote_addr
+    player = verify_player_exists("ip", ip)
+    
+    if player is not None:
+        print(player["username"],"returned to lobby!")
+        if player["username"] in players_ready:
+            players_ready.remove(player["username"])
+    
+        if player["username"] == leader:
+            stop_thread = True
+            socketio.emit('final_message', "", broadcast=True)
+    
     return jsonify({'status': 'Message receive with success'})
 
 

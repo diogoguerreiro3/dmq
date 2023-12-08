@@ -1,25 +1,20 @@
 . nas deficuldades com percentagem, se o filme não tiver essa percentagem devemos procurar outro, mas não podmeos estar sempre a procurar, pensar numa maneira melhor para isso. 
-. colocar no audio.html as estatisticas da musica
-. sistema de ready
-. fazer team leader onde só ele pode começar a room quando todos tiverem ready
-. se uma pessoa não tiver no room, não contar as percentagens.
 . bloquear o reply depois da resposta ser avaliada
-. colocar a dificuldade e imagem quando mostram a musica correta
-. skip song quando todos já responderam bem
+. skip system
 . validar se ou percentagem ou default estão selecionados antes de ser creado um room
-. melhorar barra de autocomplete
-. bloquear user se entrar a meio, mas pode ouvir musica
-. se toda a gente sair da sala, a thread acaba. Se um sair, não contar os pontos dessse, fazer um array de ativos na room
+. verificar se quando um user entra a meio, pode jogar ou não
 . resolver problema do chromium
-. mudar brother bear para versão inglesa
 . limite de caracters
-. implementar os nomes em portugues também
 . melhorar randomizer
 . há dois fors no random default percentage e percentage normal, temos de colocar apenas 1, não vale a pena verificar se os nomes são iguais.
-. começar a colocar as sequelas
 
 Erros:
 . se não alterar o volume , a musica não reproduz
 
-. verificar as musicas:
-Bambi 6 - Gallop of the Stags The Great Prince of the Forest Man.mp3
+Adicionar:
+. colocar imagem quando mostram a musica correta
+. implementar os nomes em portugues também
+. começar a colocar as sequelas
+
+Musicas:
+no string do pinocchio está estranha
