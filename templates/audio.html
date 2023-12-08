@@ -24,6 +24,7 @@
         <form id="form_reply">
             <input type="text" id="reply_text" name="input" placeholder="Write the movie..." style="height: 30px;" autocomplete="off">
             <button type="submit" class="btn" style="margin-left: 10px;">Reply</button>
+            <button onclick="skip()" class="btn_gray" style="margin-left: 10px;">Skip</button>
             <ul id="sugestions"></ul>
         </form>
         <br>
@@ -263,6 +264,23 @@
                     console.log(song_img.src)
                     song_img.style.display = 'block';
                 }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        /* Message to the server to inform that some people skip the song */
+        function skip() {
+            fetch("/skip", {method: 'POST', headers: { 'Content-Type': 'application/json'}})
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Error sending the message.');
+            })
+            .then(data => {
+                console.log('Response of server:', data);
             })
             .catch(error => {
                 console.error('Error:', error);

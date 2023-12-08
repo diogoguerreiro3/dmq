@@ -180,6 +180,9 @@ def main_room_thread():
             socketio.emit('title_refresh', f"[{n}] Listen Carefully! ({i})", broadcast=True)
             time.sleep(1)
             #print(f'Counter for song {n}: {i}')
+            if is_all_skiped():
+                clear_skips()
+                break
         socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
         verify_replys()
         calculate_difficulty()
@@ -188,6 +191,9 @@ def main_room_thread():
             socketio.emit('music_content', '{"current_difficulty" : "'+str(round(current_difficulty, 2))+'", "current_default_difficulty" : "'+str(current_default_difficulty)+'", "count" : "' + str(current_count) + '"}', broadcast=True)
             time.sleep(1)
             #print(f'Counter for wait for song {n}: {i}')
+            if is_all_skiped():
+                clear_skips()
+                break
         if stop_thread:
             break
     socketio.emit('title_refresh', f"Acabou!", broadcast=True)
@@ -285,13 +291,8 @@ def update_replys(username, reply_movie):
             break
 
 def clean_replys():
-    global current_replys_and_points_room, currents_players, players_ready
-    players_in_game = []
-    for player in currents_players:
-        if player == leader:
-            players_in_game.append(player)
-        elif player in players_ready:
-            players_in_game.append(player)
+    global current_replys_and_points_room
+    players_in_game = get_players_in_game()
     for player in players_in_game:
         existPlayer = False
         for reply in current_replys_and_points_room:
@@ -301,19 +302,14 @@ def clean_replys():
                 existPlayer = True
                 break
         if not existPlayer:
-            current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0})
+            current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0, "skip" : False})
 
 def clean_points():
-    global current_replys_and_points_room, currents_players
+    global current_replys_and_points_room
     current_replys_and_points_room = []
-    players_in_game = []
-    for player in currents_players:
-        if player == leader:
-            players_in_game.append(player)
-        elif player in players_ready:
-            players_in_game.append(player)
+    players_in_game = get_players_in_game()
     for player in players_in_game:
-        current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0})   
+        current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0, "skip" : False})   
 
 def verify_replys():
     global current_replys_and_points_room, current_random_movie
@@ -330,6 +326,16 @@ def update_player_point(username):
     for player in current_replys_and_points_room:
         if username == player["username"]:
             player["points"] += 1
+
+def get_players_in_game():
+    global currents_players, leader, players_ready
+    players_in_game = []
+    for player in currents_players:
+        if player == leader:
+            players_in_game.append(player)
+        elif player in players_ready:
+            players_in_game.append(player)
+    return players_in_game
 
 
 
@@ -380,6 +386,40 @@ def create_music_json():
 
     with open("_musics.json", 'w') as musicsdb:
         json.dump(data, musicsdb, indent=4)
+
+
+
+### Skip ###
+
+@app.route('/skip', methods=['POST'])
+def skip():
+    global current_replys_and_points_room
+
+    ip = request.remote_addr
+    player = verify_player_exists("ip", ip)
+    
+    if player is not None:
+        print(player["username"],"skip!")
+        for reply in current_replys_and_points_room:
+            if reply["username"] == player["username"]:
+                reply["skip"] = True
+                break
+
+    return jsonify({'status': 'Message receive with success'})
+
+def is_all_skiped():
+    global current_replys_and_points_room
+    all_skiped = True
+    for reply in current_replys_and_points_room:
+        if not reply["skip"]:
+            all_skiped = False
+            break
+    return all_skiped
+
+def clear_skips():
+    global current_replys_and_points_room
+    for reply in current_replys_and_points_room:
+        reply["skip"] = False
 
 
 

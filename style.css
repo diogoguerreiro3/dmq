@@ -48,6 +48,23 @@ a {
     border: 1px solid #640202; /* Cor da borda ao passar o mouse */
 }
 
+.btn_gray {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c7279; /* Cor de fundo */
+    border: 1px solid #6c7279; /* Cor da borda */
+    color: #fff; /* Cor do texto */
+    text-decoration: none;
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.btn_gray:hover {
+    background-color: #424549; /* Cor de fundo ao passar o mouse */
+    border: 1px solid #424549; /* Cor da borda ao passar o mouse */
+}
+
+
 .container {
     display: flex;
     align-items: center;
@@ -73,7 +90,7 @@ a {
 }
 
 #sugestions li:hover {
-    background-color: #f0f0f0;
+    background-color: #555050;
 }
 
 li {
