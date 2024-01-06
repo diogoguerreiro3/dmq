@@ -23,7 +23,7 @@
         <br>
 
         <form id="form_reply">
-            <input type="text" id="reply_text" name="input" placeholder="Write the movie..." style="height: 30px;" autocomplete="off">
+            <input type="text" id="reply_text" name="input" maxlength="70" placeholder="Write the movie..." style="height: 30px;" autocomplete="off">
             <button if="submit_button" type="submit" class="btn" style="margin-left: 10px;">Reply</button>
             <button onclick="skip()" class="btn_gray" style="margin-left: 10px;">Skip</button>
             <ul id="sugestions"></ul>
@@ -319,7 +319,7 @@
             })
             .then(data => {
                 console.log('Response of server:', data);
-                if(data.status == "Message receive with success") {
+                if(data.status == "Message receive with success" && hasImage(data.url)) {
                     song_img.src = data.url;
                     song_img.style.display = 'block';
                 }
@@ -327,6 +327,19 @@
             .catch(error => {
                 console.error('Error:', error);
             });
+        }
+        function hasImage(url) {
+            fetch(url, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error to verify the image:', error);
+                });
         }
 
         /* Message to the server to inform that some people skip the song */

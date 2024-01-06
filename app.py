@@ -242,6 +242,12 @@ def choose_random_music():
     if len(musics) > 0:
     random.shuffle(musics)
     random.shuffle(musics)
+    random.shuffle(musics)
+    if len(musics) > 0:
+        random.shuffle(musics)
+    if len(musics) > 0:
+        random.shuffle(musics)
+    random.shuffle(musics)
     if len(musics) > 0:
         random.shuffle(musics)
     if len(musics) > 0:
