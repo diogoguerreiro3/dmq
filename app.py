@@ -214,11 +214,10 @@ def choose_random_music():
     random.shuffle(random_movies)
     current_random_movie = random_movies[0]
     print("current_random_movie", current_random_movie)
-    musics = os.listdir(os.path.join(path_to_music, current_random_movie))
     if default_mode == "on":
-        musics = choose_random_music_by_default_mode(musics)
+        musics = choose_random_music_by_default_mode()
     elif percentage_mode == "on":
-        musics = choose_random_music_by_percentage_mode(musics)
+        musics = choose_random_music_by_percentage_mode()
     random.shuffle(musics)
     if len(musics) > 0:
         current_random_music_name = musics[0]
@@ -237,7 +236,7 @@ def choose_random_music():
         print("THERE ARE NO SONGS FOR THAT PERCENTAGE OR DIFFICULTY")
         current_random_music = ""
 
-def choose_random_music_by_default_mode(musics):
+def choose_random_music_by_default_mode():
     global easy, medium, hard, current_random_movie
     with open(musics_json_filename, 'r') as musicdb:
         music_data = json.load(musicdb)
@@ -246,17 +245,16 @@ def choose_random_music_by_default_mode(musics):
         if value_movie["movie"] == current_random_movie:
             current_data_movie_musics = music_data[key_movie]["musics"]
     musics_by_mode = []
-    for music in musics:
-        for key_data_music, value_data_music in enumerate(current_data_movie_musics):
-            if easy == "on" and value_data_music["name"] == music and value_data_music["difficulty_defualt"] == "easy":
-                musics_by_mode.append(music)
-            elif medium == "on" and value_data_music["name"] == music and value_data_music["difficulty_defualt"] == "medium":
-                musics_by_mode.append(music)
-            elif hard == "on" and value_data_music["name"] == music and value_data_music["difficulty_defualt"] == "hard":
-                musics_by_mode.append(music)
+    for key_data_music, value_data_music in enumerate(current_data_movie_musics):
+        if easy == "on" and value_data_music["difficulty_defualt"] == "easy":
+            musics_by_mode.append(value_data_music["name"])
+        elif medium == "on" and value_data_music["difficulty_defualt"] == "medium":
+            musics_by_mode.append(value_data_music["name"])
+        elif hard == "on" and value_data_music["difficulty_defualt"] == "hard":
+            musics_by_mode.append(value_data_music["name"])
     return musics_by_mode
 
-def choose_random_music_by_percentage_mode(musics):
+def choose_random_music_by_percentage_mode():
     global easy, medium, hard, current_random_movie
     with open(musics_json_filename, 'r') as musicdb:
         music_data = json.load(musicdb)
@@ -265,18 +263,16 @@ def choose_random_music_by_percentage_mode(musics):
         if value_movie["movie"] == current_random_movie:
             current_data_movie_musics = music_data[key_movie]["musics"]
     musics_by_mode = []
-    for music in musics:
-        for key_data_music, value_data_music in enumerate(current_data_movie_musics):
-            if easy == "on" or medium == "on" or hard == "on":
-                if easy == "on" and value_data_music["name"] == music and value_data_music["difficulty"] >= 75:
-                    musics_by_mode.append(music)
-                elif medium == "on" and value_data_music["name"] == music and value_data_music["difficulty"] > 35 and value_data_music["difficulty"] < 75:
-                    musics_by_mode.append(music)
-                elif hard == "on" and value_data_music["name"] == music and value_data_music["difficulty"] <= 35:
-                    musics_by_mode.append(music)
-            else:
-                if value_data_music["name"] == music and value_data_music["difficulty"] >= current_percentage_range[0] and value_data_music["difficulty"] <= current_percentage_range[1]:
-                    musics_by_mode.append(music)
+    for key_data_music, value_data_music in enumerate(current_data_movie_musics):
+        if easy == "on" and value_data_music["difficulty"] >= 75:
+            musics_by_mode.append(value_data_music["name"])
+        elif medium == "on" and value_data_music["difficulty"] > 35 and value_data_music["difficulty"] < 75:
+            musics_by_mode.append(value_data_music["name"])
+        elif hard == "on" and value_data_music["difficulty"] <= 35:
+            musics_by_mode.append(value_data_music["name"])
+        else:
+            if value_data_music["difficulty"] >= current_percentage_range[0] and value_data_music["difficulty"] <= current_percentage_range[1]:
+                musics_by_mode.append(value_data_music["name"])
     return musics_by_mode
 
 

@@ -1,5 +1,4 @@
 Pequenas coisas:
-. há dois fors no random default percentage e percentage normal, temos de colocar apenas 1, não vale a pena verificar se os nomes são iguais.
 . bloquear o reply depois da resposta ser avaliada
 . validar se ou percentagem ou default estão selecionados antes de ser creado um room
 . limite de caracters
@@ -13,13 +12,8 @@ Médias coisas:
 . song history
 . Colocar um guess rating
 
-
-Erros:
-. se não alterar o volume , a musica não reproduz
-. resolver problema do chromium
-
 Musicas:
-. implementar os nomes em portugues também
-. começar a colocar as sequelas
 . verificar se raya está com a linguagem correta
 . diminuir o volume de sugar rush
+. implementar os nomes em portugues também
+. começar a colocar as sequelas

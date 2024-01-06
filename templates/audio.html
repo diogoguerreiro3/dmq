@@ -15,6 +15,7 @@
             <source id="audio-src" src="{{ url_for('play') }}" type="audio/mpeg">
             Your browser doesn't support this audio tag.
         </audio> -->
+        <input id="button_listen" type="button" class="btn_green" style="margin-bottom: 30px; width: auto" value="Click to Listen!!!">
         <div id="volume-control" class="container">
             <label for="volume-slider">Volume Control:</label>
             <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" style="margin-bottom: 0;">
@@ -49,6 +50,7 @@
         var reply_text = document.getElementById("reply_text");
         var sugestions = document.getElementById("sugestions");
         var song_img = document.getElementById("song_img");
+        var button_listen = document.getElementById("button_listen");
 
         /* Event to change the title sent by server */
         socket.on('title_refresh', function(data) {
@@ -345,6 +347,11 @@
                 console.error('Error:', error);
             });
         }
+
+        /* Button to aprove listen de audio */
+        button_listen.onclick = function() {
+            button_listen.style.display = 'none';
+        };
     </script>
 </body>
 </html>

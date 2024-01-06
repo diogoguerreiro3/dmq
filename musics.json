@@ -2738,8 +2738,8 @@
         "musics": [
             {
                 "name": "Cinderella - A Dream Is a Wish Your Heart Makes.mp3",
-                "count": 6,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "easy"
             },
             {
@@ -2906,8 +2906,8 @@
             },
             {
                 "name": "Cinderella - The Mouse Song.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -3414,7 +3414,7 @@
             },
             {
                 "name": "Dinosaur - 26 - It Comes With A Pool.mp3",
-                "count": 6,
+                "count": 7,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
@@ -3551,8 +3551,8 @@
             },
             {
                 "name": "Dumbo 8 - The Pyramid of Pachyderms.mp3",
-                "count": 6,
-                "difficulty": 83.33333333333334,
+                "count": 7,
+                "difficulty": 85.71428571428574,
                 "difficulty_defualt": "medium"
             },
             {
@@ -3760,8 +3760,8 @@
             },
             {
                 "name": "Elemental - Steal The Show.mp3",
-                "count": 21,
-                "difficulty": 76.19047619047619,
+                "count": 23,
+                "difficulty": 78.26086956521738,
                 "difficulty_defualt": "easy"
             },
             {
@@ -4154,8 +4154,8 @@
             },
             {
                 "name": "Fantasia - The Nutcracker Suite, Op. 71A, Dance of the Reed Flutes (Irwin Kostal Re-Record 1982).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium"
             },
             {
@@ -5396,8 +5396,8 @@
             },
             {
                 "name": "Fun and Fancy Free - Eat Until I Die.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -5700,8 +5700,8 @@
             },
             {
                 "name": "Home on the Range - Little Patch of Heaven.mp3",
-                "count": 8,
-                "difficulty": 50.0,
+                "count": 9,
+                "difficulty": 55.55555555555556,
                 "difficulty_defualt": "easy"
             },
             {
@@ -6935,8 +6935,8 @@
             },
             {
                 "name": "Meet the Robinsons - Another Believer.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -6959,8 +6959,8 @@
             },
             {
                 "name": "Meet the Robinsons - Little Wonders.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             },
             {
@@ -10293,8 +10293,8 @@
             },
             {
                 "name": "Raya and the Last Dragon - Oshins - What a World We Live In.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "easy"
             },
             {
@@ -10621,7 +10621,7 @@
             },
             {
                 "name": "Saludos Amigos - Saludos Amigos (reprise).mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -11421,8 +11421,8 @@
             },
             {
                 "name": "Strange World - They're The Clades! (Reprise).mp3",
-                "count": 8,
-                "difficulty": 62.5,
+                "count": 9,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             },
             {
@@ -11773,8 +11773,8 @@
             },
             {
                 "name": "Tarzan - Mark Mancina - Primitive Beasts.mp3",
-                "count": 2,
-                "difficulty": 100.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium"
             },
             {
@@ -11923,7 +11923,7 @@
             },
             {
                 "name": "Tarzan - Two Worlds.mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             },
@@ -13009,8 +13009,8 @@
             },
             {
                 "name": "The Good Dinosaur - Make Your Mark.mp3",
-                "count": 17,
-                "difficulty": 23.52941176470588,
+                "count": 18,
+                "difficulty": 22.22222222222222,
                 "difficulty_defualt": "easy"
             },
             {
@@ -13301,8 +13301,8 @@
             },
             {
                 "name": "The Hunchback of Notre Dame - God Help the Outcasts.mp3",
-                "count": 5,
-                "difficulty": 20.0,
+                "count": 6,
+                "difficulty": 16.666666666666664,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15192,8 +15192,8 @@
             },
             {
                 "name": "The Three Caballeros - Ba\u00eda - Nestor Amaral.mp3",
-                "count": 11,
-                "difficulty": 18.181818181818183,
+                "count": 12,
+                "difficulty": 16.66666666666667,
                 "difficulty_defualt": "easy"
             },
             {
@@ -15653,8 +15653,8 @@
             },
             {
                 "name": "Toy Story - You've Got a Friend in Me.mp3",
-                "count": 12,
-                "difficulty": 58.33333333333333,
+                "count": 13,
+                "difficulty": 61.53846153846154,
                 "difficulty_defualt": "easy"
             },
             {
@@ -16890,8 +16890,8 @@
             },
             {
                 "name": "Turning Red - U Know What's Up.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy"
             },
             {

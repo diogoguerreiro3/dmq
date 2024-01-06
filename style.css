@@ -48,6 +48,22 @@ a {
     border: 1px solid #640202; /* Cor da borda ao passar o mouse */
 }
 
+.btn_green {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #15ff00; /* Cor de fundo */
+    border: 1px solid #15ff00; /* Cor da borda */
+    color: #fff; /* Cor do texto */
+    text-decoration: none;
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.btn_green:hover {
+    background-color: #056402; /* Cor de fundo ao passar o mouse */
+    border: 1px solid #056402; /* Cor da borda ao passar o mouse */
+}
+
 .btn_gray {
     display: inline-block;
     padding: 10px 20px;
