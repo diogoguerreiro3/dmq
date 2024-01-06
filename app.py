@@ -539,12 +539,13 @@ def return_lobby():
         print(player["username"],"returned to lobby!")
         if player["username"] in players_ready:
             players_ready.remove(player["username"])
+            return jsonify({'status': 'Message receive with success', 'player': 'player'})
     
         if player["username"] == leader:
             stop_thread = True
             socketio.emit('final_message', "", broadcast=True)
+            return jsonify({'status': 'Message receive with success', 'player': 'leader'})
     
-    return jsonify({'status': 'Message receive with success'})
 
 
 

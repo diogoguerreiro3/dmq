@@ -3,18 +3,23 @@ Pequenas coisas:
 . bloquear o reply depois da resposta ser avaliada
 . validar se ou percentagem ou default estão selecionados antes de ser creado um room
 . limite de caracters
+. skip está mal, não aparece amarelo
+. quando não existe uma imagem, não dar set da imagem
 
 Médias coisas:
-. nas deficuldades com percentagem, se o filme não tiver essa percentagem devemos procurar outro, mas não podmeos estar sempre a procurar, pensar numa maneira melhor para isso. 
+. nas dificuldades com percentagem, se o filme não tiver essa percentagem devemos procurar outro, mas não podmeos estar sempre a procurar, pensar numa maneira melhor para isso. 
 . verificar se quando um user entra a meio, pode jogar ou não
 . melhorar randomizer
+. song history
+. Colocar um guess rating
 
-Coisas complicadas:
-. resolver problema do chromium
 
 Erros:
 . se não alterar o volume , a musica não reproduz
+. resolver problema do chromium
 
 Musicas:
 . implementar os nomes em portugues também
 . começar a colocar as sequelas
+. verificar se raya está com a linguagem correta
+. diminuir o volume de sugar rush

@@ -1,8 +1,8 @@
 [
     {
-        "ip": "192.168.1.219",
+        "ip": "192.168.1.2",
         "username": "Narutoshi",
-        "points": 473
+        "points": 704
     },
     {
         "ip": "192.168.1.213",
@@ -12,12 +12,12 @@
     {
         "ip": "81.193.187.59",
         "username": "CuteLittleGoddess",
-        "points": 2
+        "points": 4
     },
     {
         "ip": "77.54.205.198",
         "username": "Pombo",
-        "points": 273
+        "points": 400
     },
     {
         "ip": "85.139.224.28",
@@ -37,12 +37,12 @@
     {
         "ip": "148.63.8.184",
         "username": "Tomas",
-        "points": 19
+        "points": 66
     },
     {
         "ip": "109.48.106.179",
         "username": "Sephas",
-        "points": 28
+        "points": 46
     },
     {
         "ip": "192.168.1.180",
@@ -53,5 +53,20 @@
         "ip": "127.0.0.1",
         "username": "Nobita",
         "points": 0
+    },
+    {
+        "ip": "37.189.45.103",
+        "username": "Joca",
+        "points": 39
+    },
+    {
+        "ip": "31.22.163.18",
+        "username": "Pixel",
+        "points": 6
+    },
+    {
+        "ip": "85.246.182.193",
+        "username": "sephas",
+        "points": 10
     }
 ]
