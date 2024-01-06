@@ -24,7 +24,7 @@
 
         <form id="form_reply">
             <input type="text" id="reply_text" name="input" placeholder="Write the movie..." style="height: 30px;" autocomplete="off">
-            <button type="submit" class="btn" style="margin-left: 10px;">Reply</button>
+            <button if="submit_button" type="submit" class="btn" style="margin-left: 10px;">Reply</button>
             <button onclick="skip()" class="btn_gray" style="margin-left: 10px;">Skip</button>
             <ul id="sugestions"></ul>
         </form>
@@ -45,12 +45,13 @@
         var socket = io.connect('http://' + document.domain + ':' + location.port);
 
         var audio_info = document.getElementById('audio_info');
-        var audio_player = document.getElementById('audio-player');
+        // var audio_player = document.getElementById('audio-player');
         var volume_slider = document.getElementById('volume-slider');
         var reply_text = document.getElementById("reply_text");
         var sugestions = document.getElementById("sugestions");
         var song_img = document.getElementById("song_img");
         var button_listen = document.getElementById("button_listen");
+        var final_message = document.getElementById('final_message');
 
         /* Event to change the title sent by server */
         socket.on('title_refresh', function(data) {
@@ -102,7 +103,12 @@
 
 
         /* Event for when the server tell to client to play music  */
-        var sound = undefined;
+        var audio_volume = 0.5;
+        var sound = new Howl({
+            src: [window.location.origin + '/play'],
+            format: ['mp3'],
+            volume: audio_volume,
+        });
         socket.on('audio_play', function(data) {
             // var data_json = JSON.parse(data);
             // if(audio_player.paused && data_json.command === 'play') {
@@ -116,19 +122,7 @@
 
             var data_json = JSON.parse(data);
 
-            if (sound == undefined) {
-                sound = new Howl({
-                    src: [window.location.origin + '/play'],
-                    onload: function() {
-                        sound.seek(data_json.time);
-                        if (data_json.command === 'play') {
-                            sound.play();
-                        }
-                    },
-                    format: ['mp3'],
-                    volume: 0.5,
-                });
-            } else if (!sound.playing() && data_json.command === 'play') {
+            if (!sound.playing() && data_json.command === 'play') {
                 sound.unload();
                 sound = undefined;
                 sound = new Howl({
@@ -138,7 +132,7 @@
                         sound.play();
                     },
                     format: ['mp3'],
-                    volume: 0.5,
+                    volume: audio_volume,
                 });
                 // sound.load();
                 // sound.play();
@@ -150,7 +144,8 @@
         
         /* Volume Control */
         volume_slider.addEventListener('input', function() {
-            sound.volume(volume_slider.value);
+            audio_volume = volume_slider.value;
+            sound.volume(audio_volume);
             // audio_player.volume = volume_slider.value;
         });
         // audio_player.volume = volume_slider.value;
@@ -179,9 +174,11 @@
                         }
                     });
 
-                    var firstItem = sugestions.childNodes[0];
-                    firstItem.focus();
-                    firstItem.classList.add('focused');
+                    if(sugestions.length > 0) {
+                        var firstItem = sugestions.childNodes[0];
+                        firstItem.focus();
+                        firstItem.classList.add('focused');
+                    }
                 });
         });
 
@@ -233,11 +230,17 @@
 
         /* Send the reply movie to server */
         document.getElementById("form_reply").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent the default form redirection
-            var formulario = new FormData(this); // Obtém os dados do formulário
-
-            var input = this.elements["input"].value;
-            socket.emit('/send_movie', input);
+            if (event.submitter.type === "submit" && event.submitter.innerHTML === "Reply" && sound.playing()) {
+                console.log("passou!");
+                if(sound.playing()) {
+                    event.preventDefault(); // Prevent the default form redirection
+                    var formulario = new FormData(this);
+                    socket.emit('/send_movie', this.elements["input"].value);
+                }
+            } else {
+                event.preventDefault();
+                return false;
+            }
         });
 
         /* Update the color of users verifying the reply movies */
@@ -300,15 +303,10 @@
             window.location.href = "{{ url_for('lobby') }}";
         });
 
-        var final_message = document.getElementById('final_message');
         /* Message for when the leader stop the game in the middle */
         socket.on('final_message', function(data) {
             final_message.innerHTML = "The room will close at the end of the song.";
         });
-
-        setTimeout(function() {
-            audio_player.muted = false;
-        }, 100);
 
         /* Ask server what is the next URL image */
         function updateURLImage() {
