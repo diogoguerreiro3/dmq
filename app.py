@@ -130,6 +130,13 @@ def lobby():
     if player is None or player["username"] not in currents_players: return redirect(url_for('index'))
     return render_template("lobby.html", movies=movies)
 
+@app.route("/lobby/<msg>")
+def lobby_msg(msg):
+    ip = request.remote_addr
+    player = verify_player_exists("ip", ip)
+    if player is None or player["username"] not in currents_players: return redirect(url_for('index'))
+    return render_template("lobby.html", movies=movies)
+
 
 
 ### Main Room / Main Game ###
@@ -144,15 +151,28 @@ def room():
 def room_post():
     global room_thread, default_mode, percentage_mode, easy, medium, hard, current_percentage_range
     if room_thread is None:
-        print("Create Room Thread!")
         default_mode = request.form.get('default')
         percentage_mode = request.form.get('percentage')
         easy = request.form.get('easy')
         medium = request.form.get('medium')
         hard = request.form.get('hard')
+        percentage_mode_custom = request.form.get('custom')
+        percentage_mode_range = request.form.get('range')
         slider_values_str = request.form.get('sliderValue')
         current_percentage_range = list(map(int, slider_values_str.split(',')))
         print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; current_percentage_range: {current_percentage_range}")
+        
+        # Validate inputs
+        if default_mode is None and percentage_mode is None:
+            return redirect(url_for('lobby', msg="You have to select one of the modes to play!"))
+        elif default_mode is not None and easy is None and medium is None and hard is None:
+            return redirect(url_for('lobby', msg="You have to select one of the difficulties to play!"))
+        elif percentage_mode is not None and percentage_mode_custom is None and percentage_mode_range is None:
+            return redirect(url_for('lobby', msg="You have to select one of the percentage difficulties modes to play!"))
+        elif percentage_mode is not None and percentage_mode_range is not None and easy is None and medium is None and hard is None:
+            return redirect(url_for('lobby', msg="You have to select one of the difficulties to play!"))
+        
+        print("Create Room Thread!")
         room_thread = threading.Thread(target=main_room_thread)
         room_thread.start()
         socketio.emit('go_to_room', "", broadcast=True)
@@ -214,11 +234,16 @@ def choose_random_music():
     random.shuffle(random_movies)
     current_random_movie = random_movies[0]
     print("current_random_movie", current_random_movie)
+    musics = []
     if default_mode == "on":
         musics = choose_random_music_by_default_mode()
     elif percentage_mode == "on":
         musics = choose_random_music_by_percentage_mode()
+    if len(musics) > 0:
     random.shuffle(musics)
+    random.shuffle(musics)
+    if len(musics) > 0:
+        random.shuffle(musics)
     if len(musics) > 0:
         current_random_music_name = musics[0]
         current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))

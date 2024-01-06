@@ -5736,7 +5736,7 @@
             },
             {
                 "name": "Home on the Range - Yodel-Adle-Eedle-Idle-Oo.mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy"
             }
@@ -7538,8 +7538,8 @@
             },
             {
                 "name": "Monsters University - 20 - Focus.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium"
             },
             {
@@ -8894,7 +8894,7 @@
         "musics": [
             {
                 "name": "Peter Pan 1 - Main Title (The Second Star to the Right) - All This Has Happened Before.mp3",
-                "count": 8,
+                "count": 9,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy"
             },
@@ -9425,8 +9425,8 @@
             },
             {
                 "name": "Ralph Breaks the Internet - A Place Called Slaughter Race.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy"
             },
             {
@@ -11421,8 +11421,8 @@
             },
             {
                 "name": "Strange World - They're The Clades! (Reprise).mp3",
-                "count": 10,
-                "difficulty": 70.0,
+                "count": 11,
+                "difficulty": 72.72727272727273,
                 "difficulty_defualt": "easy"
             },
             {

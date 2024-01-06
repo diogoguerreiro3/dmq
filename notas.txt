@@ -1,5 +1,4 @@
 Pequenas coisas:
-. validar se ou percentagem ou default estão selecionados antes de ser creado um room
 . limite de caracters
 . skip está mal, não aparece amarelo
 . quando não existe uma imagem, não dar set da imagem
