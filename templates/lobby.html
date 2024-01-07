@@ -50,6 +50,14 @@
                 </div>
             </div>
 
+            <br>
+
+            <input type="checkbox" id="english" name="english" checked>
+            <label for="english">English</label>
+
+            <input type="checkbox" id="portuguese" name="portuguese" checked>
+            <label for="portuguese">Portuguese</label>
+
             <br><br>
             <!-- <a href="{{ url_for('room') }}" class="btn" style="margin-right:10px">Room</a> -->
             <input class="btn" style="margin-right:10px" type="submit" value="Room">    
@@ -73,7 +81,6 @@
         <script>
             const url = new URL(window.location.href);
             var msg = url.searchParams.get('msg');;
-            console.log(msg);
             if(msg) {
                 alert(msg);
             }

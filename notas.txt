@@ -1,17 +1,7 @@
-Pequenas coisas:
-. limite de caracters
-. skip está mal, não aparece amarelo
-. quando não existe uma imagem, não dar set da imagem
-
-Médias coisas:
-. nas dificuldades com percentagem, se o filme não tiver essa percentagem devemos procurar outro, mas não podmeos estar sempre a procurar, pensar numa maneira melhor para isso. 
-. verificar se quando um user entra a meio, pode jogar ou não
-. melhorar randomizer
+. melhorar randomizer, fazendo com que não calhe os ultimos 10 filmes
 . song history
 . Colocar um guess rating
 
 Musicas:
-. verificar se raya está com a linguagem correta
-. diminuir o volume de sugar rush
 . implementar os nomes em portugues também
 . começar a colocar as sequelas

@@ -72,25 +72,6 @@
             }
         });
 
-        // /* Verifica se o navegador suporta a API de MediaDevices */
-        // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        //     // Solicita permissão para acessar dispositivos de áudio e vídeo
-        //     navigator.mediaDevices.getUserMedia({ audio: true, video: true })
-        //     .then(function (stream) {
-        //     // Permissão concedida, você pode reproduzir vídeos e áudios automaticamente
-        //     alert('Permissão concedida para autoplay de vídeos e áudios!');
-        //     // Aqui você pode chamar funções ou executar ações que envolvam autoplay de mídia
-        //     })
-        //     .catch(function (error) {
-        //     // Caso o usuário negue a permissão
-        //     alert('Permissão negada para autoplay de vídeos e áudios!');
-        //     console.error('Erro ao solicitar permissão:', error);
-        //     });
-        // } else {
-        //     // O navegador não suporta a API de MediaDevices
-        //     alert('O navegador não suporta a API de MediaDevices para permissão de autoplay de vídeos e áudios!');
-        // }
-
         /* If image don't exists, hide*/
         song_img.onerror = function() {
             song_img.style.display = 'none';
@@ -231,7 +212,6 @@
         /* Send the reply movie to server */
         document.getElementById("form_reply").addEventListener("submit", function (event) {
             if (event.submitter.type === "submit" && event.submitter.innerHTML === "Reply" && sound.playing()) {
-                console.log("passou!");
                 if(sound.playing()) {
                     event.preventDefault(); // Prevent the default form redirection
                     var formulario = new FormData(this);
@@ -329,7 +309,7 @@
             });
         }
         function hasImage(url) {
-            fetch(url, { method: 'HEAD' })
+            return fetch(url, { method: 'HEAD' })
                 .then(response => {
                     if (response.ok) {
                         return true;
@@ -339,6 +319,7 @@
                 })
                 .catch(error => {
                     console.error('Error to verify the image:', error);
+                    return false;
                 });
         }
 

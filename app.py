@@ -24,13 +24,16 @@ current_random_music = "music\Snow White and the Seven Dwarfs\Snow White Soundtr
 current_random_music_name = "Snow White Soundtrack - 01 - Overture.mp3"
 current_random_movie = "Snow White and the Seven Dwarfs"
 
+movies_filter = []
+finish_filter = False
+
 current_random_time = 0
 initial_waiting_duration = 10
 waiting_duration = 7
 song_duration = 20
 number_of_songs = 20
 
-default_mode = percentage_mode = easy = medium = hard = False
+default_mode = percentage_mode = easy = medium = hard = percentage_mode_custom = percentage_mode_range = english = portuguese = False
 current_percentage_range = []
 current_difficulty = None
 current_default_difficulty = None
@@ -149,7 +152,7 @@ def room():
 
 @app.route("/room", methods=['POST'])
 def room_post():
-    global room_thread, default_mode, percentage_mode, easy, medium, hard, current_percentage_range
+    global room_thread, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, percentage_mode_range, current_percentage_range, english, portuguese
     if room_thread is None:
         default_mode = request.form.get('default')
         percentage_mode = request.form.get('percentage')
@@ -160,7 +163,9 @@ def room_post():
         percentage_mode_range = request.form.get('range')
         slider_values_str = request.form.get('sliderValue')
         current_percentage_range = list(map(int, slider_values_str.split(',')))
-        print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; current_percentage_range: {current_percentage_range}")
+        english = request.form.get('english')
+        portuguese = request.form.get('portuguese')
+        print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; percentage_mode_custom: {percentage_mode_custom}; percentage_mode_range: {percentage_mode_range}; current_percentage_range: {current_percentage_range}; english: {english}; portuguese: {portuguese}")
         
         # Validate inputs
         if default_mode is None and percentage_mode is None:
@@ -171,7 +176,13 @@ def room_post():
             return redirect(url_for('lobby', msg="You have to select one of the percentage difficulties modes to play!"))
         elif percentage_mode is not None and percentage_mode_range is not None and easy is None and medium is None and hard is None:
             return redirect(url_for('lobby', msg="You have to select one of the difficulties to play!"))
-        
+        elif portuguese is None and english is None:
+            return redirect(url_for('lobby', msg="You have to select at least one language!"))        
+
+        print("Create Filter Thread!")
+        filter_thread = threading.Thread(target=filter_all_movies)
+        filter_thread.start()
+
         print("Create Room Thread!")
         room_thread = threading.Thread(target=main_room_thread)
         room_thread.start()
@@ -182,8 +193,11 @@ def main_room_thread():
     global current_random_time, room_thread, stop_thread, current_random_music, current_difficulty, current_default_difficulty, current_count, players_ready
     stop_thread = False
     clean_points()
+    clean_replys()
     for i in range(initial_waiting_duration+1,0,-1):
-        clean_replys()
+        if finish_filter:
+            if len(movies_filter) == 0:
+                break
         socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...", broadcast=True)
         time.sleep(1)
         #print(f'Counter for wait: {i}')
@@ -227,30 +241,50 @@ def main_room_thread():
 
 ### Choose Music ###
 
-def choose_random_music():
-    global current_random_music, current_random_time, current_random_movie, current_random_music_name, random_movies, default_mode, percentage_mode
+def filter_all_movies():
+    global movies_filter, finish_filter, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, current_percentage_range
+    with open(musics_json_filename, 'r') as musicdb:
+        music_data = json.load(musicdb)
+    for key_movie, value_movie in enumerate(music_data):
+        movie_group = (value_movie["movie"], [])
+        current_data_movie_musics = value_movie["musics"]
+        for key_data_music, value_data_music in enumerate(current_data_movie_musics):            
+            if default_mode:
+                if easy == "on" and value_data_music["difficulty_defualt"] == "easy" and isMusicLang(value_data_music):
+                    movie_group[1].append(value_data_music["name"])
+                elif medium == "on" and value_data_music["difficulty_defualt"] == "medium" and isMusicLang(value_data_music):
+                    movie_group[1].append(value_data_music["name"])
+                elif hard == "on" and value_data_music["difficulty_defualt"] == "hard" and isMusicLang(value_data_music):
+                    movie_group[1].append(value_data_music["name"])
+            else:
+                if percentage_mode_custom:
+                    if easy == "on" and value_data_music["difficulty"] >= 75 and isMusicLang(value_data_music):
+                        movie_group[1].append(value_data_music["name"])
+                    elif medium == "on" and value_data_music["difficulty"] > 35 and value_data_music["difficulty"] < 75 and isMusicLang(value_data_music):
+                        movie_group[1].append(value_data_music["name"])
+                    elif hard == "on" and value_data_music["difficulty"] <= 35 and isMusicLang(value_data_music):
+                        movie_group[1].append(value_data_music["name"])
+                else:
+                    if value_data_music["difficulty"] >= current_percentage_range[0] and value_data_music["difficulty"] <= current_percentage_range[1] and isMusicLang(value_data_music):
+                        movie_group[1].append(value_data_music["name"])
+        if len(movie_group[1]) > 0:
+            movies_filter.append(movie_group)
+    finish_filter = True
+    print("Finished filtering of all movies...")
 
-    random_movies = copy.deepcopy(movies)
-    random.shuffle(random_movies)
-    current_random_movie = random_movies[0]
-    print("current_random_movie", current_random_movie)
-    musics = []
-    if default_mode == "on":
-        musics = choose_random_music_by_default_mode()
-    elif percentage_mode == "on":
-        musics = choose_random_music_by_percentage_mode()
-    if len(musics) > 0:
-    random.shuffle(musics)
-    random.shuffle(musics)
-    random.shuffle(musics)
+def isMusicLang(music):
+    global english, portuguese
+    return (music["lang"] == "en" and english is not None) or (music["lang"] == "pt" and portuguese is not None)
+
+def choose_random_music():
+    global current_random_music, current_random_time, current_random_movie, current_random_music_name, movies_filter, default_mode, percentage_mode
+    
+    random.shuffle(movies_filter)
+    current_random_movie = movies_filter[0][0]
+    print("MOVIE:", current_random_movie)
+    musics = movies_filter[0][1]
     if len(musics) > 0:
         random.shuffle(musics)
-    if len(musics) > 0:
-        random.shuffle(musics)
-    random.shuffle(musics)
-    if len(musics) > 0:
-        random.shuffle(musics)
-    if len(musics) > 0:
         current_random_music_name = musics[0]
         current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
         
@@ -261,50 +295,10 @@ def choose_random_music():
             current_random_time = 0
         else:
             current_random_time = random.randint(1, duration - song_duration)
-        print("current_random_time:",current_random_time)
         print(current_random_music,"(",current_random_time,"sec )")
     else:
         print("THERE ARE NO SONGS FOR THAT PERCENTAGE OR DIFFICULTY")
         current_random_music = ""
-
-def choose_random_music_by_default_mode():
-    global easy, medium, hard, current_random_movie
-    with open(musics_json_filename, 'r') as musicdb:
-        music_data = json.load(musicdb)
-    current_data_movie_musics = {}
-    for key_movie, value_movie in enumerate(music_data):
-        if value_movie["movie"] == current_random_movie:
-            current_data_movie_musics = music_data[key_movie]["musics"]
-    musics_by_mode = []
-    for key_data_music, value_data_music in enumerate(current_data_movie_musics):
-        if easy == "on" and value_data_music["difficulty_defualt"] == "easy":
-            musics_by_mode.append(value_data_music["name"])
-        elif medium == "on" and value_data_music["difficulty_defualt"] == "medium":
-            musics_by_mode.append(value_data_music["name"])
-        elif hard == "on" and value_data_music["difficulty_defualt"] == "hard":
-            musics_by_mode.append(value_data_music["name"])
-    return musics_by_mode
-
-def choose_random_music_by_percentage_mode():
-    global easy, medium, hard, current_random_movie
-    with open(musics_json_filename, 'r') as musicdb:
-        music_data = json.load(musicdb)
-    current_data_movie_musics = {}
-    for key_movie, value_movie in enumerate(music_data):
-        if value_movie["movie"] == current_random_movie:
-            current_data_movie_musics = music_data[key_movie]["musics"]
-    musics_by_mode = []
-    for key_data_music, value_data_music in enumerate(current_data_movie_musics):
-        if easy == "on" and value_data_music["difficulty"] >= 75:
-            musics_by_mode.append(value_data_music["name"])
-        elif medium == "on" and value_data_music["difficulty"] > 35 and value_data_music["difficulty"] < 75:
-            musics_by_mode.append(value_data_music["name"])
-        elif hard == "on" and value_data_music["difficulty"] <= 35:
-            musics_by_mode.append(value_data_music["name"])
-        else:
-            if value_data_music["difficulty"] >= current_percentage_range[0] and value_data_music["difficulty"] <= current_percentage_range[1]:
-                musics_by_mode.append(value_data_music["name"])
-    return musics_by_mode
 
 
 
@@ -413,6 +407,18 @@ def create_music_json():
 
     with open("_musics.json", 'w') as musicsdb:
         json.dump(data, musicsdb, indent=4)
+
+def add_language_music():
+    with open(musics_json_filename, 'r') as musicdb:
+        music_data = json.load(musicdb)
+    for key_movie, value_movie in enumerate(music_data):
+        movie_group = (value_movie["movie"], [])
+        current_data_movie_musics = value_movie["musics"]
+        for key_data_music, value_data_music in enumerate(current_data_movie_musics):
+            value_data_music["lang"] = "en"          
+
+    with open("_musics.json", 'w') as musicsdb:
+        json.dump(music_data, musicsdb, indent=4)
 
 
 
@@ -578,4 +584,5 @@ def return_lobby():
 
 if __name__ == '__main__':
     #create_music_json()
+    #add_language_music()
     socketio.run(app, port=44444, host='0.0.0.0', debug=True)

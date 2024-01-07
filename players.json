@@ -2,7 +2,7 @@
     {
         "ip": "192.168.1.2",
         "username": "Narutoshi",
-        "points": 746
+        "points": 768
     },
     {
         "ip": "192.168.1.213",
@@ -68,5 +68,10 @@
         "ip": "85.246.182.193",
         "username": "sephas",
         "points": 10
+    },
+    {
+        "ip": "192.168.1.232",
+        "username": "Pixel 7",
+        "points": 2
     }
 ]
