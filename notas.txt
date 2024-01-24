@@ -1,7 +1,14 @@
-. melhorar randomizer, fazendo com que não calhe os ultimos 10 filmes
 . song history
 . Colocar um guess rating
+. botão para remover duplicados (do mesmo filme)
+. colocar musica quando mostra a resposta
+. titulos em portugues
+. mudar os buttons todos para type button
+. esta a calhar sempre o mesmo tempo / sample do nuckcraket
 
 Musicas:
 . implementar os nomes em portugues também
 . começar a colocar as sequelas
+. "Raya and the Last Dragon - Oshins - What a World We Live In.mp3" colocar mais alto, por medium
+. cortar Luca - Edoardo Benatto - Il gatto e la volpe.mp3 
+. diminuir oo volume de uma musica conhecida da raya, easy

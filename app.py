@@ -33,7 +33,7 @@ waiting_duration = 7
 song_duration = 20
 number_of_songs = 20
 
-default_mode = percentage_mode = easy = medium = hard = percentage_mode_custom = percentage_mode_range = english = portuguese = False
+default_mode = percentage_mode = easy = medium = hard = percentage_mode_custom = percentage_mode_range = english = portuguese = duplicate = None
 current_percentage_range = []
 current_difficulty = None
 current_default_difficulty = None
@@ -152,7 +152,7 @@ def room():
 
 @app.route("/room", methods=['POST'])
 def room_post():
-    global room_thread, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, percentage_mode_range, current_percentage_range, english, portuguese
+    global room_thread, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, percentage_mode_range, current_percentage_range, english, portuguese, duplicate
     if room_thread is None:
         default_mode = request.form.get('default')
         percentage_mode = request.form.get('percentage')
@@ -165,7 +165,8 @@ def room_post():
         current_percentage_range = list(map(int, slider_values_str.split(',')))
         english = request.form.get('english')
         portuguese = request.form.get('portuguese')
-        print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; percentage_mode_custom: {percentage_mode_custom}; percentage_mode_range: {percentage_mode_range}; current_percentage_range: {current_percentage_range}; english: {english}; portuguese: {portuguese}")
+        duplicate = request.form.get('duplicate')
+        print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; percentage_mode_custom: {percentage_mode_custom}; percentage_mode_range: {percentage_mode_range}; current_percentage_range: {current_percentage_range}; english: {english}; portuguese: {portuguese}; duplicate: {duplicate}")
         
         # Validate inputs
         if default_mode is None and percentage_mode is None:
@@ -204,6 +205,7 @@ def main_room_thread():
     socketio.emit('title_refresh', f'Listen Carefully! ({song_duration})', broadcast=True)
     for n in range(1,number_of_songs+1):
         clean_replys()
+        clear_skips()
         choose_random_music()
         if current_random_music == "":
             break
@@ -215,6 +217,7 @@ def main_room_thread():
             time.sleep(1)
             #print(f'Counter for song {n}: {i}')
             if is_all_skiped():
+                remove_choosen_music_from_filter()
                 clear_skips()
                 break
         socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
@@ -226,8 +229,10 @@ def main_room_thread():
             time.sleep(1)
             #print(f'Counter for wait for song {n}: {i}')
             if is_all_skiped():
+                remove_choosen_music_from_filter()
                 clear_skips()
                 break
+        remove_choosen_music_from_filter()
         if stop_thread:
             break
     socketio.emit('title_refresh', f"Acabou!", broadcast=True)
@@ -243,6 +248,8 @@ def main_room_thread():
 
 def filter_all_movies():
     global movies_filter, finish_filter, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, current_percentage_range
+    movies_filter = []
+    finish_filter = False
     with open(musics_json_filename, 'r') as musicdb:
         music_data = json.load(musicdb)
     for key_movie, value_movie in enumerate(music_data):
@@ -280,26 +287,41 @@ def choose_random_music():
     global current_random_music, current_random_time, current_random_movie, current_random_music_name, movies_filter, default_mode, percentage_mode
     
     random.shuffle(movies_filter)
-    current_random_movie = movies_filter[0][0]
-    print("MOVIE:", current_random_movie)
-    musics = movies_filter[0][1]
-    if len(musics) > 0:
-        random.shuffle(musics)
-        current_random_music_name = musics[0]
-        current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
-        
-        audio = AudioSegment.from_file(current_random_music, format="mp3")
-        duration = int(len(audio) / 1000) # seconds
-        print("Duration:",duration)
-        if duration <= 20:
-            current_random_time = 0
+    if len(movies_filter) > 0:
+        current_random_movie = movies_filter[0][0]
+        print("MOVIE:", current_random_movie)
+        musics = movies_filter[0][1]
+
+        if len(musics) > 0:
+            random.shuffle(musics)
+            current_random_music_name = musics[0]
+            current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
+            
+            audio = AudioSegment.from_file(current_random_music, format="mp3")
+            duration = int(len(audio) / 1000) # seconds
+            print("Duration:",duration)
+            if duration <= 20:
+                current_random_time = 0
+            else:
+                current_random_time = random.randint(1, duration - song_duration)
+            print(current_random_music,"(",current_random_time,"sec )")
         else:
-            current_random_time = random.randint(1, duration - song_duration)
-        print(current_random_music,"(",current_random_time,"sec )")
+            print("There are no songs for that percentage or dificulty")
+            current_random_music = ""
     else:
-        print("THERE ARE NO SONGS FOR THAT PERCENTAGE OR DIFFICULTY")
+        print("There are no more movies ...")
         current_random_music = ""
 
+def remove_choosen_music_from_filter():
+    global movies_filter, current_random_movie, current_random_music_name, duplicate
+
+    if duplicate is not None:
+        movies_filter = [movie_tuple for movie_tuple in movies_filter if current_random_movie not in movie_tuple]
+    else:
+        for movie_tuple in movies_filter:
+            musics = movie_tuple[1]
+            if current_random_music_name in musics:
+                musics.remove(current_random_music_name)
 
 
 ### Replies and Points ###
