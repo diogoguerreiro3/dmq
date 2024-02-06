@@ -8,6 +8,8 @@ from pydub import AudioSegment
 app = Flask(__name__)
 socketio = SocketIO(app)
 
+verbose = False
+
 path_to_music = "./music/"
 movies = [movie for movie in os.listdir(path_to_music) if os.path.isdir(os.path.join(path_to_music, movie))]
 
@@ -91,7 +93,7 @@ def index():
     global currents_players, leader
 
     ip = request.remote_addr
-    print(ip,"entrou no DMQ!")
+    print(ip,"enter in DMQ!")
     
     player = verify_player_exists("ip", ip)
     if player != None:
@@ -166,7 +168,8 @@ def room_post():
         english = request.form.get('english')
         portuguese = request.form.get('portuguese')
         duplicate = request.form.get('duplicate')
-        print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; percentage_mode_custom: {percentage_mode_custom}; percentage_mode_range: {percentage_mode_range}; current_percentage_range: {current_percentage_range}; english: {english}; portuguese: {portuguese}; duplicate: {duplicate}")
+        if verbose:
+            print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; percentage_mode_custom: {percentage_mode_custom}; percentage_mode_range: {percentage_mode_range}; current_percentage_range: {current_percentage_range}; english: {english}; portuguese: {portuguese}; duplicate: {duplicate}")
         
         # Validate inputs
         if default_mode is None and percentage_mode is None:
@@ -180,11 +183,13 @@ def room_post():
         elif portuguese is None and english is None:
             return redirect(url_for('lobby', msg="You have to select at least one language!"))        
 
-        print("Create Filter Thread!")
+        if verbose:
+            print("Create Filter Thread!")
         filter_thread = threading.Thread(target=filter_all_movies)
         filter_thread.start()
 
-        print("Create Room Thread!")
+        if verbose:
+            print("Create Room Thread!")
         room_thread = threading.Thread(target=main_room_thread)
         room_thread.start()
         socketio.emit('go_to_room', "", broadcast=True)
@@ -201,7 +206,8 @@ def main_room_thread():
                 break
         socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...", broadcast=True)
         time.sleep(1)
-        #print(f'Counter for wait: {i}')
+        if verbose:
+            print(f'Counter for wait: {i}')
     socketio.emit('title_refresh', f'Listen Carefully! ({song_duration})', broadcast=True)
     for n in range(1,number_of_songs+1):
         clean_replys()
@@ -215,23 +221,26 @@ def main_room_thread():
             socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
             socketio.emit('title_refresh', f"[{n}] Listen Carefully! ({i})", broadcast=True)
             time.sleep(1)
-            #print(f'Counter for song {n}: {i}')
+            if verbose:
+                print(f'Counter for song {n}: {i}')
             if is_all_skiped():
-                remove_choosen_music_from_filter()
                 clear_skips()
                 break
-        socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
+        # socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
         verify_replys()
         calculate_difficulty()
         for i in range(waiting_duration+1,0,-1):
+            # current_time = current_random_time + song_duration - i
+            # socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
             socketio.emit('title_refresh', current_random_music_name, broadcast=True)
-            socketio.emit('music_content', '{"current_difficulty" : "'+str(round(current_difficulty, 2))+'", "current_default_difficulty" : "'+str(current_default_difficulty)+'", "count" : "' + str(current_count) + '"}', broadcast=True)
+            socketio.emit('music_content', '{"current_difficulty" : "' + str(round(current_difficulty, 2)) + '", "current_default_difficulty" : "' + str(current_default_difficulty) + '", "count" : "' + str(current_count) + '"}', broadcast=True)
             time.sleep(1)
-            #print(f'Counter for wait for song {n}: {i}')
+            if verbose:
+                print(f'Counter for wait for song {n}: {i}')
             if is_all_skiped():
-                remove_choosen_music_from_filter()
                 clear_skips()
                 break
+        socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
         remove_choosen_music_from_filter()
         if stop_thread:
             break
@@ -274,14 +283,37 @@ def filter_all_movies():
                 else:
                     if value_data_music["difficulty"] >= current_percentage_range[0] and value_data_music["difficulty"] <= current_percentage_range[1] and isMusicLang(value_data_music):
                         movie_group[1].append(value_data_music["name"])
+
+        # for key_data_music, value_data_music in enumerate(current_data_movie_musics):
+        #     if isMusicLang(value_data_music): #and get_song_duration(value_movie["movie"], value_data_music["name"]) >= song_duration:
+        #         if default_mode and (\
+        #             (easy == "on" and value_data_music["difficulty_defualt"] == "easy") or \
+        #             (medium == "on" and value_data_music["difficulty_defualt"] == "medium") or \
+        #             (hard == "on" and value_data_music["difficulty_defualt"] == "hard")):
+        #             movie_group[1].append(value_data_music["name"])
+        #         elif percentage_mode_custom and (\
+        #             (easy == "on" and value_data_music["difficulty"] >= 75) or \
+        #             (medium == "on" and value_data_music["difficulty"] > 35 and value_data_music["difficulty"] < 75) or \
+        #             (hard == "on" and value_data_music["difficulty"] <= 35)):
+        #             movie_group[1].append(value_data_music["name"])
+        #         elif value_data_music["difficulty"] >= current_percentage_range[0] and \
+        #             value_data_music["difficulty"] <= current_percentage_range[1]:
+        #             movie_group[1].append(value_data_music["name"])
         if len(movie_group[1]) > 0:
             movies_filter.append(movie_group)
     finish_filter = True
-    print("Finished filtering of all movies...")
+    if verbose:
+        print("Finished filtering of all movies...")
 
 def isMusicLang(music):
     global english, portuguese
     return (music["lang"] == "en" and english is not None) or (music["lang"] == "pt" and portuguese is not None)
+
+def get_song_duration(movie, music):
+    current_music_data = os.path.abspath(os.path.join(path_to_music, movie, music))
+    audio = AudioSegment.from_file(current_music_data, format="mp3")
+    duration = int(len(audio) / 1000) # seconds
+    return duration
 
 def choose_random_music():
     global current_random_music, current_random_time, current_random_movie, current_random_music_name, movies_filter, default_mode, percentage_mode
@@ -289,27 +321,29 @@ def choose_random_music():
     random.shuffle(movies_filter)
     if len(movies_filter) > 0:
         current_random_movie = movies_filter[0][0]
-        print("MOVIE:", current_random_movie)
+        if verbose:
+            print("Movie:", current_random_movie)
         musics = movies_filter[0][1]
 
         if len(musics) > 0:
             random.shuffle(musics)
             current_random_music_name = musics[0]
             current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
-            
-            audio = AudioSegment.from_file(current_random_music, format="mp3")
-            duration = int(len(audio) / 1000) # seconds
-            print("Duration:",duration)
+            duration = get_song_duration(current_random_movie, current_random_music_name)
+            if verbose:
+                print("Duration:",duration)
             if duration <= 20:
                 current_random_time = 0
             else:
                 current_random_time = random.randint(1, duration - song_duration)
-            print(current_random_music,"(",current_random_time,"sec )")
+            print(f"{current_random_music} ( {current_random_time} sec )")
         else:
-            print("There are no songs for that percentage or dificulty")
+            if verbose:
+                print("There are no songs for that percentage or dificulty")
             current_random_music = ""
     else:
-        print("There are no more movies ...")
+        if verbose:
+            print("There are no more movies ...")
         current_random_music = ""
 
 def remove_choosen_music_from_filter():
@@ -357,8 +391,7 @@ def clean_points():
 def verify_replys():
     global current_replys_and_points_room, current_random_movie
     for reply in current_replys_and_points_room:
-        print("Movie Reply:",reply["movie"])
-        print("Correct Movie:",current_random_movie)
+        print(f"{reply['username']} reply {reply['movie']} on {current_random_movie} song")
         if reply["movie"].lower() == current_random_movie.lower():
             reply["correct"] = "true"
             update_player_point(reply["username"])
@@ -398,13 +431,14 @@ def calculate_difficulty():
                     old_correct_count = old_count * copy.deepcopy(current_data[key_movie]["musics"][key_music]["difficulty"]) / 100.0
 
                     current_correct_count = 0
-                    print("Calculate Difficulty with", current_replys_and_points_room)
+                    if verbose:
+                        print(f"Calculate Difficulty with {current_replys_and_points_room}")
                     for reply in current_replys_and_points_room:
                         if reply["correct"] == "true":
                             current_correct_count+=1
                     new_difficulty = (old_correct_count + current_correct_count) / (old_count + len(current_replys_and_points_room)) * 100
-                    
-                    print("Difficulty = ", new_difficulty)
+                    if verbose:
+                        print(f"Difficulty = {new_difficulty}")
 
                     current_data[key_movie]["musics"][key_music]["count"] += len(current_replys_and_points_room)
                     current_data[key_movie]["musics"][key_music]["difficulty"] = new_difficulty
@@ -484,13 +518,13 @@ def clear_skips():
 def send_movie(intput):
     ip = request.remote_addr
     player = verify_player_exists("ip", ip)
-    print("Reply from ", player, "with username", player["username"], "with movie", intput)
+    print(f"{player['username']} reply the movie {intput}")
     update_replys(player["username"], intput)
 
 @app.route("/play")
 def play():
     global current_random_music
-    print("Play:", current_random_music)
+    print(f"Play >> {current_random_music}")
     return send_file(current_random_music, as_attachment=False)
 
 @app.route("/song")
@@ -578,7 +612,8 @@ def style():
 def receive_ready():
     global players_ready
     player_ready = request.json.get("user")
-    print(player_ready,"ready!")
+    if verbose:
+        print(f"{player_ready} is ready!")
     if player_ready not in players_ready:
         players_ready.append(player_ready)
     return jsonify({'status': 'Message receive with success'})
@@ -591,7 +626,8 @@ def return_lobby():
     player = verify_player_exists("ip", ip)
     
     if player is not None:
-        print(player["username"],"returned to lobby!")
+        if verbose:
+            print(f"{player['username']} returned to lobby!")
         if player["username"] in players_ready:
             players_ready.remove(player["username"])
             return jsonify({'status': 'Message receive with success', 'player': 'player'})
@@ -603,8 +639,14 @@ def return_lobby():
     
 
 
-
 if __name__ == '__main__':
     #create_music_json()
     #add_language_music()
-    socketio.run(app, port=44444, host='0.0.0.0', debug=True)
+    if verbose: 
+        socketio.run(app, port=44444, host='0.0.0.0', debug=True)
+
+
+
+
+    else:
+        socketio.run(app, port=44444, host='0.0.0.0', debug=False)

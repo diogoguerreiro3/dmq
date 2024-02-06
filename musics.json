@@ -228,8 +228,8 @@
             },
             {
                 "name": "A Bug's Life - 33 - Circus Bugs Discovered.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -312,8 +312,8 @@
             },
             {
                 "name": "A Bug's Life - 45 - Weak No Longer-Ants Attack.mp3",
-                "count": 1,
-                "difficulty": 0.0,
+                "count": 8,
+                "difficulty": 25.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -326,15 +326,15 @@
             },
             {
                 "name": "A Bug's Life - 47 - A New Day-Circus Bugs Leaving-Flik The Hero-Happy End.mp3",
-                "count": 7,
-                "difficulty": 42.857142857142854,
+                "count": 12,
+                "difficulty": 25.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "A Bug's Life - 48 - End Credits (Time Of Your Life).mp3",
-                "count": 21,
-                "difficulty": 33.33333333333333,
+                "count": 26,
+                "difficulty": 34.61538461538461,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -352,15 +352,15 @@
             },
             {
                 "name": "Aladdin - A Whole New World (Aladdin's Theme).mp3",
-                "count": 6,
-                "difficulty": 83.33333333333334,
+                "count": 11,
+                "difficulty": 90.9090909090909,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Aladdin - A Whole New World.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -380,8 +380,8 @@
             },
             {
                 "name": "Aladdin - Alchemy.mp3",
-                "count": 7,
-                "difficulty": 28.57142857142857,
+                "count": 12,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -394,8 +394,8 @@
             },
             {
                 "name": "Aladdin - Arabian Nights.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -436,7 +436,7 @@
             },
             {
                 "name": "Aladdin - Friend Like Me.mp3",
-                "count": 1,
+                "count": 6,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -569,8 +569,8 @@
             },
             {
                 "name": "Aladdin - Marketplace.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 6,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -639,8 +639,8 @@
             },
             {
                 "name": "Aladdin - Street Urchins.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -699,6 +699,62 @@
                 "difficulty": 0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
+            },
+            {
+                "name": "Aladdin - A Friend Like Me (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Aladdin - A Whole New World - Ending Scene (Eu Portuguese).mp3",
+                "count": 4,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Aladdin - A Whole New World (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Aladdin - Arabians Nights (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Aladdin - One Jump Ahead - Reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Aladdin - One Jump Ahead (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Aladdin - Prince Ali - Reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Aladdin - Prince Ali (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -707,7 +763,7 @@
         "musics": [
             {
                 "name": "Alice in Wonderland 1 - Main Title.mp3",
-                "count": 9,
+                "count": 10,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -716,7 +772,7 @@
                 "name": "Alice in Wonderland 10 - Mary Ann! - A Lizard with a Ladder - We'll Smoke the Blighter Out.mp3",
                 "count": 2,
                 "difficulty": 0.0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
@@ -749,8 +805,8 @@
             },
             {
                 "name": "Alice in Wonderland 15 - Alone Again - 'Twas Brillig - Lose Something.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -772,20 +828,20 @@
                 "name": "Alice in Wonderland 18 - Very Good Advice.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Alice in Wonderland 19 - Whom Did You Expect.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
             {
                 "name": "Alice in Wonderland 2 - Pay Attention - In a World of My Own.mp3",
-                "count": 13,
-                "difficulty": 61.53846153846154,
+                "count": 28,
+                "difficulty": 46.42857142857143,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -835,7 +891,7 @@
                 "name": "Alice in Wonderland 5 - The Sailor's Hornpipe - The Caucus Race.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
@@ -856,15 +912,120 @@
                 "name": "Alice in Wonderland 8 - The Walrus and the Carpenter.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Alice in Wonderland 9 - Old Father William.mp3",
                 "count": 2,
                 "difficulty": 100.0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
+            },
+            {
+                "name": "Alice in Wonderland - A-E-I-O-U (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - Alice in Wonderland - ending credits (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - Alice in Wonderland - Main Title (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - All in the golden afternoon (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - Ending scene (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - How do you do and shake hands (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - In a world of my own (Eu Portuguese).mp3",
+                "count": 9,
+                "difficulty": 33.33333333333333,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - Old father William (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - Painting the roses red (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - Smoke the blighter out (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - The sailor's hornpipe - The caucus race (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - The unbirthday song (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - The Walrus and the Carpenter (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - 'Twas Brilling (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Alice in Wonderland - Very good advice (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
             }
         ]
     },
@@ -894,8 +1055,8 @@
             },
             {
                 "name": "Atlantis the Lost Empire - 12 - The Journey.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1027,22 +1188,22 @@
             },
             {
                 "name": "Atlantis the Lost Empire - 30 - Atlantis.mp3",
-                "count": 18,
-                "difficulty": 27.77777777777778,
+                "count": 34,
+                "difficulty": 35.294117647058826,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Atlantis the Lost Empire - 31 - Where the dreams take you.mp3",
-                "count": 18,
-                "difficulty": 22.22222222222222,
+                "count": 23,
+                "difficulty": 21.73913043478261,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Atlantis the Lost Empire - 32 - End Credits.mp3",
-                "count": 9,
-                "difficulty": 44.44444444444444,
+                "count": 14,
+                "difficulty": 35.714285714285715,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1102,8 +1263,8 @@
         "musics": [
             {
                 "name": "Bambi 1 - Main Titles (Love is a Song).mp3",
-                "count": 1,
-                "difficulty": 0.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1130,14 +1291,14 @@
             },
             {
                 "name": "Bambi 13 - Looking for Romance (I Bring You a Song).mp3",
-                "count": 19,
-                "difficulty": 52.63157894736842,
+                "count": 25,
+                "difficulty": 51.99999999999999,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Bambi 14 - Man Returns.mp3",
-                "count": 5,
+                "count": 10,
                 "difficulty": 40.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -1172,8 +1333,8 @@
             },
             {
                 "name": "Bambi 4 - Little April Shower.mp3",
-                "count": 8,
-                "difficulty": 50.0,
+                "count": 13,
+                "difficulty": 46.15384615384615,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1214,8 +1375,8 @@
             },
             {
                 "name": "Bambi - I Bring You a Song (Eu Portuguese).mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -1228,22 +1389,22 @@
             },
             {
                 "name": "Bambi - Little April Shower (Eu Portuguese).mp3",
-                "count": 2,
-                "difficulty": 100.0,
+                "count": 8,
+                "difficulty": 62.5,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
             {
                 "name": "Bambi - Love Is a Song - Ending Scene (Eu Portuguese).mp3",
-                "count": 2,
-                "difficulty": 100.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             },
             {
                 "name": "Bambi - Love Is a Song - Opening Scene (Eu Portuguese).mp3",
-                "count": 5,
-                "difficulty": 20.0,
+                "count": 8,
+                "difficulty": 37.5,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             }
@@ -1296,8 +1457,8 @@
             },
             {
                 "name": "Beauty and the Beast - Belle (Reprise).mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 8,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1324,8 +1485,8 @@
             },
             {
                 "name": "Beauty and the Beast - Death of the Beast.mp3",
-                "count": 4,
-                "difficulty": 75.0,
+                "count": 9,
+                "difficulty": 44.44444444444444,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1352,8 +1513,8 @@
             },
             {
                 "name": "Beauty and the Beast - Gaston.mp3",
-                "count": 4,
-                "difficulty": 100.0,
+                "count": 9,
+                "difficulty": 88.88888888888889,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1387,15 +1548,15 @@
             },
             {
                 "name": "Beauty and the Beast - Maurice Taken - Gaston Rejected.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Beauty and the Beast - Something There.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 9,
+                "difficulty": 55.55555555555556,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1408,8 +1569,8 @@
             },
             {
                 "name": "Beauty and the Beast - Tonight's the Night.mp3",
-                "count": 14,
-                "difficulty": 57.14285714285714,
+                "count": 19,
+                "difficulty": 57.89473684210527,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1419,6 +1580,83 @@
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
+            },
+            {
+                "name": "Beauty and the Beast - Be Our Guest (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 66.66666666666666,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Belle - Reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Belle (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Ending Scene (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Gaston (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Human Again (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Main Theme - Credit's Version (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Prologue (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Something There (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - Tale as Old as Time (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Beauty and the Beast - The Mob Song (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
             }
         ]
     },
@@ -1427,8 +1665,8 @@
         "musics": [
             {
                 "name": "Big Hero 6 - 01 - Tadashii Roboto No Tsukurinata.mp3",
-                "count": 6,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1546,8 +1784,8 @@
             },
             {
                 "name": "Big Hero 6 - 18 - Upgrades.mp3",
-                "count": 5,
-                "difficulty": 40.0,
+                "count": 15,
+                "difficulty": 53.333333333333336,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1588,8 +1826,8 @@
             },
             {
                 "name": "Big Hero 6 - 24 - First Flight.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 4,
+                "difficulty": 25.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1644,8 +1882,8 @@
             },
             {
                 "name": "Big Hero 6 - 32 - Holding Out For A Hiro.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -1672,8 +1910,8 @@
             },
             {
                 "name": "Big Hero 6 - 36 - Immortals - Fall Out Boy.mp3",
-                "count": 20,
-                "difficulty": 75.00000000000003,
+                "count": 38,
+                "difficulty": 86.84210526315793,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -1705,15 +1943,15 @@
             },
             {
                 "name": "Bolt - Barking at the Moon (Soundtrack).mp3",
-                "count": 21,
-                "difficulty": 57.14285714285714,
+                "count": 31,
+                "difficulty": 51.61290322580645,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Bolt - Bolt Transforms.mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 12,
+                "difficulty": 41.66666666666667,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1733,8 +1971,8 @@
             },
             {
                 "name": "Bolt - I Thought I Lost You (Soundtrack).mp3",
-                "count": 16,
-                "difficulty": 68.75000000000001,
+                "count": 24,
+                "difficulty": 70.83333333333336,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1754,8 +1992,8 @@
             },
             {
                 "name": "Bolt - Meet Mittens.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -1768,8 +2006,8 @@
             },
             {
                 "name": "Bolt - Rescuing Penny.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -1782,8 +2020,8 @@
             },
             {
                 "name": "Bolt - Scooter Chase.mp3",
-                "count": 13,
-                "difficulty": 46.15384615384615,
+                "count": 21,
+                "difficulty": 47.61904761904761,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1822,8 +2060,8 @@
         "musics": [
             {
                 "name": "Brave - Fate And Destiny.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1850,8 +2088,8 @@
             },
             {
                 "name": "Brave - Into The Open Air.mp3",
-                "count": 7,
-                "difficulty": 42.857142857142854,
+                "count": 15,
+                "difficulty": 46.66666666666667,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1920,8 +2158,8 @@
             },
             {
                 "name": "Brave - Song Of Mor'du.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 15,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1948,8 +2186,8 @@
             },
             {
                 "name": "Brave - Touch The Sky.mp3",
-                "count": 4,
-                "difficulty": 75.0,
+                "count": 9,
+                "difficulty": 77.77777777777779,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -1959,6 +2197,20 @@
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
+            },
+            {
+                "name": "Brave - Into the Open Air (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Brave - Touch the Sky (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -2079,8 +2331,8 @@
             },
             {
                 "name": "Brother Bear - Funeral.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -2100,8 +2352,8 @@
             },
             {
                 "name": "Brother Bear - Great Spirits.mp3",
-                "count": 3,
-                "difficulty": 100.0,
+                "count": 8,
+                "difficulty": 75.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -2128,7 +2380,7 @@
             },
             {
                 "name": "Brother Bear - Look Through My Eyes.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -2198,8 +2450,8 @@
             },
             {
                 "name": "Brother Bear - On My Way.mp3",
-                "count": 13,
-                "difficulty": 61.53846153846154,
+                "count": 18,
+                "difficulty": 61.111111111111114,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -2226,8 +2478,8 @@
             },
             {
                 "name": "Brother Bear - Transformation.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 7,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -2247,15 +2499,15 @@
             },
             {
                 "name": "Brother Bear - Welcome (Blind Boys of Alabama).mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 17,
+                "difficulty": 52.94117647058824,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Brother Bear - Great Spirits (Reprise).mp3",
-                "count": 9,
-                "difficulty": 55.55555555555556,
+                "count": 14,
+                "difficulty": 71.42857142857143,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -2490,8 +2742,8 @@
             },
             {
                 "name": "Cars - Chuck Berry - Route 66 - pelicula cars.mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 13,
+                "difficulty": 61.53846153846154,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -2504,8 +2756,8 @@
             },
             {
                 "name": "Cars - John Mayer - Route 66.mp3",
-                "count": 11,
-                "difficulty": 72.72727272727273,
+                "count": 14,
+                "difficulty": 71.42857142857144,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -2539,8 +2791,8 @@
             },
             {
                 "name": "Cars - Real Gone.mp3",
-                "count": 11,
-                "difficulty": 45.45454545454545,
+                "count": 16,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -2565,8 +2817,8 @@
             },
             {
                 "name": "Cars 2 - 02 - It's Finn McMissile!.mp3",
-                "count": 20,
-                "difficulty": 55.00000000000001,
+                "count": 25,
+                "difficulty": 52.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -2600,7 +2852,7 @@
             },
             {
                 "name": "Cars 2 - 07 - You Might Think - Weezer.mp3",
-                "count": 8,
+                "count": 14,
                 "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -2614,8 +2866,8 @@
             },
             {
                 "name": "Cars 2 - 09 - Gran Introductions.mp3",
-                "count": 5,
-                "difficulty": 40.0,
+                "count": 10,
+                "difficulty": 30.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -2831,8 +3083,8 @@
             },
             {
                 "name": "Cars 2 - 40 - The Other Shoot (Film Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -2948,8 +3200,8 @@
             },
             {
                 "name": "Cars 3 - Dan Auerbach - Run That Race.mp3",
-                "count": 7,
-                "difficulty": 42.857142857142854,
+                "count": 12,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -2983,8 +3235,8 @@
             },
             {
                 "name": "Cars 3 - If This Track Could Talk.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -3102,8 +3354,8 @@
             },
             {
                 "name": "Cars 3 - ZZ Ward - Ride ft - Gary Clark Jr..mp3",
-                "count": 29,
-                "difficulty": 48.275862068965516,
+                "count": 34,
+                "difficulty": 47.05882352941176,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -3177,7 +3429,7 @@
             },
             {
                 "name": "Chicken Little - Stir It Up ( Patti LaBelle and Joss Stone ) Chicken Little - Chansons dessins anim\u00e9s.mp3",
-                "count": 5,
+                "count": 15,
                 "difficulty": 20.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -3205,8 +3457,8 @@
             },
             {
                 "name": "Chicken Little - We Are the Champions.mp3",
-                "count": 5,
-                "difficulty": 80.0,
+                "count": 25,
+                "difficulty": 84.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -3217,8 +3469,8 @@
         "musics": [
             {
                 "name": "Cinderella - A Dream Is a Wish Your Heart Makes.mp3",
-                "count": 10,
-                "difficulty": 60.0,
+                "count": 15,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -3294,7 +3546,7 @@
             },
             {
                 "name": "Cinderella - I\u2019m In the Middle of a Muddle.mp3",
-                "count": 2,
+                "count": 12,
                 "difficulty": 50.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
@@ -3448,15 +3700,15 @@
             },
             {
                 "name": "Cinderella - A Dream Is a Wish Your Heart Makes (Eu Portuguese).mp3",
-                "count": 3,
-                "difficulty": 100.0,
+                "count": 8,
+                "difficulty": 62.5,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
             {
                 "name": "Cinderella - Bibbidi-Bobbidi-Boo (Eu Portuguese).mp3",
-                "count": 6,
-                "difficulty": 83.33333333333334,
+                "count": 15,
+                "difficulty": 80.00000000000001,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -3483,7 +3735,7 @@
             },
             {
                 "name": "Cinderella - So This Is Love (Eu Portuguese).mp3",
-                "count": 1,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
@@ -3497,7 +3749,7 @@
             },
             {
                 "name": "Cinderella - The Work Song (Eu Portuguese).mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
@@ -3614,8 +3866,8 @@
             },
             {
                 "name": "Coco - Fiesta con de la Cruz.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -3677,8 +3929,8 @@
             },
             {
                 "name": "Coco - La Llorona-2.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -3700,7 +3952,7 @@
                 "name": "Coco - Much Needed Advice.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
@@ -3768,22 +4020,22 @@
             },
             {
                 "name": "Coco - Remember Me (Ernesto de la Cruz).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 10,
+                "difficulty": 90.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Coco - Remember Me (Lullaby).mp3",
-                "count": 4,
-                "difficulty": 100.0,
+                "count": 9,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Coco - Remember Me (Reunion).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -3877,6 +4129,62 @@
                 "difficulty": 0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
+            },
+            {
+                "name": "Coco - Everyone Knows Juanita (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Coco - Much Needed Advice (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Coco - Proud Coraz\u00c3\u00b3n - Ending Scene (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Coco - Remember Me - Ernesto De La Cruz (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Coco - Remember Me - Lullaby (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Coco - Remember Me - Reunion (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Coco - The World Es Mi Familia (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Coco - Un Poco Loco (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -3906,8 +4214,8 @@
             },
             {
                 "name": "Dinosaur - 04 - The Egg Travels.mp3",
-                "count": 6,
-                "difficulty": 16.666666666666664,
+                "count": 11,
+                "difficulty": 18.181818181818183,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -4184,8 +4492,8 @@
             },
             {
                 "name": "Dumbo 3 - Loading the Train Casey Junior Stork On a Cloud Straight From Heaven.mp3",
-                "count": 11,
-                "difficulty": 54.54545454545454,
+                "count": 12,
+                "difficulty": 58.33333333333333,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -4219,8 +4527,8 @@
             },
             {
                 "name": "Dumbo 8 - The Pyramid of Pachyderms.mp3",
-                "count": 7,
-                "difficulty": 85.71428571428574,
+                "count": 11,
+                "difficulty": 90.9090909090909,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -4247,15 +4555,15 @@
             },
             {
                 "name": "Dumbo - Clown Song (Eu Portuguese).mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             },
             {
                 "name": "Dumbo - Look Out For Mister Stork (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             },
@@ -4455,8 +4763,8 @@
             },
             {
                 "name": "Elemental - Love Scooter.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -4469,8 +4777,8 @@
             },
             {
                 "name": "Elemental - Make Connection.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -4553,8 +4861,8 @@
             },
             {
                 "name": "Elemental - Vivisteria.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 42.857142857142854,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -4817,15 +5125,15 @@
             },
             {
                 "name": "Encanto - Two Oruguitas.mp3",
-                "count": 4,
-                "difficulty": 100.0,
+                "count": 9,
+                "difficulty": 77.77777777777779,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Encanto - T\u00edo Bruno.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -4880,21 +5188,21 @@
             },
             {
                 "name": "Encanto - All of You (Eu Portuguese).mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 4,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
             {
                 "name": "Encanto - Surface Pressure (Eu Portuguese).mp3",
-                "count": 1,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
             {
                 "name": "Encanto - The Family Madrigal (Eu Portuguese).mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
@@ -5025,8 +5333,8 @@
             },
             {
                 "name": "Fantasia - The Nutcracker Suite, Op. 71A, Chinese Dance (Irwin Kostal Re-Record 1982).mp3",
-                "count": 49,
-                "difficulty": 40.81632653061225,
+                "count": 59,
+                "difficulty": 42.3728813559322,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5039,7 +5347,7 @@
             },
             {
                 "name": "Fantasia - The Nutcracker Suite, Op. 71A, Dance of the Sugar Plum Fairy (Irwin Kostal Re-Record 1982).mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -5053,15 +5361,15 @@
             },
             {
                 "name": "Fantasia - The Nutcracker Suite, Op. 71A, Waltz of the Flowers (Irwin Kostal Re-Record 1982).mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 14,
+                "difficulty": 28.57142857142857,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Fantasia - Toccata and Fugue in D Minor, BWV 565 (Irwin Kostal Re-Record 1982).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -5079,7 +5387,7 @@
         "musics": [
             {
                 "name": "Fantasia 2000 - 01 - Symphony No - 5.mp3",
-                "count": 12,
+                "count": 14,
                 "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -5107,8 +5415,8 @@
             },
             {
                 "name": "Fantasia 2000 - 05 - Carnival Of The Animals, Finale.mp3",
-                "count": 24,
-                "difficulty": 79.16666666666666,
+                "count": 30,
+                "difficulty": 76.66666666666667,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5121,8 +5429,8 @@
             },
             {
                 "name": "Fantasia 2000 - 07 - Pomp and Circumstance, Marches #1, 2, 3, & 4.mp3",
-                "count": 15,
-                "difficulty": 20.000000000000004,
+                "count": 25,
+                "difficulty": 20.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5217,8 +5525,8 @@
             },
             {
                 "name": "Finding Dory - Jewel of Morro Bay.mp3",
-                "count": 1,
-                "difficulty": 0.0,
+                "count": 6,
+                "difficulty": 16.666666666666664,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -5322,8 +5630,8 @@
             },
             {
                 "name": "Finding Dory - Release.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 28.57142857142857,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -5350,8 +5658,8 @@
             },
             {
                 "name": "Finding Dory - Three Hearts (End Title).mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -5439,8 +5747,8 @@
             },
             {
                 "name": "Finding Nemo - First Day.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 7,
+                "difficulty": 28.57142857142857,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -5474,8 +5782,8 @@
             },
             {
                 "name": "Finding Nemo - Haiku.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -5523,8 +5831,8 @@
             },
             {
                 "name": "Finding Nemo - Nemo Egg (Main Title).mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 42.857142857142854,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5745,8 +6053,8 @@
             },
             {
                 "name": "Frozen - For the First Time in Forever (From -Frozen-Soundtrack Version).mp3",
-                "count": 1,
-                "difficulty": 0.0,
+                "count": 6,
+                "difficulty": 83.33333333333334,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5759,15 +6067,15 @@
             },
             {
                 "name": "Frozen - For the First Time in Forever (Reprise).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Frozen - Frozen Heart (From -Frozen-Soundtrack Version).mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5801,7 +6109,7 @@
             },
             {
                 "name": "Frozen - In Summer (From -Frozen-Soundtrack Version).mp3",
-                "count": 3,
+                "count": 6,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -5857,8 +6165,8 @@
             },
             {
                 "name": "Frozen - Life's Too Short (Reprise).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -6085,6 +6393,76 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "Frozen - Do You Want to Build a Snowman (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - Fixer Upper (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - For the First Time in Forever - Reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - For the First Time in Forever (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - Frozen Heart - Opening Scene (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - Frozen Heart (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - In Summer (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - Let It Go (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - Love Is an Open Door (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Frozen - Reindeers Are Better Than People (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -6254,8 +6632,8 @@
             },
             {
                 "name": "Frozen 2 - Evan Rachel Wood - All Is Found (Lullaby Ending) (From _Frozen 2_Outtake_Audio Only).mp3",
-                "count": 1,
-                "difficulty": 0.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -6436,7 +6814,7 @@
             },
             {
                 "name": "Frozen 2 - Weezer - Lost in the Woods (From _Frozen 2_).mp3",
-                "count": 3,
+                "count": 6,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -6464,8 +6842,8 @@
             },
             {
                 "name": "Frozen 2 - All Is Found (Eu Portuguese).mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 4,
+                "difficulty": 75.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -6539,8 +6917,8 @@
             },
             {
                 "name": "Fun and Fancy Free - Eat Until I Die.mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 11,
+                "difficulty": 36.36363636363637,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -6656,8 +7034,8 @@
         "musics": [
             {
                 "name": "Hercules 1 - Long Ago....mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -6677,8 +7055,8 @@
             },
             {
                 "name": "Hercules 12 - Go The Distance (Single).mp3",
-                "count": 9,
-                "difficulty": 22.22222222222222,
+                "count": 14,
+                "difficulty": 21.428571428571427,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -6768,22 +7146,22 @@
             },
             {
                 "name": "Hercules 24 - A True Hero_A Star Is Born.mp3",
-                "count": 7,
-                "difficulty": 57.14285714285714,
+                "count": 8,
+                "difficulty": 62.5,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Hercules 3 - The Gospel Truth II.mp3",
-                "count": 1,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Hercules 4 - The Gospel Truth III.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -6934,8 +7312,8 @@
             },
             {
                 "name": "Home on the Range - Yodel-Adle-Eedle-Idle-Oo.mp3",
-                "count": 5,
-                "difficulty": 100.0,
+                "count": 8,
+                "difficulty": 87.5,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -7002,15 +7380,15 @@
             },
             {
                 "name": "Inside Out - First Day of School.mp3",
-                "count": 11,
-                "difficulty": 72.72727272727273,
+                "count": 12,
+                "difficulty": 75.00000000000001,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Inside Out - Free Skating.mp3",
-                "count": 26,
-                "difficulty": 69.23076923076923,
+                "count": 31,
+                "difficulty": 64.51612903225806,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -7023,8 +7401,8 @@
             },
             {
                 "name": "Inside Out - Imagination Land.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -7037,8 +7415,8 @@
             },
             {
                 "name": "Inside Out - Memory Lanes.mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 8,
+                "difficulty": 37.5,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -7168,7 +7546,7 @@
             },
             {
                 "name": "Lady And The Tramp - He's a Tramp.mp3",
-                "count": 1,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -7231,8 +7609,8 @@
             },
             {
                 "name": "Lady And The Tramp - Main Title (Bella Notte)  - The Wag of a Dog's Tail.mp3",
-                "count": 7,
-                "difficulty": 28.57142857142857,
+                "count": 10,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -7343,8 +7721,8 @@
             },
             {
                 "name": "Lady and the Tramp - Bella Notte (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -7357,8 +7735,8 @@
             },
             {
                 "name": "Lady and the Tramp - He's a Tramp (Eu Portuguese).mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 4,
+                "difficulty": 75.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -7385,8 +7763,8 @@
             },
             {
                 "name": "Lady and the Tramp - What's a Baby - La La Lu (Eu Portuguese).mp3",
-                "count": 2,
-                "difficulty": 100.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             }
@@ -7411,8 +7789,8 @@
             },
             {
                 "name": "Lightyear - 03 - Lightyear.mp3",
-                "count": 32,
-                "difficulty": 50.0,
+                "count": 41,
+                "difficulty": 51.219512195121965,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -7523,8 +7901,8 @@
             },
             {
                 "name": "Lightyear - 19 - Oh, Hover.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -7654,8 +8032,8 @@
             },
             {
                 "name": "Lilo & Stitch - Can't Help Falling In Love.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -7689,8 +8067,8 @@
             },
             {
                 "name": "Lilo & Stitch - Escape (Alternate).mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 7,
+                "difficulty": 14.285714285714285,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -7752,8 +8130,8 @@
             },
             {
                 "name": "Lilo & Stitch - Hawaiian Roller Coaster Ride.mp3",
-                "count": 3,
-                "difficulty": 100.0,
+                "count": 8,
+                "difficulty": 87.5,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -7766,15 +8144,15 @@
             },
             {
                 "name": "Lilo & Stitch - Hound Dog (Elvis Presley).mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 10,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Lilo & Stitch - House Explodes.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -7995,8 +8373,8 @@
             },
             {
                 "name": "Luca - Edoardo Benatto - Il gatto e la volpe.mp3",
-                "count": 9,
-                "difficulty": 44.44444444444444,
+                "count": 10,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -8301,7 +8679,7 @@
             },
             {
                 "name": "Make Mine Music - Disney's Little Toot.mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -8336,8 +8714,8 @@
             },
             {
                 "name": "Make Mine Music - Peter and the Wolf.mp3",
-                "count": 17,
-                "difficulty": 23.52941176470588,
+                "count": 25,
+                "difficulty": 28.000000000000004,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -8453,15 +8831,15 @@
             },
             {
                 "name": "Meet the Robinsons - The Future Has Arrived.mp3",
-                "count": 7,
-                "difficulty": 71.42857142857143,
+                "count": 13,
+                "difficulty": 61.53846153846153,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Meet the Robinsons - The Motion Waltz (Emotional Commotion).mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 10,
+                "difficulty": 30.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -8507,15 +8885,15 @@
         "musics": [
             {
                 "name": "Melody Time - 'Blue Shadows' by Roy Rogers.mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Melody Time - Bumble Boogie.mp3",
-                "count": 23,
-                "difficulty": 43.47826086956521,
+                "count": 24,
+                "difficulty": 45.83333333333333,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -8631,15 +9009,15 @@
             },
             {
                 "name": "Moana - Lin-Manuel Miranda - You're Welcome (From MoanaDemoAudio Only).mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Moana - Lin-Manuel Miranda, Opetaia Foa'i - We Know The Way (From MoanaFinaleAudio Only).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -8897,8 +9275,8 @@
             },
             {
                 "name": "Moana - Mark Mancina, Opetaia Foa'i - Te Fiti Restored.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -8943,6 +9321,76 @@
                 "difficulty": 71.42857142857143,
                 "difficulty_defualt": "easy",
                 "lang": "en"
+            },
+            {
+                "name": "Moana - How Far I'll Go - Reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - How Far I'll Go (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - I Am Moana (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - I Know Who You Are (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - Shiny (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - We Know The Way - Ending Scene (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - We Know the Way (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - Where You Are (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - You're Welcome - Credit's Version (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana - You're Welcome (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -9000,8 +9448,8 @@
             },
             {
                 "name": "Monsters University - 08 - Off To College.mp3",
-                "count": 13,
-                "difficulty": 23.076923076923077,
+                "count": 21,
+                "difficulty": 28.57142857142857,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -9035,8 +9483,8 @@
             },
             {
                 "name": "Monsters University - 13 - To Scare Class.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -9105,8 +9553,8 @@
             },
             {
                 "name": "Monsters University - 23 - Scare Games Opening.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -9397,8 +9845,8 @@
         "musics": [
             {
                 "name": "Monsters, Inc - 01 - Main Title (Film Edit).mp3",
-                "count": 24,
-                "difficulty": 79.16666666666666,
+                "count": 27,
+                "difficulty": 77.77777777777777,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -9411,8 +9859,8 @@
             },
             {
                 "name": "Monsters, Inc - 03 - Waternoose.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -9460,8 +9908,8 @@
             },
             {
                 "name": "Monsters, Inc - 10 - In On Seven.mp3",
-                "count": 7,
-                "difficulty": 85.71428571428574,
+                "count": 10,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -9656,8 +10104,8 @@
             },
             {
                 "name": "Monsters, Inc - 38 - Fungus_Hall Exit.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 4,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -9698,8 +10146,8 @@
             },
             {
                 "name": "Monsters, Inc - 44 - Sulley's Back.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -10053,8 +10501,8 @@
             },
             {
                 "name": "Mulan - Reflection.mp3",
-                "count": 6,
-                "difficulty": 66.66666666666666,
+                "count": 11,
+                "difficulty": 54.54545454545454,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -10107,7 +10555,7 @@
             },
             {
                 "name": "Oliver & Company - End Title (Score) - Oliver & Company.mp3",
-                "count": 6,
+                "count": 11,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -10121,8 +10569,8 @@
             },
             {
                 "name": "Oliver & Company - Main Titles-Once Upon a Time In New York City - Oliver & Company.mp3",
-                "count": 2,
-                "difficulty": 100.0,
+                "count": 4,
+                "difficulty": 49.99999999999999,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -10142,8 +10590,8 @@
             },
             {
                 "name": "Oliver & Company - Streets of Gold - Oliver & Company.mp3",
-                "count": 10,
-                "difficulty": 30.0,
+                "count": 13,
+                "difficulty": 38.46153846153847,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -10170,10 +10618,52 @@
             },
             {
                 "name": "Oliver & Company - Why Should I Worry - Oliver & Company.mp3",
-                "count": 9,
-                "difficulty": 66.66666666666666,
+                "count": 14,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "easy",
                 "lang": "en"
+            },
+            {
+                "name": "Oliver & Company - Good company (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 0.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Oliver & Company - Once upon a time in New York City (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Oliver & Company - Perfect isn't easy (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Oliver & Company - Streets of gold (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Oliver & Company - Why should I worry - finale (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Oliver & Company - Why should I worry (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -10210,8 +10700,8 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Cruella De Vil (Movie Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -10224,7 +10714,7 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Cruella De Vil - Disney Sing-Along.mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -10273,8 +10763,8 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Kanine Krunchies.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 10,
+                "difficulty": 40.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -10343,8 +10833,8 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Ending (Eu Portuguese).mp3",
-                "count": 6,
-                "difficulty": 83.33333333333334,
+                "count": 8,
+                "difficulty": 87.50000000000001,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             }
@@ -10656,8 +11146,8 @@
             },
             {
                 "name": "Onward - Voltar Thunderseer!.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 6,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -10794,8 +11284,8 @@
             },
             {
                 "name": "Peter Pan 5 - A Pirate's Life.mp3",
-                "count": 11,
-                "difficulty": 81.81818181818183,
+                "count": 17,
+                "difficulty": 88.23529411764707,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -10850,8 +11340,8 @@
             },
             {
                 "name": "Peter Pan - The second star to the right - main title (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 7,
+                "difficulty": 42.857142857142854,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -10878,8 +11368,8 @@
             },
             {
                 "name": "Peter Pan - Your mother and mine (Eu Portuguese).mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             }
@@ -10946,8 +11436,8 @@
             },
             {
                 "name": "Pinocchio 09 - Hi-Diddle-Dee-Dee (An Actor's Life For Me).mp3",
-                "count": 8,
-                "difficulty": 50.0,
+                "count": 11,
+                "difficulty": 54.54545454545454,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -10960,8 +11450,8 @@
             },
             {
                 "name": "Pinocchio 11 - I've Got No Strings.mp3",
-                "count": 4,
-                "difficulty": 100.0,
+                "count": 12,
+                "difficulty": 83.33333333333334,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -11023,8 +11513,8 @@
             },
             {
                 "name": "Pinocchio 20 - To the Rescue.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -11072,7 +11562,7 @@
             },
             {
                 "name": "Pinocchio - Hi-Diddle-Dee-Dee (Eu Portuguese).mp3",
-                "count": 6,
+                "count": 9,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
@@ -11086,7 +11576,7 @@
             },
             {
                 "name": "Pinocchio - Little Wooden Head (Eu Portuguese).mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
@@ -11100,8 +11590,8 @@
             },
             {
                 "name": "Pinocchio - When You Wish Upon a Star - Ending Scene (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -11133,8 +11623,8 @@
             },
             {
                 "name": "Pocahontas - Colors of the Wind (End Title).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -11203,8 +11693,8 @@
             },
             {
                 "name": "Pocahontas - If I Never Knew You (Love Theme).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -11287,8 +11777,8 @@
             },
             {
                 "name": "Pocahontas - Savages.mp3",
-                "count": 2,
-                "difficulty": 0.0,
+                "count": 8,
+                "difficulty": 25.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -11375,6 +11865,83 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "Pocahontas - Colors of the Wind (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 66.66666666666666,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Just Around the Riverbend (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Listen With Your Heart I (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Listen With Your Heart II (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Listen With Your Heart III (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Mine, Mine, Mine (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Savages (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Steady As The Beating Drum - Main Credits Translated (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - Steady As The Beating Drum - Reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - The Virginia Company (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Pocahontas - The Virginia Company Reprise - Steady as the Beating Drum (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
             }
         ]
     },
@@ -11495,8 +12062,8 @@
             },
             {
                 "name": "Ralph Breaks the Internet - In This Place.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 28.57142857142857,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -11621,10 +12188,24 @@
             },
             {
                 "name": "Ralph Breaks the Internet - Zero.mp3",
-                "count": 10,
-                "difficulty": 50.0,
+                "count": 20,
+                "difficulty": 45.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
+            },
+            {
+                "name": "Ralph Breaks the Internet - A Place Called Slaughter Race (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Ralph Breaks the Internet - Never Gonna Give You Up (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -11696,8 +12277,8 @@
             },
             {
                 "name": "Ratatouille - Anyone Can Cook (OST Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -11892,8 +12473,8 @@
             },
             {
                 "name": "Ratatouille - Le Festin (OST Version).mp3",
-                "count": 21,
-                "difficulty": 80.95238095238095,
+                "count": 31,
+                "difficulty": 87.09677419354838,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -12156,8 +12737,8 @@
             },
             {
                 "name": "Raya and the Last Dragon - BEGINNERS, Night Panda - Start A Riot.mp3",
-                "count": 5,
-                "difficulty": 40.0,
+                "count": 11,
+                "difficulty": 36.36363636363637,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -12408,7 +12989,7 @@
             },
             {
                 "name": "Raya and the Last Dragon - Oshins - What a World We Live In.mp3",
-                "count": 10,
+                "count": 15,
                 "difficulty": 40.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -12443,8 +13024,8 @@
             },
             {
                 "name": "Raya and the Last Dragon - Search for the Last Dragon.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -12464,8 +13045,8 @@
             },
             {
                 "name": "Raya and the Last Dragon - Storming Fang.mp3",
-                "count": 3,
-                "difficulty": 33.33333333333333,
+                "count": 4,
+                "difficulty": 24.999999999999996,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -12485,7 +13066,7 @@
             },
             {
                 "name": "Raya and the Last Dragon - The New World.mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -12693,10 +13274,52 @@
             },
             {
                 "name": "Robin Hood - Whistle Stop.mp3",
-                "count": 25,
-                "difficulty": 68.0,
+                "count": 30,
+                "difficulty": 63.33333333333333,
                 "difficulty_defualt": "easy",
                 "lang": "en"
+            },
+            {
+                "name": "Robin Hood - Ending (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Robin Hood - Love (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Robin Hood - Not in Nottingham - reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Robin Hood - Not in Nottingham (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Robin Hood - Oo de lally (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Robin Hood - The phoney king of England (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
             }
         ]
     },
@@ -12775,8 +13398,8 @@
             },
             {
                 "name": "Saludos Amigos - Pedro (score).mp3",
-                "count": 4,
-                "difficulty": 0.0,
+                "count": 15,
+                "difficulty": 6.666666666666667,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -12885,8 +13508,8 @@
             },
             {
                 "name": "Sleeping Beauty - Do You Hear That- - I Wonder.mp3",
-                "count": 5,
-                "difficulty": 20.0,
+                "count": 6,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -12899,8 +13522,8 @@
             },
             {
                 "name": "Sleeping Beauty - Evil Evil.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -12948,8 +13571,8 @@
             },
             {
                 "name": "Sleeping Beauty - Main Title - Once Upon A Dream - Prologue.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -13011,14 +13634,14 @@
             },
             {
                 "name": "Sleeping Beauty - Woodland Symphony - Once Upon a Dream.mp3",
-                "count": 10,
-                "difficulty": 30.0,
+                "count": 15,
+                "difficulty": 26.666666666666668,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Sleeping Beauty - Hail to Princess Aurora (Eu Portuguese).mp3",
-                "count": 3,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
@@ -13032,8 +13655,8 @@
             },
             {
                 "name": "Sleeping Beauty - Once Upon a Dream - Ending Scene (Eu Portuguese).mp3",
-                "count": 8,
-                "difficulty": 75.0,
+                "count": 11,
+                "difficulty": 72.72727272727273,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -13046,8 +13669,8 @@
             },
             {
                 "name": "Sleeping Beauty - Once Upon a Dream (Eu Portuguese).mp3",
-                "count": 12,
-                "difficulty": 50.0,
+                "count": 13,
+                "difficulty": 46.15384615384615,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -13072,8 +13695,8 @@
             },
             {
                 "name": "Snow White Soundtrack - 02 - Magic Mirror.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -13121,8 +13744,8 @@
             },
             {
                 "name": "Snow White Soundtrack - 09 - Heigh Ho.mp3",
-                "count": 6,
-                "difficulty": 83.33333333333334,
+                "count": 11,
+                "difficulty": 90.9090909090909,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -13261,14 +13884,14 @@
             },
             {
                 "name": "Snow White and the Seven Dwarfs - Heigh-Ho (Eu Portuguese).mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
             {
                 "name": "Snow White and the Seven Dwarfs - I'm Wishing - One Song (Eu Portuguese).mp3",
-                "count": 2,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
@@ -13282,8 +13905,8 @@
             },
             {
                 "name": "Snow White and the Seven Dwarfs - Someday My Prince Will Come - Reprise (Eu Portuguese).mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             },
@@ -13413,8 +14036,8 @@
             },
             {
                 "name": "Soul - Jon Batiste - It's All Right.mp3",
-                "count": 13,
-                "difficulty": 76.92307692307693,
+                "count": 16,
+                "difficulty": 81.25000000000001,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -13831,15 +14454,15 @@
             },
             {
                 "name": "Strange World - They're The Clades! (Reprise).mp3",
-                "count": 13,
-                "difficulty": 76.92307692307693,
+                "count": 19,
+                "difficulty": 68.42105263157896,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Strange World - They're The Clades!.mp3",
-                "count": 22,
-                "difficulty": 50.000000000000014,
+                "count": 25,
+                "difficulty": 52.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -13929,7 +14552,7 @@
                 "name": "Tangled - 08-When Will My Life Begin (Reprise 1).mp3",
                 "count": 5,
                 "difficulty": 60.0,
-                "difficulty_defualt": "medium",
+                "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
@@ -13997,8 +14620,8 @@
             },
             {
                 "name": "Tangled - 17-When Will My Life Begin (Reprise 2).mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 11,
+                "difficulty": 27.27272727272727,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -14127,6 +14750,62 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "Tangled - Healing incantation - all scenes (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Tangled - Healing incantation (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Tangled - I see the light (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Tangled - I've got a dream (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Tangled - Mother knows best - reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Tangled - Mother knows best (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Tangled - When will my life begin - reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Tangled - When will my life begin (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -14198,8 +14877,8 @@
             },
             {
                 "name": "Tarzan - Mark Mancina - Jane Meets Kerchak.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -14415,8 +15094,8 @@
             },
             {
                 "name": "Tarzan - Two Worlds.mp3",
-                "count": 4,
-                "difficulty": 100.0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -14525,8 +15204,8 @@
             },
             {
                 "name": "The Adventures of Ichabod and Mr Toad - The Headless Horseman.mp3",
-                "count": 23,
-                "difficulty": 65.21739130434784,
+                "count": 33,
+                "difficulty": 57.57575757575761,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -14588,8 +15267,8 @@
             },
             {
                 "name": "The Adventures of Ichabod and Mr Toad - Ichabod Crane Song (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -14609,7 +15288,7 @@
             },
             {
                 "name": "The Adventures of Ichabod and Mr Toad - The Headless Horseman Chases Ichabod - Ending Scene (Eu Portuguese).mp3",
-                "count": 2,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
@@ -14684,8 +15363,8 @@
             },
             {
                 "name": "The Aristocats - Ev'rybody Wants to Be a Cat (Original Soundtrack Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -14961,6 +15640,41 @@
                 "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "The Aristocats - Ev'rybody wants to be a cat - reprise (Eu Portuguese).mp3",
+                "count": 6,
+                "difficulty": 83.33333333333334,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Aristocats - Ev'rybody wants to be a cat (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 66.66666666666666,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Aristocats - Scales and arpeggios (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Aristocats - The Aristocats - main title (Eu Portuguese).mp3",
+                "count": 7,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Aristocats - Thomas O'Malley cat (Eu Portuguese).mp3",
+                "count": 4,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -14969,8 +15683,8 @@
         "musics": [
             {
                 "name": "The Black Cauldron - A Trade (Pt. I, Pt. II, Alternate).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15032,8 +15746,8 @@
             },
             {
                 "name": "The Black Cauldron - End Credits.mp3",
-                "count": 33,
-                "difficulty": 9.090909090909092,
+                "count": 46,
+                "difficulty": 17.391304347826082,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -15088,8 +15802,8 @@
             },
             {
                 "name": "The Black Cauldron - Gypsy Dance.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15338,8 +16052,8 @@
             },
             {
                 "name": "The Emperor's New Groove - 14 Course poursuite.mp3",
-                "count": 8,
-                "difficulty": 25.0,
+                "count": 16,
+                "difficulty": 31.25,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -15422,8 +16136,8 @@
             },
             {
                 "name": "The Emperor's New Groove - Tom Jones - A Perfect World [BONUS].mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15455,8 +16169,8 @@
             },
             {
                 "name": "The Fox And The Hound - A New Home.mp3",
-                "count": 2,
-                "difficulty": 0.0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15464,7 +16178,7 @@
                 "name": "The Fox And The Hound - Appreciate The Lady.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
@@ -15478,13 +16192,13 @@
                 "name": "The Fox And The Hound - Best Of Friends.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "The Fox And The Hound - Big Mama.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 9,
+                "difficulty": 22.22222222222222,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15497,8 +16211,8 @@
             },
             {
                 "name": "The Fox And The Hound - Farewell.mp3",
-                "count": 35,
-                "difficulty": 28.571428571428566,
+                "count": 40,
+                "difficulty": 27.499999999999996,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -15527,7 +16241,7 @@
                 "name": "The Fox And The Hound - Goodbyes May Seem Forever.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
@@ -15539,8 +16253,8 @@
             },
             {
                 "name": "The Fox And The Hound - Main Title.mp3",
-                "count": 7,
-                "difficulty": 14.285714285714285,
+                "count": 8,
+                "difficulty": 12.5,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15609,8 +16323,8 @@
             },
             {
                 "name": "The Fox And The Hound - Thrown Out.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -15620,6 +16334,41 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "The Fox and the Hound - A Huntin' Man (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Fox and the Hound - Appreciate the Lady (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Fox and the Hound - Best of Friends (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Fox and the Hound - Goodbye May Seem Forever (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Fox and the Hound - Lack of Education (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
             }
         ]
     },
@@ -15642,8 +16391,8 @@
             },
             {
                 "name": "The Good Dinosaur - Bloodhound.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15726,8 +16475,8 @@
             },
             {
                 "name": "The Good Dinosaur - Make Your Mark.mp3",
-                "count": 24,
-                "difficulty": 20.833333333333336,
+                "count": 32,
+                "difficulty": 18.750000000000004,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -15782,8 +16531,8 @@
             },
             {
                 "name": "The Good Dinosaur - Run With the Herd.mp3",
-                "count": 6,
-                "difficulty": 16.666666666666664,
+                "count": 9,
+                "difficulty": 11.11111111111111,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15796,8 +16545,8 @@
             },
             {
                 "name": "The Good Dinosaur - Storm Chasers.mp3",
-                "count": 11,
-                "difficulty": 9.09090909090909,
+                "count": 15,
+                "difficulty": 13.333333333333334,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15824,8 +16573,8 @@
             },
             {
                 "name": "The Good Dinosaur - Unexpected Friend.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -15878,8 +16627,8 @@
             },
             {
                 "name": "The Great Mouse Detective - End Title-GoodBye So Soon.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15941,15 +16690,15 @@
             },
             {
                 "name": "The Great Mouse Detective - The Worl'd Greatest Criminal Mi.mp3",
-                "count": 3,
-                "difficulty": 33.33333333333333,
+                "count": 11,
+                "difficulty": 27.27272727272727,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "The Great Mouse Detective - Unusual foot prints.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -16002,7 +16751,7 @@
             },
             {
                 "name": "The Hunchback of Notre Dame - Draussen (From the Musical -Der Gl\u00f6ckner von Notre Dame-Remastered 2021).mp3",
-                "count": 12,
+                "count": 15,
                 "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -16044,8 +16793,8 @@
             },
             {
                 "name": "The Hunchback of Notre Dame - God Help The Outcasts (Bette Midler Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -16114,14 +16863,14 @@
             },
             {
                 "name": "The Hunchback of Notre Dame - Out There (Demo 1).mp3",
-                "count": 8,
-                "difficulty": 62.5,
+                "count": 13,
+                "difficulty": 61.53846153846154,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "The Hunchback of Notre Dame - Out There (Demo 2).mp3",
-                "count": 1,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -16170,15 +16919,15 @@
             },
             {
                 "name": "The Hunchback of Notre Dame - The Bells Of Notre Dame (Reprise).mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "The Hunchback of Notre Dame - The Bells of Notre Dame.mp3",
-                "count": 5,
-                "difficulty": 100.0,
+                "count": 10,
+                "difficulty": 90.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -16350,8 +17099,8 @@
             },
             {
                 "name": "The Incredibles - 17 - Off to Work.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -16518,8 +17267,8 @@
             },
             {
                 "name": "The Incredibles - 41 - The Incredits.mp3",
-                "count": 8,
-                "difficulty": 75.0,
+                "count": 13,
+                "difficulty": 84.61538461538461,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -16712,22 +17461,22 @@
             },
             {
                 "name": "The Incredibles 2 - 27 - Here Comes The Elastigirl - Elastigirl's Theme.mp3",
-                "count": 8,
-                "difficulty": 75.0,
-                "difficulty_defualt": "easy",
-                "lang": "en"
-            },
-            {
-                "name": "The Incredibles 2 - 28 - Chill or Be Chilled - Frozone's Theme.mp3",
                 "count": 13,
                 "difficulty": 69.23076923076923,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
+                "name": "The Incredibles 2 - 28 - Chill or Be Chilled - Frozone's Theme.mp3",
+                "count": 18,
+                "difficulty": 55.55555555555556,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
                 "name": "The Incredibles 2 - 29 - Pow! Pow! Pow! - Mr - Incredible's Theme.mp3",
-                "count": 8,
-                "difficulty": 75.0,
+                "count": 14,
+                "difficulty": 78.57142857142858,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -16913,8 +17662,8 @@
             },
             {
                 "name": "The Jungle Book - Trust In Me (The Python's Song).mp3",
-                "count": 6,
-                "difficulty": 50.0,
+                "count": 9,
+                "difficulty": 44.44444444444444,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -16924,6 +17673,69 @@
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
+            },
+            {
+                "name": "The Jungle Book - Colonel Hathi's march (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - Colonel Hati's march - reprise (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - I Wan'na Be Like You (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - My own home (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - That's what friends are for (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - The bare necessities - finale (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - The bare necessities - reprise (Eu Portuguese).mp3",
+                "count": 5,
+                "difficulty": 80.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - The bare necessities (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Jungle Book - Trust in me (Eu Portuguese).mp3",
+                "count": 8,
+                "difficulty": 87.5,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -17044,8 +17856,8 @@
             },
             {
                 "name": "The Lion King - Kings Of The Past.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -17107,8 +17919,8 @@
             },
             {
                 "name": "The Lion King - The Rightful King Score Demo.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -17160,6 +17972,83 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "The Lion King - Be Prepared (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - Can You Feel the Love Tonight (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - Circle of Life - Ending Scene (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - Circle of Life (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - Hakuna Matata (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - Hula Song (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - I Just Can't Wait to Be King (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - Remember Who You Are (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - The Lion Sleeps Tonight (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - The Morning Report (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Lion King - Zazu Sings to Scar (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
             }
         ]
     },
@@ -17191,7 +18080,7 @@
                 "name": "The Little Mermaid - Daughters of Triton.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
@@ -17212,7 +18101,7 @@
                 "name": "The Little Mermaid - Fathoms Below.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
@@ -17294,15 +18183,15 @@
             },
             {
                 "name": "The Little Mermaid - Part of Your World (Reprise) - Ursula Plots.mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "The Little Mermaid - Part of Your World.mp3",
-                "count": 16,
-                "difficulty": 87.5,
+                "count": 21,
+                "difficulty": 80.95238095238095,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -17389,6 +18278,83 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "The Little Mermaid - Daughters of Triton (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Fathoms Below - Opening Scene (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Kiss the Girl (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Les Poissons (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Part of your world - Ending Scene (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Part of Your World - Reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Part of Your World (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Poor Unfortunate Souls - Part 1 (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Poor Unfortunate Souls - Part 2 (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Under the Sea (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Little Mermaid - Vanessa's Song (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
             }
         ]
     },
@@ -17397,8 +18363,8 @@
         "musics": [
             {
                 "name": "The Many Adventures of Winnie the Pooh 1 - Introduction Theme.mp3",
-                "count": 19,
-                "difficulty": 63.1578947368421,
+                "count": 24,
+                "difficulty": 62.5,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -17486,7 +18452,7 @@
         "musics": [
             {
                 "name": "The Princess and the Frog - Almost There.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -17598,8 +18564,8 @@
             },
             {
                 "name": "The Princess and the Frog - When We're Human.mp3",
-                "count": 7,
-                "difficulty": 57.14285714285714,
+                "count": 12,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -17610,8 +18576,8 @@
         "musics": [
             {
                 "name": "The Rescuers - A MDifficult Decision.mp3",
-                "count": 9,
-                "difficulty": 55.55555555555556,
+                "count": 14,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -17652,8 +18618,8 @@
             },
             {
                 "name": "The Rescuers - Faster, Evinrude, Faster!.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -17729,8 +18695,8 @@
             },
             {
                 "name": "The Rescuers - Rescue Aid Society.mp3",
-                "count": 24,
-                "difficulty": 79.16666666666666,
+                "count": 27,
+                "difficulty": 77.77777777777777,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -17799,8 +18765,8 @@
             },
             {
                 "name": "The Rescuers - Tomorrow Is Another Day.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -17965,8 +18931,8 @@
             },
             {
                 "name": "The Rescuers Down Under - Message Montage.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -18021,8 +18987,8 @@
             },
             {
                 "name": "The Rescuers Down Under - Wilbur Takes Off.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             }
@@ -18226,6 +19192,69 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "The Sword in the Stone - A most befuddling thing (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - Blue oak tree (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - Ending (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - Higitus Figitus (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 0.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - Mad Madam Mim (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - Rubity, scrubity, sweepity (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - That's what makes the world go round - reprise (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - That's what makes the world go round (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "The Sword in the Stone - The legend of the sword in the stone (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -18255,8 +19284,8 @@
             },
             {
                 "name": "The Three Caballeros - Ba\u00eda (orchestra only).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -18332,8 +19361,8 @@
             },
             {
                 "name": "The Three Caballeros - Joe Carioca.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 42.857142857142854,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -18402,15 +19431,15 @@
             },
             {
                 "name": "The Three Caballeros - Pandeiro & Flute.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "The Three Caballeros - Song of the Aracuan.mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 8,
+                "difficulty": 37.5,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -18437,8 +19466,8 @@
             },
             {
                 "name": "The Three Caballeros - The Lilongo - Tr\u00edo Calaveras.mp3",
-                "count": 4,
-                "difficulty": 75.0,
+                "count": 9,
+                "difficulty": 55.55555555555556,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -18582,8 +19611,8 @@
             },
             {
                 "name": "Toy Story - Opening & You\u2019ve Got a Friend in Me.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -18673,8 +19702,8 @@
             },
             {
                 "name": "Toy Story - Strange Things (Instrumental).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -18687,8 +19716,8 @@
             },
             {
                 "name": "Toy Story - Strange Things.mp3",
-                "count": 13,
-                "difficulty": 23.076923076923077,
+                "count": 18,
+                "difficulty": 22.22222222222222,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -18799,8 +19828,8 @@
             },
             {
                 "name": "Toy Story - You've Got a Friend in Me.mp3",
-                "count": 17,
-                "difficulty": 58.82352941176471,
+                "count": 22,
+                "difficulty": 54.545454545454554,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -18866,6 +19895,34 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "Toy Story - I Will Go Sailing No More (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Toy Story - Strange Things (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Toy Story - You've Got a Friend in Me - End Credits (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Toy Story - You've Got a Friend in Me (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -18916,8 +19973,8 @@
             },
             {
                 "name": "Toy Story 2 - Let's Save Woody.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -18993,8 +20050,8 @@
             },
             {
                 "name": "Toy Story 2 - When She Loved Me.mp3",
-                "count": 11,
-                "difficulty": 81.81818181818183,
+                "count": 14,
+                "difficulty": 85.71428571428574,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -19021,8 +20078,8 @@
             },
             {
                 "name": "Toy Story 2 - Woody's Roundup.mp3",
-                "count": 1,
-                "difficulty": 0.0,
+                "count": 4,
+                "difficulty": 75.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -19042,8 +20099,8 @@
             },
             {
                 "name": "Toy Story 2 - Zurg's Planet.mp3",
-                "count": 5,
-                "difficulty": 20.0,
+                "count": 6,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             }
@@ -19264,8 +20321,8 @@
             },
             {
                 "name": "Toy Story 3 - Lotso.mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 11,
+                "difficulty": 36.36363636363637,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -19425,8 +20482,8 @@
             },
             {
                 "name": "Toy Story 3 - The Claw.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -19467,8 +20524,8 @@
             },
             {
                 "name": "Toy Story 3 - Venga Conmigo.mp3",
-                "count": 3,
-                "difficulty": 33.33333333333333,
+                "count": 8,
+                "difficulty": 25.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -19682,8 +20739,8 @@
             },
             {
                 "name": "Toy Story 4 - The Ballad of the Lonesome Cowboy.mp3",
-                "count": 12,
-                "difficulty": 75.00000000000001,
+                "count": 17,
+                "difficulty": 76.47058823529413,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -19717,10 +20774,24 @@
             },
             {
                 "name": "Toy Story 4 - You've Got a Friend in Me.mp3",
-                "count": 11,
+                "count": 17,
                 "difficulty": 0.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
+            },
+            {
+                "name": "Toy Story 4 - I Can't Let You Throw Yourself Away (Eu Portuguese).mp3",
+                "count": 3,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Toy Story 4 - You've Got a Friend in Me (Eu Portuguese).mp3",
+                "count": 1,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -19729,8 +20800,8 @@
         "musics": [
             {
                 "name": "Treasure Planet - 01 - Prologue.mp3",
-                "count": 9,
-                "difficulty": 0.0,
+                "count": 10,
+                "difficulty": 10.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -20002,15 +21073,15 @@
             },
             {
                 "name": "Treasure Planet - I'm Still Here.mp3",
-                "count": 14,
-                "difficulty": 78.57142857142858,
+                "count": 17,
+                "difficulty": 76.47058823529413,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Treasure Planet - 12 Years Later.mp3",
-                "count": 21,
-                "difficulty": 23.809523809523807,
+                "count": 29,
+                "difficulty": 31.03448275862069,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -20119,8 +21190,8 @@
             },
             {
                 "name": "Turning Red - Never Again Dream.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -20231,8 +21302,8 @@
             },
             {
                 "name": "Turning Red - U Know What's Up (The Panda Hustle Version).mp3",
-                "count": 14,
-                "difficulty": 92.85714285714286,
+                "count": 19,
+                "difficulty": 84.21052631578947,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -20264,8 +21335,8 @@
             },
             {
                 "name": "Up - 02 - Up with Titles.mp3",
-                "count": 21,
-                "difficulty": 61.90476190476192,
+                "count": 26,
+                "difficulty": 57.6923076923077,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -20299,8 +21370,8 @@
             },
             {
                 "name": "Up - 07 - Married Life.mp3",
-                "count": 3,
-                "difficulty": 66.66666666666666,
+                "count": 8,
+                "difficulty": 62.5,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -20488,8 +21559,8 @@
             },
             {
                 "name": "Up - 34 - Spirit of Adventure Tour.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -20801,8 +21872,8 @@
             },
             {
                 "name": "WALL-E - First Date.mp3",
-                "count": 9,
-                "difficulty": 88.88888888888889,
+                "count": 14,
+                "difficulty": 71.42857142857143,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -21079,15 +22150,15 @@
             },
             {
                 "name": "Winnie the Pooh - Everything is Honey.mp3",
-                "count": 3,
-                "difficulty": 33.33333333333333,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
             {
                 "name": "Winnie the Pooh - Get You Tiggerized!.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -21156,8 +22227,8 @@
             },
             {
                 "name": "Winnie the Pooh - The Tummy Song.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -21181,6 +22252,69 @@
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - A very important thing to do (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - Everything is honey (Eu Portuguese).mp3",
+                "count": 2,
+                "difficulty": 100.0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - It's gonna be great (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - The Backson song (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - The tummy song (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - The winner song (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - The winner song - Everything is honey - finale (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - The wonderful thing about tiggers (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Winnie the Pooh (2011) - Winnie the Pooh (Eu Portuguese).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
             }
         ]
     },
@@ -21238,8 +22372,8 @@
             },
             {
                 "name": "Wish - A Wish Worth Making \u2013 Julia Michaels.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -21254,14 +22388,14 @@
                 "name": "Wish - At All Costs (Demo) \u2013 Benjamin Rice & Julia Michaels.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Wish - At All Costs (Instrumental) \u2013 Julia Michaels & Benjamin Rice.mp3",
                 "count": 0,
                 "difficulty": 0,
-                "difficulty_defualt": "hard",
+                "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
@@ -21553,8 +22687,8 @@
             },
             {
                 "name": "Wish - Bem-vindo a Rosas (Portuguese European).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -21567,8 +22701,8 @@
             },
             {
                 "name": "Wish - Desejo (Portuguese European).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 4,
+                "difficulty": 75.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -21581,8 +22715,8 @@
             },
             {
                 "name": "Wish - O Que Hoje Sabemos (Portuguese European).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -21663,8 +22797,8 @@
             },
             {
                 "name": "Wreck-It Ralph - Life In The Arcade.mp3",
-                "count": 6,
-                "difficulty": 66.66666666666666,
+                "count": 7,
+                "difficulty": 71.42857142857143,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -21698,8 +22832,8 @@
             },
             {
                 "name": "Wreck-It Ralph - Royal Raceway.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 5,
+                "difficulty": 20.0,
                 "difficulty_defualt": "hard",
                 "lang": "en"
             },
@@ -21733,15 +22867,15 @@
             },
             {
                 "name": "Wreck-It Ralph - Vanellope's Hideout.mp3",
-                "count": 5,
-                "difficulty": 20.0,
+                "count": 9,
+                "difficulty": 11.11111111111111,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "Wreck-It Ralph - When Can I See You Again (From Wreck-It RalphSoundtrack Version).mp3",
-                "count": 12,
-                "difficulty": 66.66666666666666,
+                "count": 17,
+                "difficulty": 58.82352941176471,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -21775,8 +22909,8 @@
             },
             {
                 "name": "Wreck-It Ralph - Rihanna - Shut Up And Drive.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 7,
+                "difficulty": 57.14285714285714,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             }
@@ -21787,8 +22921,8 @@
         "musics": [
             {
                 "name": "Zootopia - 01 - Shakira - Try Everything.mp3",
-                "count": 7,
-                "difficulty": 71.42857142857143,
+                "count": 10,
+                "difficulty": 80.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -21808,8 +22942,8 @@
             },
             {
                 "name": "Zootopia - 04 - Ticket To Write.mp3",
-                "count": 9,
-                "difficulty": 44.44444444444444,
+                "count": 17,
+                "difficulty": 47.05882352941176,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -21857,8 +22991,8 @@
             },
             {
                 "name": "Zootopia - 11 - Work Slowly and Carry a Big Shtick.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },

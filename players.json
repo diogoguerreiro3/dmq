@@ -2,12 +2,7 @@
     {
         "ip": "192.168.1.2",
         "username": "Narutoshi",
-        "points": 1226
-    },
-    {
-        "ip": "192.168.1.213",
-        "username": "Narutoshi3",
-        "points": 0
+        "points": 1550
     },
     {
         "ip": "81.193.187.59",
@@ -17,12 +12,12 @@
     {
         "ip": "77.54.205.198",
         "username": "Pombo",
-        "points": 638
+        "points": 843
     },
     {
         "ip": "85.139.224.28",
         "username": "shrek \u00e9 melhor",
-        "points": 22
+        "points": 31
     },
     {
         "ip": "79.168.39.130",
@@ -37,7 +32,7 @@
     {
         "ip": "148.63.8.184",
         "username": "Tomas",
-        "points": 78
+        "points": 120
     },
     {
         "ip": "109.48.106.179",
@@ -45,9 +40,9 @@
         "points": 46
     },
     {
-        "ip": "192.168.1.180",
+        "ip": "192.168.1.6",
         "username": "Shizuka",
-        "points": 0
+        "points": 2
     },
     {
         "ip": "127.0.0.1",
@@ -67,26 +62,31 @@
     {
         "ip": "85.246.182.193",
         "username": "sephas",
-        "points": 35
-    },
-    {
-        "ip": "192.168.1.232",
-        "username": "Pixel 7",
-        "points": 2
+        "points": 86
     },
     {
         "ip": "89.115.123.95",
         "username": "CyanideSB",
-        "points": 45
+        "points": 62
     },
     {
         "ip": "85.240.107.64",
         "username": "Manel",
-        "points": 30
+        "points": 80
     },
     {
         "ip": "85.240.182.147",
         "username": "Mulan is overrated",
         "points": 4
+    },
+    {
+        "ip": "192.168.1.1",
+        "username": "Router",
+        "points": 0
+    },
+    {
+        "ip": "89.180.170.13",
+        "username": "NOS",
+        "points": 1
     }
 ]
