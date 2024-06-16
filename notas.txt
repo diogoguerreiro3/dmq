@@ -4,6 +4,7 @@
 . mudar os buttons todos para type button
 . juntar musicas com a mesma melodia com filmes diferentes por exmeplo toy story e toy story 4
 . opção no menu de fazer de certas datas a certas datas
+. bloquear a caixa antes da musica acabar
 
 Musicas:
 . implementar os nomes em portugues também

@@ -8,7 +8,7 @@ from pydub import AudioSegment
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-verbose = False
+verbose = True
 
 path_to_music = "./music/"
 movies = [movie for movie in os.listdir(path_to_music) if os.path.isdir(os.path.join(path_to_music, movie))]
@@ -30,9 +30,10 @@ movies_filter = []
 finish_filter = False
 
 current_random_time = 0
-initial_waiting_duration = 10
+initial_waiting_duration = 3
 waiting_duration = 7
-song_duration = 20
+song_duration = 10
+music_silence_duration = 8
 number_of_songs = 20
 
 default_mode = percentage_mode = easy = medium = hard = percentage_mode_custom = percentage_mode_range = english = portuguese = duplicate = None
@@ -216,9 +217,12 @@ def main_room_thread():
         if current_random_music == "":
             break
         socketio.emit('music_content', '{"current_difficulty" : "", "current_default_difficulty" : ""}', broadcast=True)
-        for i in range(song_duration+1,0,-1):
+        for i in range(song_duration,0,-1):
             current_time = current_random_time + song_duration - i
-            socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
+            if song_duration - (current_time - current_random_time) <= music_silence_duration:
+                socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
+            else:
+                socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
             socketio.emit('title_refresh', f"[{n}] Listen Carefully! ({i})", broadcast=True)
             time.sleep(1)
             if verbose:
@@ -644,9 +648,5 @@ if __name__ == '__main__':
     #add_language_music()
     if verbose: 
         socketio.run(app, port=44444, host='0.0.0.0', debug=True)
-
-
-
-
     else:
         socketio.run(app, port=44444, host='0.0.0.0', debug=False)

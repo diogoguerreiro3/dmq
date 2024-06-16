@@ -2,7 +2,7 @@
     {
         "ip": "192.168.1.2",
         "username": "Narutoshi",
-        "points": 1550
+        "points": 1939
     },
     {
         "ip": "81.193.187.59",
@@ -12,12 +12,12 @@
     {
         "ip": "77.54.205.198",
         "username": "Pombo",
-        "points": 843
+        "points": 904
     },
     {
         "ip": "85.139.224.28",
         "username": "shrek \u00e9 melhor",
-        "points": 31
+        "points": 43
     },
     {
         "ip": "79.168.39.130",
@@ -32,7 +32,7 @@
     {
         "ip": "148.63.8.184",
         "username": "Tomas",
-        "points": 120
+        "points": 135
     },
     {
         "ip": "109.48.106.179",
@@ -50,9 +50,9 @@
         "points": 0
     },
     {
-        "ip": "37.189.45.103",
+        "ip": "185.142.131.144",
         "username": "Joca",
-        "points": 39
+        "points": 56
     },
     {
         "ip": "31.22.163.18",
@@ -62,12 +62,12 @@
     {
         "ip": "85.246.182.193",
         "username": "sephas",
-        "points": 86
+        "points": 93
     },
     {
         "ip": "89.115.123.95",
         "username": "CyanideSB",
-        "points": 62
+        "points": 149
     },
     {
         "ip": "85.240.107.64",
@@ -88,5 +88,15 @@
         "ip": "89.180.170.13",
         "username": "NOS",
         "points": 1
+    },
+    {
+        "ip": "185.142.131.150",
+        "username": "Avo",
+        "points": 20
+    },
+    {
+        "ip": "85.244.209.214",
+        "username": "Narutoshi Chin\u00eas ",
+        "points": 3
     }
 ]

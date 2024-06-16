@@ -212,12 +212,12 @@
         document.getElementById("form_reply").addEventListener("submit", function (event) {
             // if (event.submitter.type === "submit" && event.submitter.innerHTML === "Reply" && sound.playing()) {
             //     if(sound.playing()) {
-            if (event.submitter.type === "submit" && event.submitter.innerHTML === "Reply" && !audio_player.paused) {
-                if(!audio_player.paused) {
-                    event.preventDefault(); // Prevent the default form redirection
-                    var formulario = new FormData(this);
-                    socket.emit('/send_movie', this.elements["input"].value);
-                }
+            if (event.submitter.type === "submit" && 
+                event.submitter.innerHTML === "Reply" && 
+                audio_info.innerHTML.includes("Listen Carefully")) {
+                event.preventDefault(); // Prevent the default form redirection
+                var formulario = new FormData(this);
+                socket.emit('/send_movie', this.elements["input"].value);
             } else {
                 event.preventDefault();
                 return false;
