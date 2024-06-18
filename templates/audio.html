@@ -136,7 +136,7 @@
             sugestions.innerHTML = ""; // Clean the list
 
             // AJAX to get the list of word of server
-            fetch('/get_movies')
+            fetch('/get_movies_with_alternatives')
                 .then(function(response) {
                     return response.json();
                 })

@@ -4,6 +4,7 @@ from googleapiclient.discovery import build
 import random, requests, re, os, threading, time, json, threading, copy
 from flask_socketio import SocketIO
 from pydub import AudioSegment
+import chardet
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -29,11 +30,14 @@ current_random_movie = "Snow White and the Seven Dwarfs"
 movies_filter = []
 finish_filter = False
 
+alternatives_movies = {}
+movies_with_alternatives = []
+
 current_random_time = 0
 initial_waiting_duration = 3
 waiting_duration = 7
-song_duration = 10
-music_silence_duration = 8
+song_duration = 20
+music_silence_duration = 0
 number_of_songs = 20
 
 default_mode = percentage_mode = easy = medium = hard = percentage_mode_custom = percentage_mode_range = english = portuguese = duplicate = None
@@ -47,17 +51,16 @@ players_ready = []
 
 
 
-
 ### Auxiliar Functions ###
 
 def update_playersdb():
     global all_players
-    with open(player_json_filename, 'r') as playersdb:
+    with open(player_json_filename, 'r', encoding='utf-8') as playersdb:
         players = json.load(playersdb)
     all_players = players
 
 def verify_player_exists(way="", input=""):
-    with open(player_json_filename, 'r') as playersdb:
+    with open(player_json_filename, 'r', encoding='utf-8') as playersdb:
         players = json.load(playersdb)
         if(len(players) > 0):
             for player in players:
@@ -66,23 +69,23 @@ def verify_player_exists(way="", input=""):
                 
 def create_player(ip, username):
     player_data = {"ip" : ip, "username" : username, "points" : 0}
-    with open(player_json_filename, 'r') as playersdb:
+    with open(player_json_filename, 'r', encoding='utf-8') as playersdb:
         current_data = json.load(playersdb)
         current_data.append(player_data)
-    with open(player_json_filename, 'w') as playersdb:
+    with open(player_json_filename, 'w', encoding='utf-8') as playersdb:
         json.dump(current_data, playersdb, indent=4)
     return player_data
 
 def add_points_player():
     global current_replys_and_points_room
-    with open(player_json_filename, 'r') as playersdbread:
+    with open(player_json_filename, 'r', encoding='utf-8') as playersdbread:
         players = json.load(playersdbread)
         if(len(players) > 0):
             for player in players:
                 for reply in current_replys_and_points_room:
                     if reply["username"] == player["username"]:
                         player["points"] += reply["points"]
-    with open(player_json_filename, 'w') as playersdbwrite:            
+    with open(player_json_filename, 'w', encoding='utf-8') as playersdbwrite:            
         json.dump(players, playersdbwrite, indent=4)
 
 
@@ -134,14 +137,14 @@ def lobby():
     ip = request.remote_addr
     player = verify_player_exists("ip", ip)
     if player is None or player["username"] not in currents_players: return redirect(url_for('index'))
-    return render_template("lobby.html", movies=movies)
+    return render_template("lobby.html", movies=alternatives_movies)
 
 @app.route("/lobby/<msg>")
 def lobby_msg(msg):
     ip = request.remote_addr
     player = verify_player_exists("ip", ip)
     if player is None or player["username"] not in currents_players: return redirect(url_for('index'))
-    return render_template("lobby.html", movies=movies)
+    return render_template("lobby.html", movies=alternatives_movies)
 
 
 
@@ -263,7 +266,7 @@ def filter_all_movies():
     global movies_filter, finish_filter, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, current_percentage_range
     movies_filter = []
     finish_filter = False
-    with open(musics_json_filename, 'r') as musicdb:
+    with open(musics_json_filename, 'r', encoding='utf-8') as musicdb:
         music_data = json.load(musicdb)
     for key_movie, value_movie in enumerate(music_data):
         movie_group = (value_movie["movie"], [])
@@ -287,22 +290,6 @@ def filter_all_movies():
                 else:
                     if value_data_music["difficulty"] >= current_percentage_range[0] and value_data_music["difficulty"] <= current_percentage_range[1] and isMusicLang(value_data_music):
                         movie_group[1].append(value_data_music["name"])
-
-        # for key_data_music, value_data_music in enumerate(current_data_movie_musics):
-        #     if isMusicLang(value_data_music): #and get_song_duration(value_movie["movie"], value_data_music["name"]) >= song_duration:
-        #         if default_mode and (\
-        #             (easy == "on" and value_data_music["difficulty_defualt"] == "easy") or \
-        #             (medium == "on" and value_data_music["difficulty_defualt"] == "medium") or \
-        #             (hard == "on" and value_data_music["difficulty_defualt"] == "hard")):
-        #             movie_group[1].append(value_data_music["name"])
-        #         elif percentage_mode_custom and (\
-        #             (easy == "on" and value_data_music["difficulty"] >= 75) or \
-        #             (medium == "on" and value_data_music["difficulty"] > 35 and value_data_music["difficulty"] < 75) or \
-        #             (hard == "on" and value_data_music["difficulty"] <= 35)):
-        #             movie_group[1].append(value_data_music["name"])
-        #         elif value_data_music["difficulty"] >= current_percentage_range[0] and \
-        #             value_data_music["difficulty"] <= current_percentage_range[1]:
-        #             movie_group[1].append(value_data_music["name"])
         if len(movie_group[1]) > 0:
             movies_filter.append(movie_group)
     finish_filter = True
@@ -393,14 +380,39 @@ def clean_points():
         current_replys_and_points_room.append({"username" : player, "movie" : "", "correct" : "", "points" : 0, "skip" : False})   
 
 def verify_replys():
-    global current_replys_and_points_room, current_random_movie
+    global current_replys_and_points_room, current_random_movie, alternatives_movies
     for reply in current_replys_and_points_room:
         print(f"{reply['username']} reply {reply['movie']} on {current_random_movie} song")
-        if reply["movie"].lower() == current_random_movie.lower():
+        if reply["movie"].lower() == current_random_movie.lower() or reply["movie"].lower() in [string.lower() for string in alternatives_movies[current_random_movie]]:
             reply["correct"] = "true"
             update_player_point(reply["username"])
         else:
             reply["correct"] = "false"
+
+def set_alternatives_movies():
+    global alternatives_movies
+
+    with open(musics_json_filename, 'rb') as musicdb:
+        music_data = json.loads(musicdb.read().decode('utf-8'))
+
+    for key_movie, value_movie in enumerate(music_data):
+        if "alternative_names" in value_movie:
+            alternatives_movies[value_movie["movie"]] = value_movie["alternative_names"]
+        else:
+            alternatives_movies[value_movie["movie"]] = []
+        print(alternatives_movies[value_movie["movie"]])
+    if verbose:
+        print(f"Alternatives Movies: {alternatives_movies}")
+
+def set_movies_with_alternatives():
+    global alternatives_movies, movies_with_alternatives
+    for movie in alternatives_movies:
+        movies_with_alternatives.append(movie)
+        for alternative in alternatives_movies[movie]:
+            movies_with_alternatives.append(alternative)
+
+    if verbose:
+        print(f"Movies with Alternatives: {movies_with_alternatives}")
 
 def update_player_point(username):
     for player in current_replys_and_points_room:
@@ -424,7 +436,7 @@ def get_players_in_game():
 def calculate_difficulty():
     global current_random_movie, current_random_music_name, current_replys_and_points_room, current_difficulty, current_default_difficulty, current_count
 
-    with open(musics_json_filename, 'r') as musicdb:
+    with open(musics_json_filename, 'r', encoding='utf-8') as musicdb:
         current_data = json.load(musicdb)
 
     for key_movie, value_movie in enumerate(current_data):
@@ -451,7 +463,7 @@ def calculate_difficulty():
                     current_default_difficulty = current_data[key_movie]["musics"][key_music]["difficulty_defualt"]
                     current_count = current_data[key_movie]["musics"][key_music]["count"]
 
-    with open(musics_json_filename, 'w') as musicdb:
+    with open(musics_json_filename, 'w', encoding='utf-8') as musicdb:
         json.dump(current_data, musicdb, indent=4)
 
 def create_music_json():
@@ -465,11 +477,11 @@ def create_music_json():
         movie_json = {"movie" : movie, "musics" : musics_json}
         data.append(movie_json)
 
-    with open("_musics.json", 'w') as musicsdb:
+    with open("_musics.json", 'w', encoding='utf-8') as musicsdb:
         json.dump(data, musicsdb, indent=4)
 
 def add_language_music():
-    with open(musics_json_filename, 'r') as musicdb:
+    with open(musics_json_filename, 'r', encoding='utf-8') as musicdb:
         music_data = json.load(musicdb)
     for key_movie, value_movie in enumerate(music_data):
         movie_group = (value_movie["movie"], [])
@@ -477,7 +489,7 @@ def add_language_music():
         for key_data_music, value_data_music in enumerate(current_data_movie_musics):
             value_data_music["lang"] = "en"          
 
-    with open("_musics.json", 'w') as musicsdb:
+    with open("_musics.json", 'w', encoding='utf-8') as musicsdb:
         json.dump(music_data, musicsdb, indent=4)
 
 
@@ -595,6 +607,11 @@ def get_movies():
     global movies
     return movies
 
+@app.route('/get_movies_with_alternatives', methods=['GET'])
+def get_movies_with_alternatives():
+    global movies_with_alternatives
+    return movies_with_alternatives
+
 @app.route('/get_replys_and_points')
 def get_replys():
     global current_replys_and_points_room
@@ -646,6 +663,9 @@ def return_lobby():
 if __name__ == '__main__':
     #create_music_json()
     #add_language_music()
+    set_alternatives_movies()
+    set_movies_with_alternatives()
+
     if verbose: 
         socketio.run(app, port=44444, host='0.0.0.0', debug=True)
     else:
