@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>DMQ</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/normalize.js@latest"></script>
 </head>
 <body>
     <div>
@@ -11,10 +14,20 @@
         <!-- 286x430 266x400 400x600 600x900 -->
         <img id="song_img" src="" width="300" height="450" style="display: none">
         <h3 id="difficulty_text"></h3>
-        <audio id="audio-player" style="display: none;" controls>
+        <!-- <audio id="audio-player" style="display: none;" controls>
             <source id="audio-src" src="{{ url_for('play') }}" type="audio/mpeg">
             Your browser doesn't support this audio tag.
+        </audio> -->
+
+        <audio id="player" style="display: none" hidden>
+            <source src="{{ url_for('play') }}" type="audio/mpeg">
         </audio>
+        <style>
+            .plyr--audio .plyr__controls {
+                display: none;
+            }
+        </style>
+
         <input id="button_listen" type="button" class="btn_green" style="margin-bottom: 30px; width: auto" value="Click to Listen!!!">
         <div id="volume-control" class="container">
             <label for="volume-slider">Volume Control:</label>
@@ -45,7 +58,7 @@
         var socket = io.connect('http://' + document.domain + ':' + location.port);
 
         var audio_info = document.getElementById('audio_info');
-        var audio_player = document.getElementById('audio-player');
+        // var audio_player = document.getElementById('audio-player');
         var volume_slider = document.getElementById('volume-slider');
         var reply_text = document.getElementById("reply_text");
         var sugestions = document.getElementById("sugestions");
@@ -83,27 +96,103 @@
         };
 
 
-        /* Event for when the server tell to client to play music  */
+        /* Player of audio */
+        const player = new Plyr('#player', {
+            hideControls: true,
+        });
         volume_slider.value = 0.5;
+        // audio_player.volume = volume_slider.value;
+
+        player.on('ready', () => {
+            player.volume = volume_slider.value;
+        });
+
+        // EXPERIENCIA 1
         // var audio_volume = volume_slider.value;
         // var sound = new Howl({
         //     src: [window.location.origin + '/play'],
         //     format: ['mp3'],
         //     volume: audio_volume,
         // });
+
+
+        /* Normalize */
+        // const normalizer = normalizer = new Normalize({ targetLevel: -12 }); // Normalize to -12 dBFS
+        const audioCtx = new AudioContext();
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.value = 0.5;
+        
+
+        /* Event for when the server tell to client to play music  */
         socket.on('audio_play', function(data) {
             var data_json = JSON.parse(data);
-            if(audio_player.paused && data_json.command === 'play') {
-                audio_player.load();
-                audio_player.currentTime = data_json.time;
-                audio_player.play();
+            
+            // ATUAL
+            // if(audio_player.paused && data_json.command === 'play') {
+            //     audio_player.load();
+            //     audio_player.currentTime = data_json.time;
+            //     audio_player.play();
+            //     reply_text.value = "";
+            // } else if (!audio_player.paused && data_json.command === 'pause') {
+            //     audio_player.pause();
+            // }
+
+            if(player.paused && data_json.command === 'play') {
+                
+                fetch('/current_music')
+                .then(response => response.json())
+                .then(data => {
+                    const musicFileUrl = data.url;
+
+                    // const normalizedData = undefined;
+                    // fetch(musicFileUrl)
+                    // .then(response => response.arrayBuffer()) // Convert response to ArrayBuffer
+                    // .then(arrayBuffer => {
+                    //     // normalizedData = normalizer.process(arrayBuffer); // Normalize audio data
+                        
+                    //     audioCtx.decodeAudioData(arrayBuffer)
+                    //     .then(audioBuffer => {
+                    //         const source = audioCtx.createBufferSource();
+                    //         source.buffer = audioBuffer;
+                    //         source.connect(gainNode);
+                    //         gainNode.connect(audioCtx.destination);
+                    //     })
+                    //     .catch(error => {
+                    //         console.error('Error decoding audio:', error);
+                    //     });
+                        
+                    // })
+                    // .catch(error => {
+                    //     console.error('Error fetching audio:', error);
+                    // });
+
+                    player.source = {
+                        type: 'audio',
+                        title: 'current_music',
+                        sources: [
+                            {
+                                src: musicFileUrl,
+                                // src: URL.createObjectURL(new Blob([normalizedData], { type: 'audio/mpeg' })),
+                                // src: audioCtx.destination,
+                                type: 'audio/mpeg',
+                            }
+                        ]
+                    };
+                });
+
+                player.on('loadedmetadata', () => {
+                    player.currentTime = data_json.time;
+                    player.play();
+                });
+                
                 reply_text.value = "";
-            } else if (!audio_player.paused && data_json.command === 'pause') {
-                audio_player.pause();
+            } else if (!player.paused && data_json.command === 'pause') {
+                player.pause();
             }
 
-            // var data_json = JSON.parse(data);
 
+            // EXPERIENCIA 1
+            // var data_json = JSON.parse(data);
             // if (!sound.playing() && data_json.command === 'play') {
             //     sound.unload();
             //     sound = undefined;
@@ -124,11 +213,16 @@
         
         /* Volume Control */
         volume_slider.addEventListener('input', function() {
+
+            // ATUAL
+            // audio_player.volume = volume_slider.value;
+            
+            player.volume = volume_slider.value;
+
+            // EXPERIENCIA 1
             // audio_volume = volume_slider.value;
             // sound.volume(audio_volume);
-            audio_player.volume = volume_slider.value;
         });
-        audio_player.volume = volume_slider.value;
 
         /* Autocomplete input text */
         reply_text.addEventListener("input", function() {

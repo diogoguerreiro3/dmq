@@ -543,6 +543,15 @@ def play():
     print(f"Play >> {current_random_music}")
     return send_file(current_random_music, as_attachment=False)
 
+@app.route("/music/<path:filename>")
+def m(filename):
+    return send_from_directory('music', filename)
+
+@app.route("/current_music")
+def music():
+    global current_random_music_name, current_random_movie
+    return jsonify({'url' : 'music/' + current_random_movie + "/" + current_random_music_name})
+
 @app.route("/song")
 def song():
     url = request.args.get('url')
