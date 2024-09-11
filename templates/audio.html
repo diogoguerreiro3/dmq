@@ -178,13 +178,30 @@
                             }
                         ]
                     };
+                })
+                .catch(error => {
+                    console.error('Error fetching music data:', error);
                 });
 
-                player.on('loadedmetadata', () => {
-                    player.currentTime = data_json.time;
-                    player.play();
-                });
                 
+                playSong(data_json.time);
+                
+
+                // player.on('ready', (event) => {
+                //     console.log('currentTime:', player.currentTime);
+                //     console.log('DATA TIME:', data_json.time);
+                //     // player.play();
+                //     // player.on('loadeddata', (event) => {
+                //         // player.currentTime = data_json.time;
+                //         // console.log('New currentTime ', player.currentTime);
+                //         // player.play();
+                //     // });
+                    
+                // })
+                // .catch(error => {
+                //     console.error('Error event ready of player:', error);
+                // });
+                    
                 reply_text.value = "";
             } else if (!player.paused && data_json.command === 'pause') {
                 player.pause();
@@ -210,6 +227,28 @@
             //     sound.stop();
             // }
         });
+
+        async function playSong(currentTimeOfPlayer) {
+            try {
+                if(player !== undefined) {
+                    player.on('ready', (event) => {
+                        player.play();
+                        player.on('loadeddata', (event) => {
+                            player.currentTime = parseInt(currentTimeOfPlayer);
+                        })
+                        .catch(error => {
+                            console.error('Error event loadeddata of player:', error);    
+                        });  
+                    })
+                    .catch(error => {
+                        console.error('Error event ready of player:', error);
+                    });    
+                }
+            } catch (err) {
+                console.error('Error playing song:', err);
+            }
+        }
+
         
         /* Volume Control */
         volume_slider.addEventListener('input', function() {
