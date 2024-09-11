@@ -1,8 +1,8 @@
 [
     {
-        "ip": "192.168.1.2",
+        "ip": "94.63.248.10",
         "username": "Narutoshi",
-        "points": 2060
+        "points": 2392
     },
     {
         "ip": "81.193.187.59",
@@ -12,7 +12,7 @@
     {
         "ip": "77.54.205.198",
         "username": "Pombo",
-        "points": 984
+        "points": 1110
     },
     {
         "ip": "85.139.224.28",
@@ -32,7 +32,7 @@
     {
         "ip": "148.63.8.184",
         "username": "Tomas",
-        "points": 135
+        "points": 160
     },
     {
         "ip": "109.48.106.179",
@@ -60,14 +60,14 @@
         "points": 6
     },
     {
-        "ip": "85.246.182.193",
+        "ip": "95.95.62.33",
         "username": "sephas",
-        "points": 93
+        "points": 104
     },
     {
         "ip": "89.115.123.95",
         "username": "CyanideSB",
-        "points": 180
+        "points": 193
     },
     {
         "ip": "85.240.107.64",
@@ -98,5 +98,30 @@
         "ip": "85.244.209.214",
         "username": "Narutoshi Chin\u00eas ",
         "points": 3
+    },
+    {
+        "ip": "87.196.73.173",
+        "username": "Dados ",
+        "points": 0
+    },
+    {
+        "ip": "87.196.72.188",
+        "username": "Dados 2",
+        "points": 0
+    },
+    {
+        "ip": "95.95.62.33",
+        "username": "Sephas1",
+        "points": 17
+    },
+    {
+        "ip": "104.28.245.254",
+        "username": "joaocnsousa",
+        "points": 0
+    },
+    {
+        "ip": "87.196.73.24",
+        "username": "Dados M\u00f3veis",
+        "points": 0
     }
 ]

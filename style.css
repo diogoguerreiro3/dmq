@@ -24,6 +24,7 @@ a {
     text-decoration: none;
     border-radius: 5px; /* Cantos arredondados */
     font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer;
 }
 
 /* Estilo para o botão quando passa o mouse por cima */
@@ -41,6 +42,7 @@ a {
     text-decoration: none;
     border-radius: 5px; /* Cantos arredondados */
     font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer;
 }
 
 .btn_red:hover {
@@ -57,6 +59,7 @@ a {
     text-decoration: none;
     border-radius: 5px; /* Cantos arredondados */
     font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer;
 }
 
 .btn_green:hover {
@@ -73,11 +76,29 @@ a {
     text-decoration: none;
     border-radius: 5px; /* Cantos arredondados */
     font-size: 16px; /* Tamanho da fonte */
+    cursor: not-allowed;
 }
 
 .btn_gray:hover {
     background-color: #424549; /* Cor de fundo ao passar o mouse */
     border: 1px solid #424549; /* Cor da borda ao passar o mouse */
+}
+
+.btn_yellow {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Cor de fundo */
+    border: 1px solid #ffcc00; /* Cor da borda */
+    color: #fff; /* Cor do texto */
+    text-decoration: none;
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer;
+}
+
+.btn_yellow:hover {
+    background-color: #b3a200; /* Cor de fundo ao passar o mouse */
+    border: 1px solid #b3a200; /* Cor da borda ao passar o mouse */
 }
 
 
