@@ -37,8 +37,8 @@
 
         <form id="form_reply">
             <input type="text" id="reply_text" name="input" maxlength="70" placeholder="Write the movie..." style="height: 30px;" autocomplete="off">
-            <button if="submit_button" type="submit" class="btn" style="margin-left: 10px;">Reply</button>
-            <button onclick="skip()" class="btn_gray" style="margin-left: 10px;">Skip</button>
+            <button id="submit_button" type="submit" class="btn" style="margin-left: 10px;">Reply</button>
+            <button onclick="skip()" class="btn_yellow" style="margin-left: 10px;">Skip</button>
             <ul id="sugestions"></ul>
         </form>
         <br>
@@ -249,6 +249,23 @@
             }
         }
 
+        /* Event to block the reply button */
+        socket.on('block_replies', function(data) {
+            var data_json = JSON.parse(data);
+            if(data_json.command === 'block') {
+                console.log('Block the reply button');
+                document.getElementById("submit_button").disabled = true;
+                document.getElementById("submit_button").classList.remove("btn");
+                document.getElementById("submit_button").classList.add("btn_gray");
+                block_reply = true;
+            } else if(data_json.command === 'unblock') {
+                console.log('Unblock the reply button');
+                document.getElementById("submit_button").disabled = false;
+                document.getElementById("submit_button").classList.remove("btn_gray");
+                document.getElementById("submit_button").classList.add("btn");
+                block_reply = false;
+            }
+        });
         
         /* Volume Control */
         volume_slider.addEventListener('input', function() {
@@ -274,7 +291,10 @@
                     return response.json();
                 })
                 .then(function(movies_list) {
-                    movies_list.forEach(function(movie) {
+                    // Remove duplicates
+                    var uniqueMovies = [...new Set(movies_list)];
+
+                    uniqueMovies.forEach(function(movie) {
                         if (movie.toLowerCase().indexOf(movie_texted) != -1) {
                             var item = document.createElement("li");
                             item.textContent = movie;
@@ -342,12 +362,14 @@
         });
 
         /* Send the reply movie to server */
+        var block_reply = false;
         document.getElementById("form_reply").addEventListener("submit", function (event) {
             // if (event.submitter.type === "submit" && event.submitter.innerHTML === "Reply" && sound.playing()) {
             //     if(sound.playing()) {
             if (event.submitter.type === "submit" && 
                 event.submitter.innerHTML === "Reply" && 
-                audio_info.innerHTML.includes("Listen Carefully")) {
+                audio_info.innerHTML.includes("Listen Carefully") &&
+                !block_reply) {
                 event.preventDefault(); // Prevent the default form redirection
                 var formulario = new FormData(this);
                 socket.emit('/send_movie', this.elements["input"].value);

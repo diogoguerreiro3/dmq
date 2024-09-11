@@ -80,12 +80,12 @@
             <label for="sort_count">Sort Songs by Count</label>
 
             <br><br>
-            <input class="btn" style="margin-right:10px" type="submit" value="Room">    
+            <input class="btn" style="margin-right:10px" type="submit" value="Room">
         </form>
         
         <br>
-        <a onclick="sendReadyServer()" class="btn" id="ready_btn">Ready</a>
-        <a href="{{ url_for('close') }}" class="btn_red" id="leave_btn">Leave</a>
+        <a onclick="sendReadyServer(true)" class="btn" id="ready_btn">Ready</a>
+        <a onclick="sendReadyServer(false)" class="btn_red" id="leave_btn">Leave</a>
         
         <br>
         <h1>Movies available:</h1>
@@ -250,8 +250,8 @@
             });
 
             /* Ready function to send message to the server */
-            function sendReadyServer() {
-                var msg = {user: current_user};
+            function sendReadyServer(status_input) {
+                var msg = {user: current_user, status: status_input};
 
                 fetch("/receive_ready", {method: 'POST', headers: { 'Content-Type': 'application/json'}, body: JSON.stringify(msg)})
                 .then(response => {
@@ -269,6 +269,10 @@
                 .catch(error => {
                     console.error('Error:', error);
                 });
+
+                if(!status_input) {
+                    window.location.href = "{{ url_for('close') }}";
+                }
             }
 
             /* Message listener from the server to go to room when is ready */

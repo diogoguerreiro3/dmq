@@ -675,10 +675,15 @@ def style():
 def receive_ready():
     global players_ready
     player_ready = request.json.get("user")
-    if verbose:
-        print(f"{player_ready} is ready!")
-    if player_ready not in players_ready:
+    status_ready = request.json.get("status")
+    if player_ready not in players_ready and status_ready == True:
         players_ready.append(player_ready)
+        if verbose:
+            print(f"{player_ready} is ready!")
+    elif player_ready in players_ready and status_ready == False:
+        players_ready.remove(player_ready)
+        if verbose:
+            print(f"{player_ready} is leave!")
     return jsonify({'status': 'Message receive with success'})
 
 @app.route('/return_lobby', methods=['POST'])
