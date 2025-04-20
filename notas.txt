@@ -1,10 +1,12 @@
 1.0
-. atualizar base de dados nas soundtracks
 . colocar login com coockie e token para não ter de ser só pelo ip
-. juntar musicas com a mesma melodia com filmes diferentes por exmeplo toy story e toy story 4
+    
+. Shrek
+. Surf's Up
+. Spider-Man
+. Despicable Me
 
 2.0
-. começar a colocar as sequelas
 . song history
 . Colocar um guess rating
 . opção no menu de fazer de certas datas a certas datas

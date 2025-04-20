@@ -2,7 +2,7 @@
     {
         "ip": "94.63.248.10",
         "username": "Narutoshi",
-        "points": 2393
+        "points": 2628
     },
     {
         "ip": "81.193.187.59",
@@ -12,7 +12,7 @@
     {
         "ip": "77.54.205.198",
         "username": "Pombo",
-        "points": 1110
+        "points": 1165
     },
     {
         "ip": "85.139.224.28",
@@ -32,7 +32,7 @@
     {
         "ip": "148.63.8.184",
         "username": "Tomas",
-        "points": 160
+        "points": 161
     },
     {
         "ip": "109.48.106.179",
@@ -67,7 +67,7 @@
     {
         "ip": "89.115.123.95",
         "username": "CyanideSB",
-        "points": 193
+        "points": 196
     },
     {
         "ip": "85.240.107.64",
@@ -123,5 +123,10 @@
         "ip": "87.196.73.24",
         "username": "Dados M\u00f3veis",
         "points": 0
+    },
+    {
+        "ip": "213.58.142.62",
+        "username": "Tomasfs0",
+        "points": 35
     }
 ]

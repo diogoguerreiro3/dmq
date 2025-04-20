@@ -35,13 +35,13 @@ alternatives_movies = {}
 movies_with_alternatives = []
 
 current_random_time = 0
-initial_waiting_duration = 3
+initial_waiting_duration = 7
 waiting_duration = 7
 song_duration = 20
 music_silence_duration = 0
 number_of_songs = 20
 
-default_mode = percentage_mode = easy = medium = hard = percentage_mode_custom = percentage_mode_range = english = portuguese = soundtrack = waltdisneyanimation = pixar = duplicate = None
+default_mode = percentage_mode = easy = medium = hard = percentage_mode_custom = percentage_mode_range = english = portuguese = soundtrack = waltdisneyanimation = disneytoon = pixar = sony = duplicate = None
 current_percentage_range = []
 current_difficulty = None
 current_default_difficulty = None
@@ -159,7 +159,7 @@ def room():
 
 @app.route("/room", methods=['POST'])
 def room_post():
-    global room_thread, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, percentage_mode_range, current_percentage_range, english, portuguese, soundtrack, waltdisneyanimation, pixar, duplicate, sort_count
+    global room_thread, default_mode, percentage_mode, easy, medium, hard, percentage_mode_custom, percentage_mode_range, current_percentage_range, english, portuguese, soundtrack, waltdisneyanimation, disneytoon, pixar, dreamworks, sony, duplicate, sort_count
     if room_thread is None:
         default_mode = request.form.get('default')
         percentage_mode = request.form.get('percentage')
@@ -174,11 +174,14 @@ def room_post():
         portuguese = request.form.get('portuguese')
         soundtrack = request.form.get('soundtrack')
         waltdisneyanimation = request.form.get('waltdisneyanimation')
+        disneytoon = request.form.get('disneytoon')
         pixar = request.form.get('pixar')
+        dreamworks = request.form.get('dreamworks')
+        sony = request.form.get('sony')
         duplicate = request.form.get('duplicate')
         sort_count = request.form.get('sort_count')
         if verbose:
-            print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; percentage_mode_custom: {percentage_mode_custom}; percentage_mode_range: {percentage_mode_range}; current_percentage_range: {current_percentage_range}; english: {english}; portuguese: {portuguese}; soundtrack: {soundtrack}; waltdisneyanimation: {waltdisneyanimation}; pixar: {pixar}; duplicate: {duplicate}; sort_count: {sort_count}")
+            print(f"default_mode = {default_mode}; percentage_mode = {percentage_mode}; easy = {easy}; medium = {medium}; hard = {hard}; percentage_mode_custom: {percentage_mode_custom}; percentage_mode_range: {percentage_mode_range}; current_percentage_range: {current_percentage_range}; english: {english}; portuguese: {portuguese}; soundtrack: {soundtrack}; waltdisneyanimation: {waltdisneyanimation}; disneytoon: {disneytoon}; pixar: {pixar}; dreamworks: {dreamworks}; sony: {sony}; duplicate: {duplicate}; sort_count: {sort_count}")
         
         # Validate inputs
         if default_mode is None and percentage_mode is None:
@@ -331,8 +334,12 @@ def isMusicLang(music):
     return (music["lang"] == "en" and english is not None) or (music["lang"] == "pt" and portuguese is not None) or (music["lang"] == "un" and soundtrack is not None)
 
 def isStudio(music):
-    global waltdisneyanimation, pixar
-    return (music["studio"] == "Walt Disney Animation Studios" and waltdisneyanimation is not None) or (music["studio"] == "Pixar Animation Studios" and pixar is not None)
+    global waltdisneyanimation, disneytoon, pixar, dreamworks, sony
+    return (music["studio"] == "Walt Disney Animation Studios" and waltdisneyanimation is not None) or \
+            (music["studio"] == "Pixar Animation Studios" and pixar is not None) or \
+            (music["studio"] == "DisneyToon Studios" and disneytoon is not None) or \
+            (music["studio"] == "DreamWorks Animation" and dreamworks is not None) or \
+            (music["studio"] == "Sony Pictures Animation" and sony is not None)
 
 def get_song_duration(movie, music):
     current_music_data = os.path.abspath(os.path.join(path_to_music, movie, music))
