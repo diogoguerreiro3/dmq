@@ -204,7 +204,7 @@ def room_post():
             print("Create Room Thread!")
         room_thread = threading.Thread(target=main_room_thread)
         room_thread.start()
-        socketio.emit('go_to_room', "", broadcast=True)
+        socketio.emit('go_to_room', "")
     return redirect(url_for('room'))
 
 def main_room_thread():
@@ -219,38 +219,38 @@ def main_room_thread():
         if finish_filter:
             if len(movies_filter) == 0:
                 break
-        socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...", broadcast=True)
+        socketio.emit('title_refresh', "Wait " + str(i) + " seconds ...")
         time.sleep(1)
         if verbose:
             print(f'Counter for wait: {i}')
 
     ## Main Game ##
 
-    socketio.emit('title_refresh', f'Listen Carefully! ({song_duration})', broadcast=True)
+    socketio.emit('title_refresh', f'Listen Carefully! ({song_duration})')
     for n in range(1,number_of_songs+1):
         clean_replys()
         clear_skips()
         choose_random_music()
         if current_random_music == "":
             break
-        socketio.emit('music_content', '{"current_difficulty" : "", "current_default_difficulty" : ""}', broadcast=True)
+        socketio.emit('music_content', '{"current_difficulty" : "", "current_default_difficulty" : ""}')
 
         ## Listen Music ##
 
         for i in range(song_duration,0,-1):
             current_time = current_random_time + song_duration - i
             if song_duration - (current_time - current_random_time) <= music_silence_duration:
-                socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
+                socketio.emit('audio_play', '{"command": "pause"}')
             else:
-                socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}', broadcast=True)
-            socketio.emit('title_refresh', f"[{n}] Listen Carefully! ({i})", broadcast=True)
+                socketio.emit('audio_play', '{"command": "play", "time": "' + str(current_time) + '"}')
+            socketio.emit('title_refresh', f"[{n}] Listen Carefully! ({i})")
             time.sleep(1)
             if verbose:
                 print(f'Counter for song {n}: {i} ({current_time})')
             if is_all_skiped():
                 clear_skips()
                 break
-        socketio.emit('block_replies', '{"command": "block"}', broadcast=True)
+        socketio.emit('block_replies', '{"command": "block"}')
 
         ## Verify Replies ##
 
@@ -260,8 +260,8 @@ def main_room_thread():
         ## Show Results ##
 
         for i in range(waiting_duration+1,0,-1):
-            socketio.emit('title_refresh', current_random_music_name, broadcast=True)
-            socketio.emit('music_content', '{"current_difficulty" : "' + str(round(current_difficulty, 2)) + '", "current_default_difficulty" : "' + str(current_default_difficulty) + '", "count" : "' + str(current_count) + '"}', broadcast=True)
+            socketio.emit('title_refresh', current_random_music_name)
+            socketio.emit('music_content', '{"current_difficulty" : "' + str(round(current_difficulty, 2)) + '", "current_default_difficulty" : "' + str(current_default_difficulty) + '", "count" : "' + str(current_count) + '"}')
             time.sleep(1)
             if verbose:
                 print(f'Counter for wait for song {n}: {i}')
@@ -271,14 +271,14 @@ def main_room_thread():
 
         ## Prepare For Next Song ##
 
-        socketio.emit('block_replies', '{"command": "unblock"}', broadcast=True)
-        socketio.emit('audio_play', '{"command": "pause"}', broadcast=True)
+        socketio.emit('block_replies', '{"command": "unblock"}')
+        socketio.emit('audio_play', '{"command": "pause"}')
         remove_choosen_music_from_filter()
         if stop_thread:
             break
-    socketio.emit('title_refresh', f"Acabou!", broadcast=True)
+    socketio.emit('title_refresh', f"Acabou!")
     time.sleep(2)
-    socketio.emit('go_to_lobby', "", broadcast=True)
+    socketio.emit('go_to_lobby', "")
     add_points_player()
     players_ready = []
     room_thread = None
@@ -709,7 +709,7 @@ def return_lobby():
     
         if player["username"] == leader:
             stop_thread = True
-            socketio.emit('final_message', "", broadcast=True)
+            socketio.emit('final_message', "")
             return jsonify({'status': 'Message receive with success', 'player': 'leader'})
     
 
