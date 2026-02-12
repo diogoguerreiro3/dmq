@@ -17,7 +17,17 @@ A real-time multiplayer music quiz game focused on animation movies soundtracks.
 ## 📋 Prerequisites
 
 - Python 3.13 or higher
-- ffmpeg (for audio processing)
+- ffmpeg and ffprobe (required for audio processing and metadata extraction)
+
+⚠️ Note: ffprobe is included with ffmpeg. Installing ffmpeg automatically installs ffprobe.
+Make sure both are available in your system PATH.
+
+You can verify installation with:
+
+```bash
+ffmpeg -version
+ffprobe -version
+```
 
 ### Installing ffmpeg
 
