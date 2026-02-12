@@ -1,0 +1,9 @@
+Flask==3.0.0
+flask-socketio==5.3.5
+pytube==15.0.0
+google-api-python-client==2.108.0
+pydub==0.25.1
+requests==2.31.0
+chardet==5.2.0
+python-socketio==5.10.0
+eventlet==0.33.3
