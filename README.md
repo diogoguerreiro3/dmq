@@ -1,16 +1,14 @@
-# 🎵 DMQ - Disney Music Quiz
+# 🎵 DMQ (Disney Music Quiz)
 
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![Python](https://img.shields.io/badge/python-3.13+-blue.svg)
 ![Flask](https://img.shields.io/badge/flask-2.0+-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-A real-time multiplayer music quiz game focused on Disney, Pixar, and other animation studio soundtracks. Test your knowledge and compete with friends!
+A real-time multiplayer music quiz game focused on animation movies soundtracks. Test your knowledge and compete with friends!
 
 ## ✨ Features
 
 - 🎮 **Multiplayer Mode**: Play with friends in real-time using WebSockets
-- 🎬 **Extensive Library**: Music from Disney, Pixar, Sony Animation, and more
-- 🌍 **Multi-language Support**: Songs in English and Portuguese
 - 🎯 **Multiple Difficulty Levels**: Choose between easy, medium, and hard
 - 📊 **Scoring System**: Track your progress and compete with other players
 - 🎨 **Visual Interface**: Movie posters and user-friendly interface
