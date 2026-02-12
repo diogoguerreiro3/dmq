@@ -27,8 +27,11 @@ socketio = SocketIO(app)
 
 verbose = True
 
-path_to_music = "music"
-movies = [movie for movie in os.listdir(path_to_music) if os.path.isdir(os.path.join(path_to_music, movie))]
+BASE_DIR = Path(__file__).resolve().parent
+MUSIC_DIR = BASE_DIR / "music"
+IMG_DIR = BASE_DIR / "img"
+
+movies = [movie for movie in os.listdir(MUSIC_DIR) if os.path.isdir(os.path.join(MUSIC_DIR, movie))]
 
 player_json_filename = "players.json"
 musics_json_filename = "musics.json"
@@ -39,9 +42,9 @@ all_players = None
 
 room_thread = None
 stop_thread = False
-current_random_music = r"music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
-current_random_music_name = "Snow White Soundtrack - 01 - Overture.mp3"
 current_random_movie = "Snow White and the Seven Dwarfs"
+current_random_music_name = "Snow White Soundtrack - 01 - Overture.mp3"
+current_random_music = MUSIC_DIR / current_random_movie / current_random_music_name
 
 movies_filter = []
 finish_filter = False
@@ -317,7 +320,6 @@ def filter_all_movies():
             musics = value_movie["musics"]
             if sort_count is not None:
                 musics = sorted(musics, key=lambda x: x["count"], reverse=False)
-                print(musics)
             for key_data_music, value_data_music in enumerate(musics):            
                 if default_mode:
                     if easy == "on" and value_data_music["difficulty_defualt"] == "easy" and isMusicLang(value_data_music):
@@ -340,7 +342,6 @@ def filter_all_movies():
 
         if len(movie_group[1]) > 0:
             movies_filter.append(movie_group)
-            # print(movie_group)
     finish_filter = True
     if verbose:
         print("Finished filtering of all movies...")
@@ -358,7 +359,7 @@ def isStudio(music):
             (music["studio"] == "Sony Pictures Animation" and sony is not None)
 
 def get_song_duration(movie, music):
-    current_music_data = os.path.abspath(os.path.join(path_to_music, movie, music))
+    current_music_data = os.path.abspath(os.path.join(MUSIC_DIR, movie, music))
     audio = AudioSegment.from_file(current_music_data, format="mp3")
     duration = int(len(audio) / 1000) # seconds
     return duration
@@ -377,7 +378,7 @@ def choose_random_music():
             if sort_count is None:
                 random.shuffle(musics)
             current_random_music_name = musics[0]
-            current_random_music = os.path.abspath(os.path.join(path_to_music, current_random_movie, current_random_music_name))
+            current_random_music = os.path.abspath(os.path.join(MUSIC_DIR, current_random_movie, current_random_music_name))
             duration = get_song_duration(current_random_movie, current_random_music_name)
             if verbose:
                 print("Duration:",duration)
@@ -458,8 +459,8 @@ def set_alternatives_movies():
             alternatives_movies[value_movie["movie"]] = value_movie["alternative_names"]
         else:
             alternatives_movies[value_movie["movie"]] = []
-    if verbose:
-        print(f"Alternatives Movies: {alternatives_movies}")
+    #if verbose:
+        #print(f"Alternatives Movies: {alternatives_movies}")
 
 def set_movies_with_alternatives():
     global alternatives_movies, movies_with_alternatives
@@ -467,8 +468,8 @@ def set_movies_with_alternatives():
         movies_with_alternatives.append(movie)
         for alternative in alternatives_movies[movie]:
             movies_with_alternatives.append(alternative)
-    if verbose:
-        print(f"Movies with Alternatives: {movies_with_alternatives}")
+    #if verbose:
+        #print(f"Movies with Alternatives: {movies_with_alternatives}")
 
 def update_player_point(username):
     for player in current_replys_and_points_room:
@@ -526,7 +527,7 @@ def create_music_json():
     data = []
     for movie in movies:
         musics_json = []
-        musics = os.listdir(os.path.join(path_to_music, movie))
+        musics = os.listdir(os.path.join(MUSIC_DIR, movie))
         for music in musics:
             music_json = {"name" : music, "count" : 0, "difficulty" : 0, "difficulty_defualt" : "hard"}
             musics_json.append(music_json)
