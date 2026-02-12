@@ -18,7 +18,7 @@ from flask import (
 )
 from flask_socketio import SocketIO
 
-from pydub import AudioSegment
+from mutagen.mp3 import MP3
 
 
 
@@ -359,9 +359,8 @@ def isStudio(music):
             (music["studio"] == "Sony Pictures Animation" and sony is not None)
 
 def get_song_duration(movie, music):
-    current_music_data = os.path.abspath(os.path.join(MUSIC_DIR, movie, music))
-    audio = AudioSegment.from_file(current_music_data, format="mp3")
-    duration = int(len(audio) / 1000) # seconds
+    current_music_data = MUSIC_DIR / movie / music
+    return int(MP3(current_music_data).info.length)
     return duration
 
 def choose_random_music():

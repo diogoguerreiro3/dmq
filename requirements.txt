@@ -1,6 +1,6 @@
 Flask==3.0.0
 flask-socketio==5.3.5
-pydub==0.25.1
+mutagen>=1.47.0
 
 # Python 3.13+
 audioop-lts==0.2.1
