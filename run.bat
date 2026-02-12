@@ -26,10 +26,10 @@ REM Run the application
 echo.
 echo [2/2] Starting Flask application...
 echo.
-echo ==========================================
-echo   Server running at: http://localhost:5000
+echo ===========================================
+echo   Server running at: http://localhost:44444
 echo   Press Ctrl+C to stop the server
-echo ==========================================
+echo ===========================================
 echo.
 
 python app.py
