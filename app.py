@@ -610,10 +610,20 @@ def music():
     return jsonify({'url' : 'music/' + current_random_movie + "/" + current_random_music_name})
 
 @app.route("/song")
-def song():
-    url = request.args.get('url')
-    print(url)
-    return send_file(url, as_attachment=False)
+def song():    
+    filename = request.args.get("url")
+    print(filename)
+
+    safe_path = (MUSIC_DIR / filename).resolve()
+
+    if not str(safe_path).startswith(str(MUSIC_DIR)):
+        return "Forbidden", 403
+
+    if not safe_path.exists():
+        return "Not found", 404
+
+    return send_file(safe_path, as_attachment=False)
+
 
 
 ### Images ###
