@@ -1,17 +1,33 @@
-from flask import Flask, render_template, request, send_file, Response, redirect, url_for, jsonify, Blueprint, send_from_directory
-from pytube import YouTube, Playlist
-from googleapiclient.discovery import build
-import random, requests, re, os, threading, time, json, threading, copy
+import os
+import json
+import time
+import random
+import copy
+import threading
+from pathlib import Path
+
+from flask import (
+    Flask,
+    render_template,
+    request,
+    jsonify,
+    send_file,
+    redirect,
+    url_for,
+    send_from_directory,
+)
 from flask_socketio import SocketIO
+
 from pydub import AudioSegment
-import chardet
+
+
 
 app = Flask(__name__)
 socketio = SocketIO(app)
 
 verbose = True
 
-path_to_music = "./music/"
+path_to_music = "music"
 movies = [movie for movie in os.listdir(path_to_music) if os.path.isdir(os.path.join(path_to_music, movie))]
 
 player_json_filename = "players.json"
@@ -23,7 +39,7 @@ all_players = None
 
 room_thread = None
 stop_thread = False
-current_random_music = "music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
+current_random_music = r"music\Snow White and the Seven Dwarfs\Snow White Soundtrack - 01 - Overture.mp3"
 current_random_music_name = "Snow White Soundtrack - 01 - Overture.mp3"
 current_random_movie = "Snow White and the Seven Dwarfs"
 
