@@ -567,8 +567,8 @@
             },
             {
                 "name": "Aladdin - Marketplace (Alternate).mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -1545,8 +1545,8 @@
             },
             {
                 "name": "Beauty and the Beast - Human Again.mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -1778,7 +1778,7 @@
             },
             {
                 "name": "Big Hero 6 - 13 - Huggable Detective.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -2199,7 +2199,7 @@
             },
             {
                 "name": "Brave - Remember To Smile.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -2882,8 +2882,8 @@
             },
             {
                 "name": "Cars - Real Gone.mp3",
-                "count": 26,
-                "difficulty": 50.0,
+                "count": 27,
+                "difficulty": 51.85185185185185,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -3602,8 +3602,8 @@
         "musics": [
             {
                 "name": "Cinderella - A Dream Is a Wish Your Heart Makes.mp3",
-                "count": 15,
-                "difficulty": 66.66666666666666,
+                "count": 16,
+                "difficulty": 68.74999999999999,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -4980,8 +4980,8 @@
             },
             {
                 "name": "Elemental - Steal The Show.mp3",
-                "count": 47,
-                "difficulty": 78.72340425531912,
+                "count": 48,
+                "difficulty": 77.0833333333333,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5035,7 +5035,7 @@
             },
             {
                 "name": "Encanto - All Of You.mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -5898,8 +5898,8 @@
             },
             {
                 "name": "Finding Nemo - First Day.mp3",
-                "count": 7,
-                "difficulty": 28.57142857142857,
+                "count": 8,
+                "difficulty": 37.5,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -6222,7 +6222,7 @@
             },
             {
                 "name": "Frozen - For the First Time in Forever (Reprise).mp3",
-                "count": 7,
+                "count": 8,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -6502,7 +6502,7 @@
             },
             {
                 "name": "Frozen - Vuelie.mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -7612,8 +7612,8 @@
             },
             {
                 "name": "Inside Out - Bundle of Joy.mp3",
-                "count": 3,
-                "difficulty": 100.0,
+                "count": 4,
+                "difficulty": 75.0,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -8085,8 +8085,8 @@
             },
             {
                 "name": "Lady And The Tramp - Footloose & Collar-Free - Bella Notte.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -9384,8 +9384,8 @@
             },
             {
                 "name": "Meet the Robinsons - Pop Quiz and the Time Machine Montage.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -9829,8 +9829,8 @@
             },
             {
                 "name": "Moana - Mark Mancina - The Return to Voyaging (From MoanaScoreAudio Only).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -11900,8 +11900,8 @@
             },
             {
                 "name": "Peter Pan 16 - Your Mother and Mine.mp3",
-                "count": 14,
-                "difficulty": 50.0,
+                "count": 15,
+                "difficulty": 53.333333333333336,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -12848,8 +12848,8 @@
             },
             {
                 "name": "Ralph Breaks the Internet - Site Seeing.mp3",
-                "count": 4,
-                "difficulty": 25.0,
+                "count": 5,
+                "difficulty": 40.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -12890,8 +12890,8 @@
             },
             {
                 "name": "Ralph Breaks the Internet - Zero.mp3",
-                "count": 27,
-                "difficulty": 48.148148148148145,
+                "count": 28,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -13755,8 +13755,8 @@
             },
             {
                 "name": "Raya and the Last Dragon - Storming Fang.mp3",
-                "count": 10,
-                "difficulty": 20.0,
+                "count": 11,
+                "difficulty": 27.27272727272727,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -13925,8 +13925,8 @@
             },
             {
                 "name": "Robin Hood - Seize the Fat One.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -15196,8 +15196,8 @@
             },
             {
                 "name": "Strange World - They're The Clades!.mp3",
-                "count": 33,
-                "difficulty": 51.515151515151516,
+                "count": 34,
+                "difficulty": 52.94117647058824,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -15771,8 +15771,8 @@
             },
             {
                 "name": "Tarzan - Souvenirs.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -17249,8 +17249,8 @@
             },
             {
                 "name": "The Good Dinosaur - Bloodhound.mp3",
-                "count": 4,
-                "difficulty": 50.0,
+                "count": 5,
+                "difficulty": 60.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -17333,8 +17333,8 @@
             },
             {
                 "name": "The Good Dinosaur - Make Your Mark.mp3",
-                "count": 44,
-                "difficulty": 20.454545454545457,
+                "count": 45,
+                "difficulty": 20.000000000000004,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -18229,8 +18229,8 @@
             },
             {
                 "name": "The Incredibles - 40 - The Underminer.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -18984,7 +18984,7 @@
             },
             {
                 "name": "The Lion King - Hakuna Matata (Eu Portuguese).mp3",
-                "count": 6,
+                "count": 7,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
@@ -19394,15 +19394,15 @@
             },
             {
                 "name": "The Many Adventures of Winnie the Pooh 4 - Rumbly in My Tumbly.mp3",
-                "count": 9,
-                "difficulty": 88.88888888888889,
+                "count": 10,
+                "difficulty": 90.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
             {
                 "name": "The Many Adventures of Winnie the Pooh 5 - Little Black Rain Cloud.mp3",
-                "count": 7,
-                "difficulty": 85.71428571428574,
+                "count": 8,
+                "difficulty": 87.50000000000001,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -20165,7 +20165,7 @@
             },
             {
                 "name": "The Sword in the Stone - Life as a Fish - That's What Makes the World Go 'Round.mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -20326,8 +20326,8 @@
             },
             {
                 "name": "The Sword in the Stone - The legend of the sword in the stone (Eu Portuguese).mp3",
-                "count": 5,
-                "difficulty": 60.0,
+                "count": 6,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             }
@@ -22435,8 +22435,8 @@
             },
             {
                 "name": "Turning Red - Turning Red.mp3",
-                "count": 18,
-                "difficulty": 72.22222222222223,
+                "count": 19,
+                "difficulty": 73.68421052631578,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -23833,8 +23833,8 @@
             },
             {
                 "name": "Wish - Welcome to Rosas (Instrumental) \u2013 Julia Michaels & Benjamin Rice.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -23868,8 +23868,8 @@
             },
             {
                 "name": "Wish - Desejo (Portuguese European).mp3",
-                "count": 11,
-                "difficulty": 81.81818181818183,
+                "count": 12,
+                "difficulty": 83.33333333333334,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -24266,8 +24266,8 @@
             },
             {
                 "name": "The Road to El Dorado - The Bull Chase - Hans Zimmer & John Powell.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -24702,8 +24702,8 @@
             },
             {
                 "name": "The Jungle Book 2 - I've Got You Beat.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
