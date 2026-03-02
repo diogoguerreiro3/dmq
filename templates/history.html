@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DMQ — History</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        body { padding: 0; }
+
+        /* ---- Topbar ---- */
+        .topbar {
+            position: fixed; top:0; left:0; right:0;
+            height: 64px;
+            background: rgba(13,13,18,0.90);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center;
+            padding: 0 32px;
+            z-index: 100;
+            gap: 18px;
+        }
+        .topbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 20px; font-weight: 700;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .topbar-title {
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            color: var(--text-muted);
+            border-left: 1px solid var(--border);
+            padding-left: 18px;
+            letter-spacing: 0.08em;
+        }
+        .topbar-actions { margin-left: auto; display: flex; gap: 12px; }
+        .topbar-actions a { padding: 9px 20px; font-size: 14px; }
+
+        /* ---- Page ---- */
+        .page-content {
+            padding-top: 88px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-left: 32px;
+            padding-right: 32px;
+            padding-bottom: 60px;
+        }
+
+        .page-header {
+            margin-bottom: 28px;
+            animation: fadeUp .4s ease both;
+        }
+        .page-header h1 {
+            font-size: 26px;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa, #f5c842);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-header p { color: var(--text-muted); font-size: 14px; margin-top: 5px; }
+
+        /* ---- Empty state ---- */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-muted);
+        }
+        .empty-state .empty-icon { font-size: 56px; margin-bottom: 16px; display: block; }
+        .empty-state h2 { font-size: 20px; color: var(--text-secondary); margin-bottom: 8px; }
+
+        /* ---- Game card ---- */
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            animation: fadeUp .35s ease both;
+        }
+
+        .game-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(167,139,250,0.04);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .game-header:hover { background: rgba(167,139,250,0.08); }
+
+        .game-id {
+            font-family: 'Cinzel', serif;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 12px;
+            background: rgba(167,139,250,0.15);
+            border: 1px solid rgba(167,139,250,0.25);
+            border-radius: 99px;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            flex-shrink: 0;
+        }
+
+        .game-meta {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .game-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .game-time {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 20px;
+            flex-shrink: 0;
+        }
+        .game-stat {
+            text-align: center;
+        }
+        .game-stat-val {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            line-height: 1;
+        }
+        .game-stat-lbl {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .game-toggle {
+            font-size: 18px;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            transition: transform 0.25s;
+        }
+        .game-toggle.open { transform: rotate(180deg); }
+
+        /* ---- Songs table ---- */
+        .songs-table-wrap {
+            display: none;
+            overflow: hidden;
+        }
+        .songs-table-wrap.open { display: block; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead tr {
+            background: var(--bg-elevated);
+        }
+        thead th {
+            padding: 11px 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        thead th:nth-child(3),
+        thead th:nth-child(4) { text-align: center; }
+
+        tbody tr {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+            cursor: pointer;
+        }
+        tbody tr:last-child { border-bottom: none; }
+        tbody tr:hover { background: rgba(167,139,250,0.05); }
+        tbody tr.detail-open { background: rgba(167,139,250,0.07); }
+
+        td {
+            padding: 13px 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            vertical-align: middle;
+        }
+
+        .td-movie {
+            font-weight: 700;
+            color: var(--text-primary);
+            max-width: 200px;
+        }
+        .td-song {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .td-center { text-align: center; }
+
+        .players-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            padding: 3px 10px;
+            background: rgba(167,139,250,0.12);
+            border: 1px solid rgba(167,139,250,0.2);
+            border-radius: 99px;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+        .correct-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            padding: 3px 10px;
+            background: rgba(52,211,153,0.12);
+            border: 1px solid rgba(52,211,153,0.2);
+            border-radius: 99px;
+            color: #34d399;
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+
+        .expand-icon {
+            font-size: 12px;
+            color: var(--text-muted);
+            float: right;
+            transition: transform 0.2s;
+        }
+        tr.detail-open .expand-icon { transform: rotate(180deg); }
+
+        /* ---- Detail row ---- */
+        .detail-row { display: none; }
+        .detail-row.open { display: table-row; }
+        .detail-row td {
+            padding: 0;
+            cursor: default;
+        }
+        .detail-row td:hover { background: transparent; }
+        .detail-row tr:hover { background: transparent; }
+
+        .detail-content {
+            padding: 16px 24px 20px 40px;
+            background: rgba(0,0,0,0.2);
+            border-bottom: 1px solid var(--border);
+        }
+        .detail-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .votes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .vote-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }
+        .vote-chip.correct {
+            background: rgba(52,211,153,0.12);
+            border-color: rgba(52,211,153,0.25);
+            color: #34d399;
+        }
+        .vote-chip.wrong {
+            background: rgba(248,113,113,0.1);
+            border-color: rgba(248,113,113,0.2);
+            color: #f87171;
+        }
+        .vote-chip.skip {
+            background: rgba(251,191,36,0.1);
+            border-color: rgba(251,191,36,0.2);
+            color: #fbbf24;
+        }
+        .vote-chip.no-answer {
+            background: var(--bg-elevated);
+            border-color: var(--border);
+            color: var(--text-muted);
+        }
+        .vote-answer {
+            font-weight: 400;
+            opacity: 0.75;
+            font-size: 12px;
+        }
+
+        /* ---- Pagination ---- */
+        .pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+        }
+        .page-info {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .page-info span { color: var(--accent); font-weight: 700; }
+
+        /* ---- Loading ---- */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+        .spinner {
+            display: inline-block;
+            width: 32px; height: 32px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin .7s linear infinite;
+            margin-bottom: 12px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(12px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="topbar">
+    <div class="topbar-brand">🎵 DMQ</div>
+    <div class="topbar-title">History</div>
+    <div class="topbar-actions">
+        <a href="/lobby" class="btn_gray nav">← Back to Lobby</a>
+    </div>
+</nav>
+
+<div class="page-content">
+    <div class="page-header">
+        <h1>Game History</h1>
+        <p>All previous games, their songs and player answers.</p>
+    </div>
+
+    <div id="history-container">
+        <div class="loading">
+            <div class="spinner"></div><br>Loading history…
+        </div>
+    </div>
+
+    <div class="pagination" id="pagination" style="display:none;">
+        <button id="btn-prev" class="btn_gray nav" onclick="changePage(-1)">← Previous</button>
+        <div class="page-info">Page <span id="page-display">1</span> of <span id="total-pages-display">1</span></div>
+        <button id="btn-next" class="btn_gray nav" onclick="changePage(1)">Next →</button>
+    </div>
+</div>
+
+<script>
+    var currentPage = 0;
+    var perPage = 5;
+    var totalGames = 0;
+
+    function formatDate(isoStr) {
+        if(!isoStr) return '—';
+        var d = new Date(isoStr);
+        return d.toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
+    }
+    function formatTime(isoStr) {
+        if(!isoStr) return '';
+        var d = new Date(isoStr);
+        return d.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
+    }
+    function formatDuration(startIso, endIso) {
+        if(!startIso || !endIso) return '';
+        var diff = Math.round((new Date(endIso) - new Date(startIso)) / 1000);
+        var m = Math.floor(diff / 60), s = diff % 60;
+        return m + 'm ' + s + 's';
+    }
+
+    function renderHistory(data) {
+        var container = document.getElementById('history-container');
+
+        if(data.games.length === 0 && currentPage === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <span class="empty-icon">🎵</span>
+                    <h2>No games played yet</h2>
+                    <p>History will appear here after the first game is completed.</p>
+                </div>`;
+            document.getElementById('pagination').style.display = 'none';
+            return;
+        }
+
+        totalGames = data.total_games;
+        var totalPages = Math.ceil(totalGames / perPage);
+
+        var html = '';
+        data.games.forEach(function(game, gi) {
+            var totalSongs = game.songs.length;
+            var totalCorrect = game.songs.reduce(function(acc, s) { return acc + (s.correct_count || 0); }, 0);
+            var delay = gi * 0.06;
+
+            html += `<div class="game-card" style="animation-delay:${delay}s">`;
+
+            // Game header (clickable to expand/collapse)
+            html += `<div class="game-header" onclick="toggleGame('${game.id}')">
+                <div class="game-id">#${game.id}</div>
+                <div class="game-meta">
+                    <div class="game-date">${formatDate(game.started_at)}</div>
+                    <div class="game-time">${formatTime(game.started_at)}${game.ended_at ? ' · ' + formatDuration(game.started_at, game.ended_at) : ''}</div>
+                </div>
+                <div class="game-stats">
+                    <div class="game-stat">
+                        <span class="game-stat-val">${totalSongs}</span>
+                        <span class="game-stat-lbl">Songs</span>
+                    </div>
+                    <div class="game-stat">
+                        <span class="game-stat-val">${totalCorrect}</span>
+                        <span class="game-stat-lbl">Correct</span>
+                    </div>
+                </div>
+                <span class="game-toggle" id="toggle-${game.id}">▾</span>
+            </div>`;
+
+            // Songs table (hidden by default)
+            html += `<div class="songs-table-wrap" id="songs-${game.id}">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Film</th>
+                            <th>Song</th>
+                            <th style="text-align:center;">Players</th>
+                            <th style="text-align:center;">Correct</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+            game.songs.forEach(function(song, si) {
+                var rowId = game.id + '_' + si;
+                html += `<tr onclick="toggleSong('${rowId}')" id="row-${rowId}">
+                    <td class="td-movie">${escHtml(song.movie)}</td>
+                    <td class="td-song" title="${escHtml(song.song)}">${escHtml(song.song)} <span class="expand-icon">▾</span></td>
+                    <td class="td-center"><span class="players-pill">${song.players_count}</span></td>
+                    <td class="td-center"><span class="correct-pill">${song.correct_count}</span></td>
+                </tr>`;
+
+                // Detail row with votes
+                html += `<tr class="detail-row" id="detail-${rowId}">
+                    <td colspan="4">
+                        <div class="detail-content">
+                            <div class="detail-title">Player Answers</div>
+                            <div class="votes-grid">`;
+
+                if(!song.votes || song.votes.length === 0) {
+                    html += `<span style="color:var(--text-muted);font-size:13px;">No votes recorded.</span>`;
+                } else {
+                    song.votes.forEach(function(v) {
+                        var cls, icon, answerText;
+                        if(v.skip) {
+                            cls = 'skip'; icon = '⏭';
+                            answerText = 'skipped';
+                        } else if(v.correct === 'true') {
+                            cls = 'correct'; icon = '✓';
+                            answerText = escHtml(v.answer);
+                        } else if(v.correct === 'false') {
+                            cls = 'wrong'; icon = '✗';
+                            answerText = v.answer ? escHtml(v.answer) : '—';
+                        } else {
+                            cls = 'no-answer'; icon = '·';
+                            answerText = 'no answer';
+                        }
+                        html += `<div class="vote-chip ${cls}">
+                            <span>${icon}</span>
+                            <span>${escHtml(v.username)}</span>
+                            <span class="vote-answer">${answerText}</span>
+                        </div>`;
+                    });
+                }
+
+                html += `</div></div></td></tr>`;
+            });
+
+            html += `</tbody></table></div></div>`;
+        });
+
+        container.innerHTML = html;
+
+        // Pagination
+        var totalPages2 = Math.ceil(totalGames / perPage);
+        document.getElementById('pagination').style.display = totalPages2 > 1 ? 'flex' : 'none';
+        document.getElementById('page-display').textContent = currentPage + 1;
+        document.getElementById('total-pages-display').textContent = totalPages2;
+        document.getElementById('btn-prev').disabled = currentPage === 0;
+        document.getElementById('btn-prev').style.opacity = currentPage === 0 ? '0.4' : '1';
+        document.getElementById('btn-next').disabled = !data.has_more;
+        document.getElementById('btn-next').style.opacity = !data.has_more ? '0.4' : '1';
+    }
+
+    function toggleGame(id) {
+        var wrap   = document.getElementById('songs-' + id);
+        var toggle = document.getElementById('toggle-' + id);
+        var isOpen = wrap.classList.contains('open');
+        wrap.classList.toggle('open', !isOpen);
+        toggle.classList.toggle('open', !isOpen);
+    }
+
+    function toggleSong(rowId) {
+        var detail = document.getElementById('detail-' + rowId);
+        var row    = document.getElementById('row-' + rowId);
+        var isOpen = detail.classList.contains('open');
+        detail.classList.toggle('open', !isOpen);
+        row.classList.toggle('detail-open', !isOpen);
+    }
+
+    function escHtml(str) {
+        if(!str) return '';
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function loadPage(page) {
+        currentPage = page;
+        document.getElementById('history-container').innerHTML =
+            '<div class="loading"><div class="spinner"></div><br>Loading…</div>';
+        fetch('/get_history?page=' + page + '&per_page=' + perPage)
+            .then(function(r) { return r.json(); })
+            .then(renderHistory)
+            .catch(function(e) {
+                console.error(e);
+                document.getElementById('history-container').innerHTML =
+                    '<div class="loading">Failed to load history.</div>';
+            });
+    }
+
+    function changePage(dir) {
+        var newPage = currentPage + dir;
+        var totalPages = Math.ceil(totalGames / perPage);
+        if(newPage < 0 || newPage >= totalPages) return;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        loadPage(newPage);
+    }
+
+    // Initial load
+    loadPage(0);
+</script>
+</body>
+</html>

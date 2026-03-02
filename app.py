@@ -4,6 +4,8 @@ import time
 import random
 import copy
 import threading
+import uuid
+from datetime import datetime, timezone
 from pathlib import Path
 
 from flask import (
@@ -31,7 +33,7 @@ socketio = SocketIO(
     transports=['polling', 'websocket']
 )
 
-verbose = True
+verbose = False
 
 BASE_DIR = Path(__file__).resolve().parent
 MUSIC_DIR = BASE_DIR / "music"
@@ -41,6 +43,11 @@ movies = [movie for movie in os.listdir(MUSIC_DIR) if os.path.isdir(os.path.join
 
 player_json_filename = "players.json"
 musics_json_filename = "musics.json"
+history_json_filename = "history.json"
+
+# Current game session tracking
+current_game_id = None
+current_game_songs = []
 
 currents_players = []
 leader = ""
@@ -196,6 +203,29 @@ def lobby_msg(msg):
     if player is None or player["username"] not in currents_players: return redirect(url_for('index'))
     return render_template("lobby.html", movies=alternatives_movies, total_movies=total_movies, total_songs=total_songs)
 
+@app.route("/history")
+def history_page():
+    ip = get_real_ip()
+    player = verify_player_exists("ip", ip)
+    if player is None or player["username"] not in currents_players: return redirect(url_for('index'))
+    return render_template("history.html")
+
+@app.route("/get_history")
+def get_history():
+    page  = int(request.args.get("page", 0))
+    per_page = int(request.args.get("per_page", 5))
+    history = load_history()
+    total_games = len(history)
+    start = page * per_page
+    end   = start + per_page
+    return jsonify({
+        "games":       history[start:end],
+        "total_games": total_games,
+        "page":        page,
+        "per_page":    per_page,
+        "has_more":    end < total_games
+    })
+
 
 
 ### Main Room / Main Game ###
@@ -261,6 +291,7 @@ def main_room_thread():
     stop_thread = False
     clean_points()
     clean_replys()
+    history_start_game()
 
     ## Initial Waiting ##
 
@@ -305,6 +336,7 @@ def main_room_thread():
 
         verify_replys()
         calculate_difficulty()
+        history_record_song()
 
         ## Show Results ##
 
@@ -329,6 +361,7 @@ def main_room_thread():
     time.sleep(2)
     socketio.emit('go_to_lobby', "")
     add_points_player()
+    history_end_game()
     players_ready = []
     room_thread = None
 
@@ -399,8 +432,7 @@ def choose_random_music():
     random.shuffle(movies_filter)
     if len(movies_filter) > 0:
         current_random_movie = movies_filter[0][0]
-        if verbose:
-            print("Movie:", current_random_movie)
+        print(current_random_movie)
         musics = movies_filter[0][1]
 
         if len(musics) > 0:
@@ -497,6 +529,82 @@ def update_guess_stats():
     with open(player_json_filename, 'w', encoding='utf-8') as f:
         json.dump(players, f, indent=4)
 
+
+
+### History ###
+
+def load_history():
+    """Load history.json, creating it if it doesn't exist."""
+    if not os.path.exists(history_json_filename):
+        with open(history_json_filename, 'w', encoding='utf-8') as f:
+            json.dump([], f, indent=4)
+        return []
+    with open(history_json_filename, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def save_history(data):
+    with open(history_json_filename, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+def history_start_game():
+    """Called at the start of a game session — creates a new game entry."""
+    global current_game_id, current_game_songs
+    current_game_id = str(uuid.uuid4())[:8].upper()
+    current_game_songs = []
+    if verbose:
+        print(f"[History] Game started: {current_game_id}")
+
+def history_record_song():
+    """Called after verify_replys — records the song result into the current game."""
+    global current_game_songs, current_replys_and_points_room
+    global current_random_movie, current_random_music_name
+    global current_difficulty, current_default_difficulty
+
+    votes = []
+    correct_count = 0
+    for reply in current_replys_and_points_room:
+        votes.append({
+            "username": reply["username"],
+            "answer":   reply["movie"],
+            "correct":  reply["correct"],
+            "skip":     reply.get("skip", False)
+        })
+        if reply["correct"] == "true":
+            correct_count += 1
+
+    song_entry = {
+        "timestamp":          datetime.now(timezone.utc).isoformat(),
+        "movie":              current_random_movie,
+        "song":               current_random_music_name.replace(".mp3", ""),
+        "difficulty":         round(current_difficulty, 2) if current_difficulty is not None else None,
+        "difficulty_default": current_default_difficulty,
+        "players_count":      len(votes),
+        "correct_count":      correct_count,
+        "votes":              votes
+    }
+    current_game_songs.append(song_entry)
+    if verbose:
+        print(f"[History] Recorded: {current_random_movie} / {current_random_music_name}")
+
+def history_end_game():
+    """Called at the end of the game — writes the completed game to history.json."""
+    global current_game_id, current_game_songs
+
+    if not current_game_id or not current_game_songs:
+        return
+
+    history = load_history()
+    game_entry = {
+        "id":         current_game_id,
+        "started_at": current_game_songs[0]["timestamp"] if current_game_songs else datetime.now(timezone.utc).isoformat(),
+        "ended_at":   datetime.now(timezone.utc).isoformat(),
+        "songs":      current_game_songs
+    }
+    history.insert(0, game_entry)  # newest first
+    save_history(history)
+    if verbose:
+        print(f"[History] Game {current_game_id} saved with {len(current_game_songs)} songs.")
+
 total_movies = 0
 total_songs = 0
 
@@ -521,8 +629,6 @@ def set_movies_with_alternatives():
         movies_with_alternatives.append(movie)
         for alternative in alternatives_movies[movie]:
             movies_with_alternatives.append(alternative)
-    #if verbose:
-        #print(f"Movies with Alternatives: {movies_with_alternatives}")
 
 def update_player_point(username):
     for player in current_replys_and_points_room:

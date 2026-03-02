@@ -72,6 +72,8 @@ a:hover{color:#c4b5fd;}
 .btn_green{background:linear-gradient(135deg,#065f46 0%,#34d399 100%);border-color:rgba(52,211,153,.3);color:#fff;box-shadow:0 2px 12px rgba(52,211,153,.2);}
 .btn_green:hover{background:linear-gradient(135deg,#047857 0%,#6ee7b7 100%);transform:translateY(-1px);box-shadow:0 4px 18px rgba(52,211,153,.35);color:#fff;}
 .btn_gray{background:var(--bg-elevated);border-color:var(--border);color:var(--text-muted);cursor:not-allowed;}
+.btn_gray.nav{cursor:pointer;color:var(--text-secondary);}
+.btn_gray.nav:hover{background:var(--bg-card);border-color:var(--border-glow);color:var(--text-primary);transform:translateY(-1px);}
 .btn_yellow{background:linear-gradient(135deg,#92400e 0%,#fbbf24 100%);border-color:rgba(251,191,36,.3);color:#fff;box-shadow:0 2px 12px rgba(251,191,36,.2);}
 .btn_yellow:hover{background:linear-gradient(135deg,#b45309 0%,#fcd34d 100%);transform:translateY(-1px);color:#fff;}
 .btn:active,.btn_red:active,.btn_green:active,.btn_yellow:active{transform:translateY(0);}
