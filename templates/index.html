@@ -2,18 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DMQ</title>
+    <title>DMQ — Disney Music Quiz</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .login-wrap {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            animation: fadeUp .5s ease both;
+        }
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(20px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+        .logo-area {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .logo-icon {
+            font-size: 52px;
+            line-height: 1;
+            margin-bottom: 12px;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(167,139,250,0.5));
+        }
+        .logo-area h1 {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa, #f5c842);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-area p {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-top: 6px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .login-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-card), 0 0 60px rgba(167,139,250,0.06);
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .input-group input[type="text"] {
+            width: 100%;
+            font-size: 15px;
+        }
+        .login-card .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 12px;
+            font-size: 15px;
+        }
+        .error-msg {
+            margin-top: 14px;
+            padding: 10px 14px;
+            background: rgba(248,113,113,0.1);
+            border: 1px solid rgba(248,113,113,0.25);
+            border-radius: var(--radius-md);
+            color: var(--red);
+            font-size: 13px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Disney Music Quiz</h1>
-    <div class="container">
-        <form action="/processar" method="post">
-            <label for="input">Username:</label>
-            <input type="text" id="input" name="input" required>
-            <button type="submit" class="btn">Start</button>
-        </form>
+    <div class="login-wrap">
+        <div class="logo-area">
+            <span class="logo-icon">🎵</span>
+            <h1>Disney Music Quiz</h1>
+            <p>Guess the soundtrack</p>
+        </div>
+        <div class="login-card">
+            <form action="/processar" method="post">
+                <div class="input-group">
+                    <label for="input">Your username</label>
+                    <input type="text" id="input" name="input" required placeholder="Enter a name…" autocomplete="off">
+                </div>
+                <button type="submit" class="btn">Enter Lobby</button>
+            </form>
+            {% if msg %}
+            <div class="error-msg">{{ msg }}</div>
+            {% endif %}
+        </div>
     </div>
-    <h3 id="error_text" style="color:red">{{msg}}</h3>
 </body>
 </html>

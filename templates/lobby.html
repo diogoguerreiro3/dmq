@@ -2,296 +2,748 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DMQ</title>
+    <title>DMQ — Lobby</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
     <link rel="stylesheet" href="https://unpkg.com/nouislider@14.6.4/distribute/nouislider.min.css">
+    <style>
+        body { padding: 0; }
+
+        /* --- Top nav bar --- */
+        .topbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 64px;
+            background: rgba(13,13,18,0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 32px;
+            z-index: 100;
+        }
+        .topbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .topbar-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 12px;
+        }
+        .topbar-actions .btn, .topbar-actions .btn_red {
+            padding: 9px 22px;
+            font-size: 15px;
+        }
+
+        /* --- Main layout --- */
+        .page-content {
+            padding-top: 88px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 32px;
+            padding-right: 32px;
+            padding-bottom: 48px;
+        }
+
+        .lobby-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* --- Left column: Players + Movies --- */
+        .left-col { display: flex; flex-direction: column; gap: 20px; }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        .panel-header {
+            padding: 16px 20px 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .panel-header h2 {
+            font-size: 14px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .panel-icon { color: var(--accent); font-size: 18px; }
+
+        /* Players */
+        #content { list-style: none; padding: 12px 14px; margin: 0; }
+        .player-entry {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 13px;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .player-entry:hover { border-color: var(--border-glow); }
+        .player-dot {
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: var(--text-muted);
+        }
+        .player-badge {
+            margin-left: auto;
+            padding: 3px 10px;
+            background: rgba(167,139,250,.15);
+            border: 1px solid rgba(167,139,250,.2);
+            border-radius: 99px;
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Movies stats bar */
+        .movies-stats {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(167,139,250,0.04);
+        }
+        .movies-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            gap: 2px;
+        }
+        .movies-stat-value {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+        .movies-stat-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .movies-stat-divider {
+            width: 1px;
+            height: 36px;
+            background: var(--border);
+            flex-shrink: 0;
+        }
+
+        /* Movies panel */
+        .movies-scroll {
+            max-height: 320px;
+            overflow-y: auto;
+            padding: 10px 12px;
+        }
+        /* Remove ALL list styling from movie lists */
+        .movies-scroll ul,
+        .movies-scroll li {
+            list-style: none !important;
+            padding-left: 0;
+            margin-left: 0;
+        }
+        .movie-group-title {
+            padding: 8px 10px 5px;
+            color: var(--accent);
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3px;
+            margin-top: 10px;
+            list-style: none !important;
+        }
+        .movie-group-title:first-child { margin-top: 0; }
+        .movie-item {
+            padding: 5px 10px 5px 14px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            cursor: default;
+            background: transparent;
+            list-style: none !important;
+        }
+        .movie-item:hover { background: var(--bg-elevated); color: var(--text-primary); }
+
+        /* --- Right column: Settings form --- */
+        .settings-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+        .settings-body { padding: 24px 28px; }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 22px 0 12px;
+            padding-bottom: 7px;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-label:first-child { margin-top: 0; }
+
+        .check-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            margin-bottom: 4px;
+        }
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .check-item label { margin: 0; font-size: 15px; color: var(--text-secondary); }
+        .check-item input[type="checkbox"] { margin: 0; }
+
+        /* Sub-options indented */
+        .sub-options {
+            padding-left: 16px;
+            border-left: 2px solid var(--border-glow);
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* Difficulty radio-style */
+        .diff-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .diff-tab {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .diff-tab input[type="checkbox"] { margin: 0; }
+
+        /* Slider */
+        #slider { width: 100%; margin: 12px 0 6px; }
+        .slider-range-display {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .slider-range-display span { color: var(--accent); font-weight: 700; }
+
+        .settings-footer {
+            padding: 16px 22px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+        }
+        .settings-footer .btn { padding: 10px 28px; }
+
+        /* Page title */
+        .page-title {
+            margin-bottom: 20px;
+            animation: fadeUp .4s ease both;
+        }
+        .page-title h1 {
+            font-size: 22px;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa, #f5c842);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-title p { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
+
+        /* ---- Non-master Ready Panel ---- */
+        .ready-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+        .ready-panel-body {
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+        }
+        .ready-panel-icon {
+            font-size: 56px;
+            line-height: 1;
+            filter: drop-shadow(0 0 24px rgba(167,139,250,0.5));
+            margin-bottom: 8px;
+        }
+        .ready-panel-title {
+            font-size: 22px;
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .ready-panel-sub {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 380px;
+        }
+        .ready-big-btn {
+            margin-top: 8px;
+            padding: 14px 48px !important;
+            font-size: 17px !important;
+            letter-spacing: 0.06em;
+            box-shadow: 0 4px 24px rgba(167,139,250,0.35) !important;
+        }
+        .ready-panel-note {
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(12px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+
+        .animate-in { animation: fadeUp .4s ease both; }
+        .animate-in:nth-child(2) { animation-delay: .08s; }
+        .animate-in:nth-child(3) { animation-delay: .15s; }
+    </style>
 </head>
 <body>
-    <div>
-        <h1>Players in the room:</h1>
-        <ul id="content">
-        </ul>
 
-        <form id="form_room" action="/room" method="post">
-            <h3>Difficulty:</h3>
+    <!-- Top navigation bar -->
+    <nav class="topbar">
+        <div class="topbar-brand">
+            <span>🎵</span>
+            DMQ
+        </div>
+        <div class="topbar-actions">
+            <a onclick="sendReadyServer(true)" class="btn" id="ready_btn">✔ Ready</a>
+            <a onclick="sendReadyServer(false)" class="btn_red" id="leave_btn">✕ Leave</a>
+        </div>
+    </nav>
 
-            <div id="percentage_div">
-                <input type="checkbox" id="percentage" name="percentage" uncheck>
-                <label for="percentage">Percentage</label>
+    <div class="page-content">
+        <div class="page-title">
+            <h1>Lobby</h1>
+            <p>Configure the game and wait for all players to be ready</p>
+        </div>
+
+        <div class="lobby-grid">
+            <!-- LEFT: Players + Movies -->
+            <div class="left-col">
+                <!-- Players panel -->
+                <div class="panel animate-in">
+                    <div class="panel-header">
+                        <span class="panel-icon">👥</span>
+                        <h2>Players</h2>
+                    </div>
+                    <ul id="content"></ul>
+                </div>
+
+                <!-- Movies panel -->
+                <div class="panel animate-in">
+                    <!-- Stats bar -->
+                    <div class="movies-stats">
+                        <div class="movies-stat">
+                            <span class="movies-stat-value">{{ total_movies }}</span>
+                            <span class="movies-stat-label">Films</span>
+                        </div>
+                        <div class="movies-stat-divider"></div>
+                        <div class="movies-stat">
+                            <span class="movies-stat-value">{{ total_songs }}</span>
+                            <span class="movies-stat-label">Songs</span>
+                        </div>
+                    </div>
+
+                    <div class="panel-header">
+                        <span class="panel-icon">🎬</span>
+                        <h2>Available Movies</h2>
+                    </div>
+                    <div class="movies-scroll">
+                        <ul>
+                            {% for key, value in movies.items() %}
+                                <li class="movie-group-title">{{ key }}</li>
+                                {% if value %}
+                                    {% for item in value %}
+                                        <li class="movie-item">{{ item }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div id="default_div">
-                <input type="checkbox" id="default" name="default">
-                <label for="default">Pre Defined</label>
+
+            <!-- RIGHT: Settings (master only) / Ready prompt (non-master) -->
+            <div class="settings-panel animate-in" id="form_room_wrapper">
+                <form id="form_room" action="/room" method="post">
+                    <div class="settings-body">
+
+                        <!-- Difficulty -->
+                        <div class="section-label">Difficulty</div>
+                        <div class="check-group">
+                            <div class="check-item" id="percentage_div">
+                                <input type="checkbox" id="percentage" name="percentage">
+                                <label for="percentage">Percentage</label>
+                            </div>
+                            <div class="check-item" id="default_div">
+                                <input type="checkbox" id="default" name="default">
+                                <label for="default">Pre Defined</label>
+                            </div>
+                        </div>
+
+                        <div class="sub-options" id="sub_options" style="display:none;">
+                            <div class="check-item" id="custom_div" style="display:none;">
+                                <input type="checkbox" id="custom" name="custom">
+                                <label for="custom">Custom (%)</label>
+                            </div>
+                            <div class="check-item" id="range_div" style="display:none;">
+                                <input type="checkbox" id="range" name="range">
+                                <label for="range">Range (%)</label>
+                            </div>
+
+                            <div id="difficulties_standarts_div" class="diff-tabs" style="display:none;">
+                                <div class="diff-tab">
+                                    <input type="checkbox" id="easy" name="easy">
+                                    <label for="easy">Easy</label>
+                                </div>
+                                <div class="diff-tab">
+                                    <input type="checkbox" id="medium" name="medium">
+                                    <label for="medium">Medium</label>
+                                </div>
+                                <div class="diff-tab">
+                                    <input type="checkbox" id="hard" name="hard">
+                                    <label for="hard">Hard</label>
+                                </div>
+                            </div>
+
+                            <div id="difficulties_div" style="display:none;">
+                                <div id="slider"></div>
+                                <p class="slider-range-display">
+                                    <span id="min-value">20</span>% to <span id="max-value">80</span>%
+                                </p>
+                                <input type="hidden" id="sliderValue" name="sliderValue">
+                            </div>
+                        </div>
+
+                        <!-- Language -->
+                        <div class="section-label">Language</div>
+                        <div class="check-group">
+                            <div class="check-item">
+                                <input type="checkbox" id="english" name="english" checked>
+                                <label for="english">English</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="portuguese" name="portuguese" checked>
+                                <label for="portuguese">Portuguese</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="soundtrack" name="soundtrack" checked>
+                                <label for="soundtrack">Instrumental</label>
+                            </div>
+                        </div>
+
+                        <!-- Studios -->
+                        <div class="section-label">Studios</div>
+                        <div class="check-group">
+                            <div class="check-item">
+                                <input type="checkbox" id="waltdisneyanimation" name="waltdisneyanimation" checked>
+                                <label for="waltdisneyanimation">Walt Disney Animation</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="disneytoon" name="disneytoon" checked>
+                                <label for="disneytoon">Disneytoon</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="pixar" name="pixar" checked>
+                                <label for="pixar">Pixar</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="dreamworks" name="dreamworks" checked>
+                                <label for="dreamworks">DreamWorks</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="sony" name="sony" checked>
+                                <label for="sony">Sony</label>
+                            </div>
+                        </div>
+
+                        <!-- Options -->
+                        <div class="section-label">Options</div>
+                        <div class="check-group">
+                            <div class="check-item">
+                                <input type="checkbox" id="duplicate" name="duplicate" checked>
+                                <label for="duplicate">No Duplicate Movies</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="sort_count" name="sort_count">
+                                <label for="sort_count">Sort Songs by Count</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-footer">
+                        <input class="btn" type="submit" value="🚀 Start Room">
+                    </div>
+                </form>
             </div>
 
-            <div style="margin-left: 3%;">
-                <div id="custom_div" style="display: none;">
-                    <input type="checkbox" id="custom" name="custom" uncheck>
-                    <label for="custom">Custom (%)</label>
-                </div>
-                <div id="range_div" style="display: none;">
-                    <input type="checkbox" id="range" name="range" uncheck>
-                    <label for="range">Range (%)</label>
-                </div>
-            
-                <div id="difficulties_standarts_div" style="display: none;">
-                    <input type="checkbox" id="easy" name="easy">
-                    <label for="easy">Easy</label>
-                    <input type="checkbox" id="medium" name="medium">
-                    <label for="medium">Medium</label>
-                    <input type="checkbox" id="hard" name="hard">
-                    <label for="hard">Hard</label>
-                </div>
-
-                <div id="difficulties_div" style="display: none">
-                    <div id="slider" style="width: 30%; margin-top: 10px;"></div>
-                    <span id="min-value"></span>% to <span id="max-value"></span>%
-                    <input type="hidden" id="sliderValue" name="sliderValue">
+            <!-- Non-master ready panel (hidden by default, shown when current user is NOT leader) -->
+            <div class="ready-panel animate-in" id="ready_panel" style="display:none;">
+                <div class="ready-panel-body">
+                    <div class="ready-panel-icon">🎵</div>
+                    <h2 class="ready-panel-title">Waiting for the game to start</h2>
+                    <p class="ready-panel-sub">The room leader is configuring the game settings.<br>When you're ready to play, hit the button below!</p>
+                    <a onclick="sendReadyServer(true)" class="btn ready-big-btn" id="ready_panel_btn">✔ I'm Ready!</a>
+                    <p class="ready-panel-note" id="ready_panel_note" style="display:none;">✓ You are marked as ready. Waiting for the leader to start…</p>
                 </div>
             </div>
-
-            <br>
-
-            <input type="checkbox" id="english" name="english" checked>
-            <label for="english">English</label>
-
-            <input type="checkbox" id="portuguese" name="portuguese" checked>
-            <label for="portuguese">Portuguese</label>
-
-            <input type="checkbox" id="soundtrack" name="soundtrack" checked>
-            <label for="soundtrack">Instrumental</label>
-
-            <br><br>
-
-            <input type="checkbox" id="waltdisneyanimation" name="waltdisneyanimation" checked>
-            <label for="waltdisneyanimation">Walt Disney Animation</label>
-
-            <input type="checkbox" id="disneytoon" name="disneytoon" checked>
-            <label for="disneytoon">Disneytoon</label>
-
-            <input type="checkbox" id="pixar" name="pixar" checked>
-            <label for="pixar">Pixar</label>
-
-            <input type="checkbox" id="dreamworks" name="dreamworks" checked>
-            <label for="dreamworks">DreamWorks</label>
-
-            <input type="checkbox" id="sony" name="sony" checked>
-            <label for="sony">Sony</label>
-
-            <br><br>
-
-            <input type="checkbox" id="duplicate" name="duplicate" checked>
-            <label for="duplicate">No Duplicate Movies</label>
-
-            <br><br>
-
-            <input type="checkbox" id="sort_count" name="sort_count">
-            <label for="sort_count">Sort Songs by Count</label>
-
-            <br><br>
-            <input class="btn" style="margin-right:10px" type="submit" value="Room">
-        </form>
-        
-        <br>
-        <a onclick="sendReadyServer(true)" class="btn" id="ready_btn">Ready</a>
-        <a onclick="sendReadyServer(false)" class="btn_red" id="leave_btn">Leave</a>
-        
-        <br>
-        <h1>Movies available:</h1>
-        <ul>
-            <!-- {% for key, value in movies.items() %}
-                <li>{{ key }} {{ value }}</li>
-            {% endfor %} -->
-            {% for key, value in movies.items() %}
-                <li>{{ key }}</li>
-                {% if value %}
-                    <ul>
-                        {% for item in value %}
-                            <li>{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
-        <script src="https://unpkg.com/nouislider@14.6.4/distribute/nouislider.min.js"></script>
-        <script>
-            const url = new URL(window.location.href);
-            var msg = url.searchParams.get('msg');;
-            if(msg) {
-                alert(msg);
-            }
-
-            var socket = io.connect('http://' + document.domain + ':' + location.port);
-
-            var current_user = "";
-            var current_status = false;
-
-            /* Get all players */
-            var list = document.getElementById('content');
-            var ready_btn = document.getElementById('ready_btn');
-            var leave_btn = document.getElementById('leave_btn');
-            var form_room = document.getElementById('form_room');
-            function refreshPlayers() {
-                $.get('/get_all_players', function(data) {
-                    list.innerHTML = '';
-                    var all_players = data[0];
-                    var leader = data[1];
-                    current_user = data[2];
-                    players_ready = data[3];
-                    all_players.forEach(function (element) {
-                        var li = document.createElement('li');
-                        li.appendChild(document.createTextNode('[' + element.points + '] ' + element.username)); 
-                        if(element.username == leader) {
-                            li.style.color = "green";
-                        } else if (players_ready.includes(element.username)) {
-                            li.style.color = "yellow";
-                        }
-                        list.appendChild(li);
-                    });
-                    if(current_user == leader) {
-                        ready_btn.style.display = 'none';
-                    } else {
-                        form_room.style.display = 'none';
-                        leave_btn.style.marginLeft = '10px';
-                    }
-
-                    setTimeout(refreshPlayers, 1000); // Update each 1 second (1000 ms)
-                });
-            }
-            $(document).ready(function() {
-                refreshPlayers();
-            });
-
-            /* Checkboxs events */
-
-            var percentage_div = document.getElementById('percentage_div');
-            var default_div = document.getElementById('default_div');
-            var custom_div = document.getElementById('custom_div');
-            var range_div = document.getElementById('range_div');
-            var difficulties_standarts_div = document.getElementById('difficulties_standarts_div');
-            var difficulties_div = document.getElementById('difficulties_div');
-
-            var percentageCheckbox = document.getElementById('percentage');
-            var defaultCheckbox = document.getElementById('default');
-            var customCheckbox = document.getElementById('custom');
-            var rangeCheckbox = document.getElementById('range');
-            var easyCheckbox = document.getElementById('easy');
-            var mediumCheckbox = document.getElementById('medium');
-            var hardCheckbox = document.getElementById('hard');
-
-            percentageCheckbox.addEventListener('change', function () {
-                if (percentageCheckbox.checked) {
-                    custom_div.style.display = 'block';
-                    range_div.style.display = 'block';
-                    default_div.style.display = 'none';
-                } else {
-                    custom_div.style.display = 'none';
-                    range_div.style.display = 'none';
-                    default_div.style.display = 'block';
-                    difficulties_standarts_div.style.display = 'none';
-                    difficulties_div.style.display = 'none';
-                    customCheckbox.checked = false;
-                    rangeCheckbox.checked = false;
-                    easyCheckbox.checked = false;
-                    mediumCheckbox.checked = false;
-                    hardCheckbox.checked = false;
-                }
-            });
-
-            customCheckbox.addEventListener('change', function () {
-                if (customCheckbox.checked) {
-                    range_div.style.display = 'none';
-                    difficulties_div.style.display = 'block';
-                } else {
-                    range_div.style.display = 'block';
-                    difficulties_div.style.display = 'none';
-                }
-            });
-
-            rangeCheckbox.addEventListener('change', function () {
-                if (rangeCheckbox.checked) {
-                    custom_div.style.display = 'none';
-                    difficulties_standarts_div.style.display = 'block';
-                } else {
-                    custom_div.style.display = 'block';
-                    difficulties_standarts_div.style.display = 'none';
-                }
-            });
-
-            defaultCheckbox.addEventListener('change', function () {
-                if (defaultCheckbox.checked) {
-                    percentage_div.style.display = 'none';
-                    difficulties_standarts_div.style.display = 'block';
-                } else {
-                    percentage_div.style.display = 'block';
-                    difficulties_standarts_div.style.display = 'none';
-                    difficulties_div.style.display = 'none';
-                    easyCheckbox.checked = false;
-                    mediumCheckbox.checked = false;
-                    hardCheckbox.checked = false;
-                }
-            });
-
-            /*Slider*/
-            var slider = document.getElementById('slider');
-            noUiSlider.create(slider, {
-                start: [20, 80], // initial values
-                connect: true, // connect the two inputs
-                range: {
-                    'min': 0,
-                    'max': 100
-                },
-                step: 1
-            });
-            // Add the event to update values
-            var minValueElement = document.getElementById('min-value');
-            var maxValueElement = document.getElementById('max-value');
-            var sliderValueInput = document.getElementById('sliderValue');
-            slider.noUiSlider.on('update', function (values) {
-                values[0] = parseInt(values[0]);
-                values[1] = parseInt(values[1]);
-                minValueElement.textContent = values[0];
-                maxValueElement.textContent = values[1];
-                sliderValueInput.value = values;
-            });
-
-            /* Ready function to send message to the server */
-            function sendReadyServer(status_input) {
-                var msg = {user: current_user, status: status_input};
-
-                fetch("/receive_ready", {method: 'POST', headers: { 'Content-Type': 'application/json'}, body: JSON.stringify(msg)})
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    throw new Error('Error sending the message.');
-                })
-                .then(data => {
-                    console.log('Response of server:', data);
-                    if(data.status == "Message receive with success") {
-                        current_status = true;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-
-                if(!status_input) {
-                    window.location.href = "{{ url_for('close') }}";
-                }
-            }
-
-            /* Message listener from the server to go to room when is ready */
-            socket.on('go_to_room', function(data) {
-                console.log("current_status " + current_status);
-                if(current_status) {
-                    window.location.href = "{{ url_for('room') }}";
-                }
-            });
-        </script>
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script src="https://unpkg.com/nouislider@14.6.4/distribute/nouislider.min.js"></script>
+    <script>
+        const url = new URL(window.location.href);
+        var msg = url.searchParams.get('msg');
+        if(msg) alert(msg);
+
+        var socket = io({ transports:['polling','websocket'], timeout:20000, reconnection:true });
+        var current_user = "", current_status = false;
+
+        var list = document.getElementById('content');
+        var ready_btn = document.getElementById('ready_btn');
+        var leave_btn = document.getElementById('leave_btn');
+        var form_room_wrapper = document.getElementById('form_room_wrapper');
+        var ready_panel = document.getElementById('ready_panel');
+        var ready_panel_btn = document.getElementById('ready_panel_btn');
+        var ready_panel_note = document.getElementById('ready_panel_note');
+        var isLeader = false;
+
+        function refreshPlayers() {
+            $.get('/get_all_players', function(data) {
+                list.innerHTML = '';
+                var all_players = data[0], leader = data[1];
+                current_user = data[2];
+                var players_ready = data[3];
+
+                all_players.forEach(function(element) {
+                    var li = document.createElement('li');
+                    li.className = 'player-entry';
+
+                    var dot = document.createElement('span');
+                    dot.className = 'player-dot';
+
+                    var name = document.createElement('span');
+                    name.textContent = element.username;
+                    name.style.flex = '1';
+
+                    var badge = document.createElement('span');
+                    badge.className = 'player-badge';
+                    badge.textContent = element.points + ' pts';
+
+                    if (element.username == leader) {
+                        dot.style.background = '#f5c842';
+                        dot.style.boxShadow = '0 0 6px #f5c842';
+                        name.style.color = '#f5c842';
+                    } else if (players_ready.includes(element.username)) {
+                        dot.style.background = '#34d399';
+                        dot.style.boxShadow = '0 0 6px #34d399';
+                        name.style.color = '#34d399';
+                    }
+
+                    li.appendChild(dot);
+                    li.appendChild(name);
+                    li.appendChild(badge);
+                    list.appendChild(li);
+                });
+
+                if(current_user == leader) {
+                    // Leader: show settings, hide topbar ready btn, hide ready panel
+                    if(!isLeader) {
+                        isLeader = true;
+                        ready_btn.style.display = 'none';
+                        form_room_wrapper.style.display = '';
+                        ready_panel.style.display = 'none';
+                    }
+                } else {
+                    // Non-leader: hide settings, hide topbar ready btn, show ready panel
+                    if(isLeader !== false) { isLeader = false; }
+                    form_room_wrapper.style.display = 'none';
+                    ready_btn.style.display = 'none';
+                    ready_panel.style.display = '';
+
+                    // Update ready panel button state
+                    if(players_ready.includes(current_user)) {
+                        ready_panel_btn.style.display = 'none';
+                        ready_panel_note.style.display = 'block';
+                    } else {
+                        ready_panel_btn.style.display = '';
+                        ready_panel_note.style.display = 'none';
+                    }
+                }
+
+                setTimeout(refreshPlayers, 1000);
+            });
+        }
+
+        $(document).ready(function() { refreshPlayers(); });
+
+        /* Checkbox logic */
+        var percentage_div = document.getElementById('percentage_div');
+        var default_div = document.getElementById('default_div');
+        var custom_div = document.getElementById('custom_div');
+        var range_div = document.getElementById('range_div');
+        var sub_options = document.getElementById('sub_options');
+        var difficulties_standarts_div = document.getElementById('difficulties_standarts_div');
+        var difficulties_div = document.getElementById('difficulties_div');
+
+        var percentageCheckbox = document.getElementById('percentage');
+        var defaultCheckbox = document.getElementById('default');
+        var customCheckbox = document.getElementById('custom');
+        var rangeCheckbox = document.getElementById('range');
+        var easyCheckbox = document.getElementById('easy');
+        var mediumCheckbox = document.getElementById('medium');
+        var hardCheckbox = document.getElementById('hard');
+
+        percentageCheckbox.addEventListener('change', function() {
+            if (percentageCheckbox.checked) {
+                sub_options.style.display = 'flex';
+                custom_div.style.display = 'flex';
+                range_div.style.display = 'flex';
+                default_div.style.display = 'none';
+            } else {
+                sub_options.style.display = 'none';
+                custom_div.style.display = 'none';
+                range_div.style.display = 'none';
+                default_div.style.display = 'flex';
+                difficulties_standarts_div.style.display = 'none';
+                difficulties_div.style.display = 'none';
+                customCheckbox.checked = false;
+                rangeCheckbox.checked = false;
+                easyCheckbox.checked = false;
+                mediumCheckbox.checked = false;
+                hardCheckbox.checked = false;
+            }
+        });
+
+        customCheckbox.addEventListener('change', function() {
+            if (customCheckbox.checked) {
+                range_div.style.display = 'none';
+                difficulties_div.style.display = 'block';
+            } else {
+                range_div.style.display = 'flex';
+                difficulties_div.style.display = 'none';
+            }
+        });
+
+        rangeCheckbox.addEventListener('change', function() {
+            if (rangeCheckbox.checked) {
+                custom_div.style.display = 'none';
+                difficulties_standarts_div.style.display = 'flex';
+            } else {
+                custom_div.style.display = 'flex';
+                difficulties_standarts_div.style.display = 'none';
+            }
+        });
+
+        defaultCheckbox.addEventListener('change', function() {
+            if (defaultCheckbox.checked) {
+                sub_options.style.display = 'flex';
+                percentage_div.style.display = 'none';
+                custom_div.style.display = 'none';
+                range_div.style.display = 'none';
+                difficulties_standarts_div.style.display = 'flex';
+            } else {
+                sub_options.style.display = 'none';
+                percentage_div.style.display = 'flex';
+                difficulties_standarts_div.style.display = 'none';
+                difficulties_div.style.display = 'none';
+                easyCheckbox.checked = false;
+                mediumCheckbox.checked = false;
+                hardCheckbox.checked = false;
+            }
+        });
+
+        /* Slider */
+        var slider = document.getElementById('slider');
+        noUiSlider.create(slider, {
+            start: [20, 80], connect: true,
+            range: { 'min': 0, 'max': 100 }, step: 1
+        });
+        var minValueElement = document.getElementById('min-value');
+        var maxValueElement = document.getElementById('max-value');
+        var sliderValueInput = document.getElementById('sliderValue');
+        slider.noUiSlider.on('update', function(values) {
+            values[0] = parseInt(values[0]); values[1] = parseInt(values[1]);
+            minValueElement.textContent = values[0];
+            maxValueElement.textContent = values[1];
+            sliderValueInput.value = values;
+        });
+
+        /* Ready */
+        function sendReadyServer(status_input) {
+            var msg = { user: current_user, status: status_input };
+            fetch("/receive_ready", {
+                method:'POST', headers:{'Content-Type':'application/json'},
+                body: JSON.stringify(msg)
+            })
+            .then(r => r.ok ? r.json() : Promise.reject())
+            .then(data => {
+                if(data.status == "Message receive with success") {
+                    current_status = true;
+                    // If in non-master panel mode, show waiting note
+                    if(ready_panel_btn) {
+                        ready_panel_btn.style.display = 'none';
+                        ready_panel_note.style.display = 'block';
+                    }
+                }
+            })
+            .catch(e => console.error(e));
+            if(!status_input) window.location.href = "{{ url_for('close') }}";
+        }
+
+        socket.on('go_to_room', function() {
+            if(current_status) window.location.href = "{{ url_for('room') }}";
+        });
+    </script>
 </body>
 </html>

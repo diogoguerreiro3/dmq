@@ -1,139 +1,145 @@
-/* Dark Mode and main things */
+/* =============================================
+   DMQ — Disney Music Quiz | Dark Mode Design
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-deep:       #0d0d12;
+    --bg-card:       #15151e;
+    --bg-elevated:   #1c1c28;
+    --bg-input:      #1f1f2e;
+    --border:        rgba(255,255,255,0.07);
+    --border-glow:   rgba(167,139,250,0.35);
+
+    --accent:        #a78bfa;
+    --accent-dim:    #7c5cbf;
+    --accent-glow:   rgba(167,139,250,0.18);
+
+    --gold:          #f5c842;
+    --green:         #34d399;
+    --green-dim:     #065f46;
+    --red:           #f87171;
+    --red-dim:       #7f1d1d;
+    --yellow:        #fbbf24;
+    --yellow-dim:    #78350f;
+
+    --text-primary:  #f0eaff;
+    --text-secondary:#a09ab8;
+    --text-muted:    #5a5470;
+
+    --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px;
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.45);
+    --transition: all 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
 body {
-    background-color: #1e1e1e; /* Cinza escuro */
-    color: white;
-    font-size: 22px;
+    background-color: var(--bg-deep);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(167,139,250,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 90%, rgba(99,102,241,0.07) 0%, transparent 50%);
+    color: var(--text-primary);
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    color: white;
+h1,h2,h3,h4 { font-family:'Cinzel',serif; color:var(--text-primary); letter-spacing:.04em; }
+
+a{color:var(--accent);text-decoration:none;transition:var(--transition);}
+a:hover{color:#c4b5fd;}
+
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:var(--bg-card);}
+::-webkit-scrollbar-thumb{background:var(--accent-dim);border-radius:99px;}
+
+/* ---- Buttons ---- */
+.btn,.btn_red,.btn_green,.btn_gray,.btn_yellow {
+    display:inline-flex;align-items:center;gap:7px;
+    padding:9px 22px;border-radius:var(--radius-md);
+    font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;
+    letter-spacing:.04em;cursor:pointer;border:1px solid transparent;
+    text-decoration:none;transition:var(--transition);white-space:nowrap;user-select:none;
+}
+.btn{background:linear-gradient(135deg,#7c5cbf 0%,#a78bfa 100%);border-color:rgba(167,139,250,.4);color:#fff;box-shadow:0 2px 12px rgba(167,139,250,.25);}
+.btn:hover{background:linear-gradient(135deg,#9474d8 0%,#c4b5fd 100%);box-shadow:0 4px 20px rgba(167,139,250,.4);transform:translateY(-1px);color:#fff;}
+.btn_red{background:linear-gradient(135deg,#991b1b 0%,#f87171 100%);border-color:rgba(248,113,113,.3);color:#fff;box-shadow:0 2px 12px rgba(248,113,113,.2);}
+.btn_red:hover{background:linear-gradient(135deg,#b91c1c 0%,#fca5a5 100%);transform:translateY(-1px);box-shadow:0 4px 18px rgba(248,113,113,.35);color:#fff;}
+.btn_green{background:linear-gradient(135deg,#065f46 0%,#34d399 100%);border-color:rgba(52,211,153,.3);color:#fff;box-shadow:0 2px 12px rgba(52,211,153,.2);}
+.btn_green:hover{background:linear-gradient(135deg,#047857 0%,#6ee7b7 100%);transform:translateY(-1px);box-shadow:0 4px 18px rgba(52,211,153,.35);color:#fff;}
+.btn_gray{background:var(--bg-elevated);border-color:var(--border);color:var(--text-muted);cursor:not-allowed;}
+.btn_yellow{background:linear-gradient(135deg,#92400e 0%,#fbbf24 100%);border-color:rgba(251,191,36,.3);color:#fff;box-shadow:0 2px 12px rgba(251,191,36,.2);}
+.btn_yellow:hover{background:linear-gradient(135deg,#b45309 0%,#fcd34d 100%);transform:translateY(-1px);color:#fff;}
+.btn:active,.btn_red:active,.btn_green:active,.btn_yellow:active{transform:translateY(0);}
+
+/* ---- Inputs ---- */
+input[type="text"],input[type="submit"] {
+    background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius-md);
+    color:var(--text-primary);font-family:'Nunito',sans-serif;font-size:14px;
+    padding:10px 14px;outline:none;transition:var(--transition);
+}
+input[type="text"]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow);}
+input[type="text"]::placeholder{color:var(--text-muted);}
+
+/* ---- Custom Checkboxes ---- */
+input[type="checkbox"]{
+    -webkit-appearance:none;appearance:none;width:17px;height:17px;
+    border:2px solid rgba(167,139,250,.4);border-radius:4px;
+    background:var(--bg-input);cursor:pointer;position:relative;
+    transition:var(--transition);flex-shrink:0;vertical-align:middle;margin-right:4px;
+}
+input[type="checkbox"]:checked{background:var(--accent);border-color:var(--accent);}
+input[type="checkbox"]:checked::after{
+    content:'';position:absolute;top:2px;left:5px;
+    width:4px;height:8px;border:2px solid #fff;
+    border-top:none;border-left:none;transform:rotate(45deg);
+}
+input[type="checkbox"]:hover{border-color:var(--accent);}
+
+label{color:var(--text-secondary);font-size:14px;font-weight:500;cursor:pointer;vertical-align:middle;transition:color .15s;}
+label:hover{color:var(--text-primary);}
+
+/* ---- Range/Volume ---- */
+input[type="range"]{
+    -webkit-appearance:none;appearance:none;
+    width:180px;height:4px;border-radius:99px;
+    background:var(--bg-elevated);outline:none;cursor:pointer;border:none;
+    transition:var(--transition);
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;width:18px;height:18px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 8px rgba(167,139,250,.5);
+    transition:var(--transition);cursor:grab;
+}
+input[type="range"]::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.2);}
+input[type="range"]::-moz-range-thumb{
+    width:18px;height:18px;border-radius:50%;background:var(--accent);border:none;cursor:grab;
 }
 
-a {
-    color: #bb86fc; /* Roxo claro para links */
-    text-decoration: underline;
-}
+/* noUiSlider */
+.noUi-target{background:var(--bg-elevated)!important;border:none!important;box-shadow:none!important;height:5px!important;border-radius:99px!important;}
+.noUi-connect{background:var(--accent)!important;}
+.noUi-handle{width:18px!important;height:18px!important;top:-7px!important;right:-9px!important;border-radius:50%!important;background:var(--accent)!important;border:none!important;box-shadow:0 0 8px rgba(167,139,250,.5)!important;cursor:grab!important;}
+.noUi-handle:before,.noUi-handle:after{display:none!important;}
 
-/* Estilo para o botão */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF; /* Cor de fundo */
-    border: 1px solid #007BFF; /* Cor da borda */
-    color: #fff; /* Cor do texto */
-    text-decoration: none;
-    border-radius: 5px; /* Cantos arredondados */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer;
+/* ---- Suggestions ---- */
+#sugestions{
+    list-style:none;padding:4px;margin-top:4px;
+    background:var(--bg-elevated);border:1px solid var(--border);
+    border-radius:var(--radius-md);max-height:160px;width:100%;
+    overflow-y:auto;position:absolute;z-index:50;box-shadow:var(--shadow-card);
 }
+#sugestions li{
+    padding:7px 12px;cursor:pointer;border-radius:var(--radius-sm);
+    color:var(--text-secondary);font-size:14px;background:transparent;transition:var(--transition);
+}
+#sugestions li:hover{background:var(--bg-card);color:var(--text-primary);}
+li.focused{background:var(--accent-dim)!important;color:#fff!important;}
+li{background:transparent;}
 
-/* Estilo para o botão quando passa o mouse por cima */
-.btn:hover {
-    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-    border: 1px solid #0056b3; /* Cor da borda ao passar o mouse */
-}
-
-.btn_red {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff1100; /* Cor de fundo */
-    border: 1px solid #ff1100; /* Cor da borda */
-    color: #fff; /* Cor do texto */
-    text-decoration: none;
-    border-radius: 5px; /* Cantos arredondados */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer;
-}
-
-.btn_red:hover {
-    background-color: #640202; /* Cor de fundo ao passar o mouse */
-    border: 1px solid #640202; /* Cor da borda ao passar o mouse */
-}
-
-.btn_green {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #15ff00; /* Cor de fundo */
-    border: 1px solid #15ff00; /* Cor da borda */
-    color: #fff; /* Cor do texto */
-    text-decoration: none;
-    border-radius: 5px; /* Cantos arredondados */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer;
-}
-
-.btn_green:hover {
-    background-color: #056402; /* Cor de fundo ao passar o mouse */
-    border: 1px solid #056402; /* Cor da borda ao passar o mouse */
-}
-
-.btn_gray {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #6c7279; /* Cor de fundo */
-    border: 1px solid #6c7279; /* Cor da borda */
-    color: #fff; /* Cor do texto */
-    text-decoration: none;
-    border-radius: 5px; /* Cantos arredondados */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: not-allowed;
-}
-
-.btn_gray:hover {
-    background-color: #424549; /* Cor de fundo ao passar o mouse */
-    border: 1px solid #424549; /* Cor da borda ao passar o mouse */
-}
-
-.btn_yellow {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ffcc00; /* Cor de fundo */
-    border: 1px solid #ffcc00; /* Cor da borda */
-    color: #fff; /* Cor do texto */
-    text-decoration: none;
-    border-radius: 5px; /* Cantos arredondados */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer;
-}
-
-.btn_yellow:hover {
-    background-color: #b3a200; /* Cor de fundo ao passar o mouse */
-    border: 1px solid #b3a200; /* Cor da borda ao passar o mouse */
-}
-
-
-.container {
-    display: flex;
-    align-items: center;
-}
-
-#reply_text {
-    width: 30%;
-}
-
-#sugestions {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #ccc;
-    max-height: 100px;
-    width: 30%;
-    overflow-y: auto;
-}
-  
-#sugestions li {
-    padding: 5px;
-    cursor: pointer;
-}
-
-#sugestions li:hover {
-    background-color: #555050;
-}
-
-li {
-    background-color: #1e1e1e;
-}
-
-li.focused {
-    background-color: #3d3d00; /* Amarelo claro */
-}
+/* ---- Generic ---- */
+.container{display:flex;align-items:center;gap:10px;}

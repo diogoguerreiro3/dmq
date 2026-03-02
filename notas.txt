@@ -1,14 +1,20 @@
 1.0
 . colocar login com coockie e token para não ter de ser só pelo ip
-    
 
-    
+2.0
+. song history
+. Colocar um guess rating para cada jogador
+. opção no menu de fazer de certas datas a certas datas
+
+
+
+Novos filmes a adiconar a seguir:
 . Shrek
 . Surf's Up
 . Spider-Man
 . Despicable Me
 
-2.0
-. song history
-. Colocar um guess rating
-. opção no menu de fazer de certas datas a certas datas
+. Todos da Dreamworks
+. Todos da Sony
+. Todos da Illumination
+. Todos da BluSky

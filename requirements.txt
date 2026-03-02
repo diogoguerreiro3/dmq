@@ -3,7 +3,7 @@ flask-socketio==5.3.5
 mutagen>=1.47.0
 
 # Python 3.13+
-audioop-lts==0.2.1
+audioop-lts==0.2.1; python_version >= "3.13"
 
 # Async runtime for Flask-SocketIO
 gevent>=25.0.0

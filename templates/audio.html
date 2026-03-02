@@ -2,504 +2,711 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DMQ</title>
+    <title>DMQ — Room</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/normalize.js@latest"></script>
+    <style>
+        body { padding: 0; }
+
+        /* ---- Top bar ---- */
+        .topbar {
+            position: fixed; top:0; left:0; right:0;
+            height: 64px;
+            background: rgba(13,13,18,0.90);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center;
+            padding: 0 32px;
+            z-index: 100;
+            gap: 18px;
+        }
+        .topbar-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 20px; font-weight: 700;
+            background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex-shrink: 0;
+        }
+        .topbar-actions {
+            margin-left: auto;
+            flex-shrink: 0;
+            display: flex; gap: 12px;
+        }
+        .topbar-actions .btn_red { padding: 9px 20px; font-size: 14px; }
+
+        /* ---- Page layout ---- */
+        .page-content {
+            padding-top: 84px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-left: 32px;
+            padding-right: 32px;
+            padding-bottom: 48px;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* ---- Left column ---- */
+        .main-col { display: flex; flex-direction: column; gap: 20px; }
+
+        /* ---- Song card ---- */
+        .song-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+        .song-cover {
+            flex-shrink: 0;
+            width: 286px;
+            height: 430px;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            border: 1px solid rgba(167,139,250,0.2);
+            background: var(--bg-elevated);
+            display: none;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.7), 0 0 0 1px rgba(167,139,250,0.1);
+        }
+        .song-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            min-height: 430px;
+        }
+
+        /* ---- Song status display (replaces "Now Playing" title) ---- */
+        .song-status {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .song-number {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #c4b5fd;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .song-state {
+            font-family: 'Cinzel', serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: #f0eaff;
+            line-height: 1.15;
+            text-shadow: 0 2px 20px rgba(167,139,250,0.4);
+        }
+        .song-countdown {
+            font-family: 'Nunito', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        .song-countdown span {
+            color: var(--yellow);
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Difficulty text */
+        #difficulty_text {
+            color: var(--text-secondary);
+            font-size: 18px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        /* Listen button */
+        #button_listen {
+            align-self: flex-start;
+            padding: 14px 28px;
+            font-size: 16px;
+            letter-spacing: .05em;
+        }
+
+        /* ---- Reply form ---- */
+        .reply-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            box-shadow: var(--shadow-card);
+        }
+        .reply-label {
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            display: block;
+        }
+        .reply-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        /* Input takes ALL remaining width */
+        .suggestions-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+        }
+        #reply_text {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 16px;
+            border-radius: var(--radius-md);
+            /* Hide browser default bottom border/line styling */
+            outline: none;
+            box-shadow: none;
+        }
+        /* Hide the default browser autocomplete underline that appears */
+        #reply_text::-webkit-contacts-auto-fill-button,
+        #reply_text::-webkit-credentials-auto-fill-button { visibility: hidden; }
+
+        /* Suggestion dropdown */
+        #sugestions {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0; right: 0;
+            z-index: 50;
+        }
+
+        .reply-actions { display: flex; gap: 10px; flex-shrink: 0; }
+        .reply-actions .btn,
+        .reply-actions .btn_yellow { padding: 14px 24px; font-size: 15px; }
+
+        /* ---- Final message ---- */
+        #final_message {
+            text-align: center;
+            color: var(--yellow);
+            font-size: 15px;
+            padding: 14px;
+            background: rgba(251,191,36,.08);
+            border: 1px solid rgba(251,191,36,.2);
+            border-radius: var(--radius-md);
+            display: none;
+        }
+        #final_message:not(:empty) { display: block; }
+
+        /* ---- Right column ---- */
+        .right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: sticky;
+            top: 84px;
+        }
+
+        /* ---- Volume card (right column) ---- */
+        .volume-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            box-shadow: var(--shadow-card);
+        }
+        .volume-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .volume-header h3 {
+            font-size: 12px;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+        }
+        .volume-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        #volume-slider { flex: 1; width: auto; }
+        #volume-value {
+            min-width: 40px; text-align: right;
+            color: var(--accent); font-size: 14px;
+            font-weight: 700; font-family: 'Cinzel', serif;
+        }
+        .volume-hint {
+            color: var(--text-muted);
+            font-size: 11px;
+            margin-top: 10px;
+        }
+
+        /* ---- Scoreboard (right column) ---- */
+        .players-col {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        .players-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .players-header h2 {
+            font-size: 13px; letter-spacing: .1em;
+            text-transform: uppercase; color: var(--text-muted);
+            font-weight: 700;
+        }
+        #content {
+            list-style: none;
+            padding: 12px 14px;
+            margin: 0;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .player-row {
+            display: flex; align-items: center; gap: 10px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            margin-bottom: 7px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            font-size: 15px;
+            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        .player-row:hover { border-color: var(--border-glow); }
+        .pr-badge {
+            margin-left: auto;
+            padding: 4px 12px;
+            background: rgba(167,139,250,.15);
+            border: 1px solid rgba(167,139,250,.25);
+            border-radius: 99px;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+        .pr-movie {
+            font-size: 13px;
+            display: block; width: 100%;
+            padding-left: 4px;
+            margin-top: 2px;
+        }
+
+        /* Hide plyr controls */
+        .plyr--audio .plyr__controls { display: none; }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(10px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+        .animate-in { animation: fadeUp .4s ease both; }
+        .animate-in:nth-child(2) { animation-delay:.08s; }
+        .animate-in:nth-child(3) { animation-delay:.15s; }
+    </style>
 </head>
 <body>
-    <div>
-        <h2 id="audio_info"></h2>
-        <!-- 286x430 266x400 400x600 600x900 -->
-        <img id="song_img" src="" width="300" height="450" style="display: none">
-        <h3 id="difficulty_text"></h3>
-        <!-- <audio id="audio-player" style="display: none;" controls>
-            <source id="audio-src" src="{{ url_for('play') }}" type="audio/mpeg">
-            Your browser doesn't support this audio tag.
-        </audio> -->
 
-        <audio id="player" style="display: none" hidden>
-            <source src="{{ url_for('play') }}" type="audio/mpeg">
-        </audio>
-        <style>
-            .plyr--audio .plyr__controls {
-                display: none;
-            }
-        </style>
-
-        <input id="button_listen" type="button" class="btn_green" style="margin-bottom: 30px; width: auto" value="Click to Listen!!!">
-        <div id="volume-control" class="container">
-            <label for="volume-slider">Volume Control:</label>
-            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5" style="margin-bottom: 0;">
+    <!-- Top bar — just brand + return -->
+    <nav class="topbar">
+        <div class="topbar-brand">🎵 DMQ</div>
+        <!-- Hidden span keeps audio_info for JS logic (submit check) -->
+        <span id="audio_info" style="display:none;"></span>
+        <div class="topbar-actions">
+            <a onclick="returnLobby()" class="btn_red">← Return to Lobby</a>
         </div>
-        <br>
+    </nav>
 
-        <form id="form_reply">
-            <input type="text" id="reply_text" name="input" maxlength="70" placeholder="Write the movie..." style="height: 30px;" autocomplete="off">
-            <button id="submit_button" type="submit" class="btn" style="margin-left: 10px;">Reply</button>
-            <button onclick="skip()" class="btn_yellow" style="margin-left: 10px;">Skip</button>
-            <ul id="sugestions"></ul>
-        </form>
-        <br>
+    <div class="page-content">
+        <!-- LEFT: main gameplay column -->
+        <div class="main-col">
 
-        <ul id="content" style="list-style-type: none">
-        </ul>
-        <br>
+            <!-- Song card -->
+            <div class="song-card animate-in">
+                <img id="song_img" class="song-cover" src="" alt="Cover">
+                <div class="song-info">
+                    <!-- Status display — parsed from audio_info -->
+                    <div class="song-status">
+                        <div class="song-number" id="song_number">Waiting…</div>
+                        <div class="song-state" id="song_state">Ready to Play</div>
+                        <div class="song-countdown" id="song_countdown" style="display:none;">
+                            ⏳ <span id="countdown_val"></span> seconds remaining
+                        </div>
+                    </div>
 
-        <a onclick="returnLobby()" class="btn_red">Return to Lobby</a>
-        <h3 id="final_message"></h3>
+                    <div id="difficulty_text"></div>
+
+                    <button id="button_listen" class="btn_green">
+                        🎧 Click to Listen
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reply form -->
+            <div class="reply-card animate-in">
+                <span class="reply-label">Your Answer</span>
+                <form id="form_reply">
+                    <div class="reply-row">
+                        <div class="suggestions-wrap">
+                            <input type="text" id="reply_text" name="input" maxlength="70"
+                                   placeholder="Write the movie name…" autocomplete="off">
+                            <ul id="sugestions"></ul>
+                        </div>
+                        <div class="reply-actions">
+                            <button id="submit_button" type="submit" class="btn">Reply</button>
+                            <button onclick="skip()" type="button" class="btn_yellow">Skip</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Final message -->
+            <div id="final_message"></div>
+        </div>
+
+        <!-- RIGHT: volume + scoreboard -->
+        <div class="right-col animate-in">
+
+            <!-- Volume -->
+            <div class="volume-card">
+                <div class="volume-header">
+                    <span style="font-size:18px;">🔊</span>
+                    <h3>Volume</h3>
+                </div>
+                <div class="volume-row">
+                    <span style="font-size:15px; color:var(--text-muted);">🔈</span>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.2">
+                    <span style="font-size:15px; color:var(--text-muted);">🔊</span>
+                    <span id="volume-value">20%</span>
+                </div>
+                <p class="volume-hint">💡 Scroll on the slider to adjust volume</p>
+            </div>
+
+            <!-- Scoreboard -->
+            <div class="players-col">
+                <div class="players-header">
+                    <span style="color:var(--accent);font-size:16px;">👥</span>
+                    <h2>Scoreboard</h2>
+                </div>
+                <ul id="content"></ul>
+            </div>
+        </div>
     </div>
+
+    <!-- Hidden audio -->
+    <audio id="player" style="display:none" hidden>
+        <source src="{{ url_for('play') }}" type="audio/mpeg">
+    </audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script>
-        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        var socket = io({ transports:['polling','websocket'], timeout:20000, reconnection:true });
 
-        var audio_info = document.getElementById('audio_info');
-        // var audio_player = document.getElementById('audio-player');
+        var audio_info    = document.getElementById('audio_info');
         var volume_slider = document.getElementById('volume-slider');
-        var reply_text = document.getElementById("reply_text");
-        var sugestions = document.getElementById("sugestions");
-        var song_img = document.getElementById("song_img");
+        var volume_value  = document.getElementById('volume-value');
+        var reply_text    = document.getElementById("reply_text");
+        var sugestions    = document.getElementById("sugestions");
+        var song_img      = document.getElementById("song_img");
         var button_listen = document.getElementById("button_listen");
         var final_message = document.getElementById('final_message');
+        var difficulty_text = document.getElementById('difficulty_text');
 
-        /* Event to change the title sent by server */
+        // Status display elements
+        var song_number   = document.getElementById('song_number');
+        var song_state    = document.getElementById('song_state');
+        var song_countdown = document.getElementById('song_countdown');
+        var countdown_val  = document.getElementById('countdown_val');
+
+        /* Parse and render audio_info string like "[8] Listen Carefully! (13)"
+           or "[8] Monsters, Inc - 38 - Fungus Hall Exit.mp3 (13)" */
+        function renderAudioInfo(raw) {
+            audio_info.innerHTML = raw; // keep hidden span updated for submit check
+
+            // Extract [N] song number
+            var numMatch = raw.match(/\[(\d+)\]/);
+            var songNum = numMatch ? numMatch[1] : null;
+
+            // Extract (N) seconds remaining
+            var secMatch = raw.match(/\((\d+)\)/);
+            var seconds = secMatch ? secMatch[1] : null;
+
+            // Get state text: everything after "] " up to the "(" or end
+            var stateMatch = raw.match(/\]\s*(.+?)(?:\s*\(|$)/);
+            var stateText = stateMatch ? stateMatch[1].trim() : raw;
+            // Strip .mp3 extension if present (filename shown during reveal)
+            stateText = stateText.replace(/\.mp3$/i, '').trim();
+
+            song_number.textContent = songNum ? 'Song ' + songNum : 'Waiting…';
+            song_state.textContent = stateText || 'Ready';
+
+            if(seconds !== null) {
+                song_countdown.style.display = 'block';
+                countdown_val.textContent = seconds;
+            } else {
+                song_countdown.style.display = 'none';
+            }
+        }
+
+        /* Volume display */
+        function updateVolumeDisplay(val) {
+            var pct = Math.round(parseFloat(val) * 100);
+            volume_value.textContent = pct + '%';
+            volume_slider.style.background =
+                'linear-gradient(to right, #a78bfa ' + pct + '%, #1c1c28 ' + pct + '%)';
+        }
+        updateVolumeDisplay(volume_slider.value);
+
+        /* Player */
+        const player = new Plyr('#player', { hideControls: true });
+        player.on('ready', () => { player.volume = parseFloat(volume_slider.value); });
+
+        const audioCtx = new AudioContext();
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.value = 0.5;
+
+        /* Socket events */
         socket.on('title_refresh', function(data) {
-            audio_info.innerHTML = data;
+            renderAudioInfo(data);
         });
 
-        /* Event to add content of reply music */
-        var difficulty_text = document.getElementById('difficulty_text');
         socket.on('music_content', function(data) {
-            var data_json = JSON.parse(data);
-            if(data_json.current_difficulty == "") {
+            var d = JSON.parse(data);
+            if(d.current_difficulty == "") {
                 difficulty_text.innerHTML = "";
                 song_img.style.display = 'none';
-
             } else {
-                difficulty_text.innerHTML = data_json.current_difficulty + "% [" + data_json.current_default_difficulty + "] (" + data_json.count + ")";
+                difficulty_text.innerHTML = d.current_difficulty + "% [" + d.current_default_difficulty + "] (" + d.count + ")";
                 updateURLImage();
             }
         });
 
-        /* If image don't exists, hide*/
-        song_img.onerror = function() {
-            song_img.style.display = 'none';
-        };
+        song_img.onerror = function() { song_img.style.display = 'none'; };
+        song_img.onload  = function() { song_img.style.display = 'block'; };
 
-        /* If image loads correctly, display it*/
-        song_img.onload = function() {
-            song_img.style.display = 'block';
-        };
-
-
-        /* Player of audio */
-        const player = new Plyr('#player', {
-            hideControls: true,
-        });
-        volume_slider.value = 0.5;
-        // audio_player.volume = volume_slider.value;
-
-        player.on('ready', () => {
-            player.volume = volume_slider.value;
-        });
-
-        // EXPERIENCIA 1
-        // var audio_volume = volume_slider.value;
-        // var sound = new Howl({
-        //     src: [window.location.origin + '/play'],
-        //     format: ['mp3'],
-        //     volume: audio_volume,
-        // });
-
-
-        /* Normalize */
-        // const normalizer = normalizer = new Normalize({ targetLevel: -12 }); // Normalize to -12 dBFS
-        const audioCtx = new AudioContext();
-        const gainNode = audioCtx.createGain();
-        gainNode.gain.value = 0.5;
-        
-
-        /* Event for when the server tell to client to play music  */
         socket.on('audio_play', function(data) {
-            var data_json = JSON.parse(data);
-            
-            // ATUAL
-            // if(audio_player.paused && data_json.command === 'play') {
-            //     audio_player.load();
-            //     audio_player.currentTime = data_json.time;
-            //     audio_player.play();
-            //     reply_text.value = "";
-            // } else if (!audio_player.paused && data_json.command === 'pause') {
-            //     audio_player.pause();
-            // }
-
-            if(player.paused && data_json.command === 'play') {
-                
+            var d = JSON.parse(data);
+            if(player.paused && d.command === 'play') {
                 fetch('/current_music')
-                .then(response => response.json())
+                .then(r => r.json())
                 .then(data => {
-                    const musicFileUrl = data.url;
-
-                    // const normalizedData = undefined;
-                    // fetch(musicFileUrl)
-                    // .then(response => response.arrayBuffer()) // Convert response to ArrayBuffer
-                    // .then(arrayBuffer => {
-                    //     // normalizedData = normalizer.process(arrayBuffer); // Normalize audio data
-                        
-                    //     audioCtx.decodeAudioData(arrayBuffer)
-                    //     .then(audioBuffer => {
-                    //         const source = audioCtx.createBufferSource();
-                    //         source.buffer = audioBuffer;
-                    //         source.connect(gainNode);
-                    //         gainNode.connect(audioCtx.destination);
-                    //     })
-                    //     .catch(error => {
-                    //         console.error('Error decoding audio:', error);
-                    //     });
-                        
-                    // })
-                    // .catch(error => {
-                    //     console.error('Error fetching audio:', error);
-                    // });
-
                     player.source = {
-                        type: 'audio',
-                        title: 'current_music',
-                        sources: [
-                            {
-                                src: musicFileUrl,
-                                // src: URL.createObjectURL(new Blob([normalizedData], { type: 'audio/mpeg' })),
-                                // src: audioCtx.destination,
-                                type: 'audio/mpeg',
-                            }
-                        ]
+                        type:'audio', title:'current_music',
+                        sources:[{ src: data.url, type:'audio/mpeg' }]
                     };
                 })
-                .catch(error => {
-                    console.error('Error fetching music data:', error);
-                });
-
-                
-                playSong(data_json.time);
-                
-
-                // player.on('ready', (event) => {
-                //     console.log('currentTime:', player.currentTime);
-                //     console.log('DATA TIME:', data_json.time);
-                //     // player.play();
-                //     // player.on('loadeddata', (event) => {
-                //         // player.currentTime = data_json.time;
-                //         // console.log('New currentTime ', player.currentTime);
-                //         // player.play();
-                //     // });
-                    
-                // })
-                // .catch(error => {
-                //     console.error('Error event ready of player:', error);
-                // });
-                    
+                .catch(e => console.error(e));
+                playSong(d.time);
                 reply_text.value = "";
-            } else if (!player.paused && data_json.command === 'pause') {
+            } else if (!player.paused && d.command === 'pause') {
                 player.pause();
             }
-
-
-            // EXPERIENCIA 1
-            // var data_json = JSON.parse(data);
-            // if (!sound.playing() && data_json.command === 'play') {
-            //     sound.unload();
-            //     sound = undefined;
-            //     sound = new Howl({
-            //         src: [window.location.origin + '/play'],
-            //         onload: function() {
-            //             sound.seek(data_json.time);
-            //             sound.play();
-            //         },
-            //         format: ['mp3'],
-            //         volume: audio_volume,
-            //     });
-            //     reply_text.value = "";
-            // } else if (sound.playing() && data_json.command === 'pause') {
-            //     sound.stop();
-            // }
         });
 
-        async function playSong(currentTimeOfPlayer) {
+        async function playSong(t) {
             try {
                 if(player !== undefined) {
-                    player.on('ready', (event) => {
+                    player.on('ready', () => {
                         player.play();
-                        player.on('loadeddata', (event) => {
-                            player.currentTime = parseInt(currentTimeOfPlayer);
-                        })
-                        .catch(error => {
-                            console.error('Error event loadeddata of player:', error);    
-                        });  
-                    })
-                    .catch(error => {
-                        console.error('Error event ready of player:', error);
-                    });    
+                        player.on('loadeddata', () => { player.currentTime = parseInt(t); })
+                        .catch(e => console.error(e));
+                    }).catch(e => console.error(e));
                 }
-            } catch (err) {
-                console.error('Error playing song:', err);
-            }
+            } catch(e) { console.error(e); }
         }
 
-        /* Event to block the reply button */
+        /* Block/unblock reply */
         socket.on('block_replies', function(data) {
-            var data_json = JSON.parse(data);
-            if(data_json.command === 'block') {
-                console.log('Block the reply button');
-                document.getElementById("submit_button").disabled = true;
-                document.getElementById("submit_button").classList.remove("btn");
-                document.getElementById("submit_button").classList.add("btn_gray");
+            var d = JSON.parse(data);
+            var btn = document.getElementById("submit_button");
+            if(d.command === 'block') {
+                btn.disabled = true;
+                btn.classList.remove("btn"); btn.classList.add("btn_gray");
                 block_reply = true;
-            } else if(data_json.command === 'unblock') {
-                console.log('Unblock the reply button');
-                document.getElementById("submit_button").disabled = false;
-                document.getElementById("submit_button").classList.remove("btn_gray");
-                document.getElementById("submit_button").classList.add("btn");
+            } else if(d.command === 'unblock') {
+                btn.disabled = false;
+                btn.classList.remove("btn_gray"); btn.classList.add("btn");
                 block_reply = false;
             }
         });
-        
-        /* Volume Control */
+
+        /* Volume: slider + scroll wheel */
         volume_slider.addEventListener('input', function() {
-
-            // ATUAL
-            // audio_player.volume = volume_slider.value;
-            
-            player.volume = volume_slider.value;
-
-            // EXPERIENCIA 1
-            // audio_volume = volume_slider.value;
-            // sound.volume(audio_volume);
+            player.volume = parseFloat(this.value);
+            updateVolumeDisplay(this.value);
         });
+        volume_slider.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            var v = parseFloat(this.value) + (e.deltaY < 0 ? 0.05 : -0.05);
+            v = Math.max(0, Math.min(1, v));
+            this.value = v;
+            player.volume = v;
+            updateVolumeDisplay(v);
+        }, { passive: false });
 
-        /* Autocomplete input text */
+        /* Autocomplete */
         reply_text.addEventListener("input", function() {
-            var movie_texted = reply_text.value.toLowerCase();
-            sugestions.innerHTML = ""; // Clean the list
-
-            // AJAX to get the list of word of server
+            var q = reply_text.value.toLowerCase();
+            sugestions.innerHTML = "";
+            if(!q) return;
             fetch('/get_movies_with_alternatives')
-                .then(function(response) {
-                    return response.json();
-                })
+                .then(r => r.json())
                 .then(function(movies_list) {
-                    // Remove duplicates
-                    var uniqueMovies = [...new Set(movies_list)];
-
-                    uniqueMovies.forEach(function(movie) {
-                        if (movie.toLowerCase().indexOf(movie_texted) != -1) {
+                    var unique = [...new Set(movies_list)];
+                    unique.forEach(function(movie) {
+                        if(movie.toLowerCase().indexOf(q) != -1) {
                             var item = document.createElement("li");
                             item.textContent = movie;
                             sugestions.appendChild(item);
-
                             item.addEventListener("click", function() {
                                 reply_text.value = movie;
-                                sugestions.innerHTML = ""; // Clean the list when select a sugestion
+                                sugestions.innerHTML = "";
                             });
                         }
                     });
-
-                    if(sugestions.length > 0) {
-                        var firstItem = sugestions.childNodes[0];
-                        firstItem.focus();
-                        firstItem.classList.add('focused');
-                    }
                 });
         });
 
-        /* Eventos para as setas para a barra de pesquisa */
+        /* Arrow keys for suggestions */
         document.addEventListener("keydown", function(e) {
-            var focusedItem = sugestions.querySelector('li.focused');
+            var focused = sugestions.querySelector('li.focused');
             var items = sugestions.querySelectorAll('li');
-
-            if (e.key === "ArrowDown") {
+            if(e.key === "ArrowDown") {
                 e.preventDefault();
-                if (!focusedItem) {
-                    items[0].classList.add('focused');
-                } else {
-                    var nextItem = focusedItem.nextElementSibling || items[0];
-                    if (nextItem) {
-                        focusedItem.classList.remove('focused');
-                        nextItem.classList.add('focused');
-                        nextItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-                    }
-                }
-            } else if (e.key === "ArrowUp") {
+                var next = focused ? (focused.nextElementSibling || items[0]) : items[0];
+                if(next) { if(focused) focused.classList.remove('focused'); next.classList.add('focused'); next.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+            } else if(e.key === "ArrowUp") {
                 e.preventDefault();
-                if (!focusedItem) {
-                    items[items.length - 1].classList.add('focused');
-                } else {
-                    var prevItem = focusedItem.previousElementSibling || items[items.length - 1];
-                    if (prevItem) {
-                        focusedItem.classList.remove('focused');
-                        prevItem.classList.add('focused');
-                        prevItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-                    }
-                }
-            } else if (e.key === "Enter" && focusedItem) {
+                var prev = focused ? (focused.previousElementSibling || items[items.length-1]) : items[items.length-1];
+                if(prev) { if(focused) focused.classList.remove('focused'); prev.classList.add('focused'); prev.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+            } else if(e.key === "Enter" && focused) {
                 e.preventDefault();
-                reply_text.value = focusedItem.textContent;
-                sugestions.innerHTML = ""; // Clean the list when a movie is selected
+                reply_text.value = focused.textContent;
+                sugestions.innerHTML = "";
             }
         });
-
-        /* When click in other place than the list of suggestions, the focus is removed from the lsit */
         document.addEventListener('click', function(e) {
-            if (!sugestions.contains(e.target)) {
-                var items = sugestions.querySelectorAll('li');
-                items.forEach(function(item) {
-                    item.classList.remove('focused');
-                });
+            if(!sugestions.contains(e.target)) {
+                sugestions.querySelectorAll('li').forEach(i => i.classList.remove('focused'));
             }
         });
 
-        /* Send the reply movie to server */
+        /* Submit */
         var block_reply = false;
-        document.getElementById("form_reply").addEventListener("submit", function (event) {
-            // if (event.submitter.type === "submit" && event.submitter.innerHTML === "Reply" && sound.playing()) {
-            //     if(sound.playing()) {
-            if (event.submitter.type === "submit" && 
-                event.submitter.innerHTML === "Reply" && 
-                audio_info.innerHTML.includes("Listen Carefully") &&
-                !block_reply) {
-                event.preventDefault(); // Prevent the default form redirection
-                var formulario = new FormData(this);
+        document.getElementById("form_reply").addEventListener("submit", function(e) {
+            e.preventDefault();
+            if(e.submitter && e.submitter.innerHTML === "Reply" &&
+               audio_info.innerHTML.includes("Listen Carefully") && !block_reply) {
                 socket.emit('/send_movie', this.elements["input"].value);
-            } else {
-                event.preventDefault();
-                return false;
             }
         });
 
-        /* Update the color of users verifying the reply movies */
+        /* Scoreboard refresh */
         var list_users = document.getElementById('content');
         function refreshPlayers() {
             $.get('/get_replys_and_points', function(data) {
                 list_users.innerHTML = '';
-                data.forEach(function (element) {
-                    var element_json = element;
-                    var username = element_json.username;
+                data.forEach(function(el) {
                     var li = document.createElement('li');
-                    var text = '[' + element_json.points + '] ' + username;
-                    if (element_json.correct != "") {
-                        text = text + ' | ' + element_json.movie;
+                    li.className = 'player-row';
+
+                    var nameSpan = document.createElement('span');
+                    nameSpan.textContent = el.username;
+                    nameSpan.style.flex = '1';
+
+                    var badge = document.createElement('span');
+                    badge.className = 'pr-badge';
+                    badge.textContent = el.points + ' pts';
+
+                    // Status icon — no movie names ever shown (others can see this!)
+                    var statusIcon = document.createElement('span');
+                    statusIcon.style.cssText = 'font-size:17px; flex-shrink:0; margin-right:4px;';
+
+                    if(el.correct == "false") {
+                        li.style.borderColor = 'rgba(248,113,113,.35)';
+                        nameSpan.style.color = '#f87171';
+                        statusIcon.textContent = '✗';
+                        statusIcon.style.color = '#f87171';
+                    } else if(el.correct == "true") {
+                        li.style.borderColor = 'rgba(52,211,153,.35)';
+                        nameSpan.style.color = '#34d399';
+                        statusIcon.textContent = '✓';
+                        statusIcon.style.color = '#34d399';
+                    } else if(el.skip) {
+                        nameSpan.style.color = '#fbbf24';
+                        statusIcon.textContent = '⏭';
+                        statusIcon.style.color = '#fbbf24';
+                    } else if(el.movie) {
+                        // Typing but not yet judged
+                        statusIcon.textContent = '✍️';
                     }
-                    li.appendChild(document.createTextNode(text));
-                    li.style.color = "#ffffff";
-                    if(element_json.correct == "false") {
-                        li.style.color = "red";
-                    } else if(element_json.correct == "true") {
-                        li.style.color = "green";
-                    } else if (element_json.skip) {
-                        li.style.color = "yellow";
-                    } else if(element_json.movie != "") {
-                        li.style.color = "orange";
-                    }
+
+                    // Build: [icon] [name ............] [pts]
+                    if(statusIcon.textContent) li.appendChild(statusIcon);
+                    li.appendChild(nameSpan);
+                    li.appendChild(badge);
+
                     list_users.appendChild(li);
                 });
-                setTimeout(refreshPlayers, 500); // Update each 1 second (1000 ms)
+                setTimeout(refreshPlayers, 500);
             });
         }
-        $(document).ready(function() {
-            refreshPlayers();
-        });
+        $(document).ready(function() { refreshPlayers(); });
 
-        /* Message to the server to inform that some people return to the lobby */
+        /* Return to lobby */
         function returnLobby() {
-            fetch("/return_lobby", {method: 'POST', headers: { 'Content-Type': 'application/json'}})
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error('Error sending the message.');
-            })
+            fetch("/return_lobby", {method:'POST', headers:{'Content-Type':'application/json'}})
+            .then(r => r.ok ? r.json() : Promise.reject())
             .then(data => {
-                if(data.status == "Message receive with success") {
-                    console.log('Response of server:', data);
-                    if(data.player == "player") {
-                        window.location.href = "{{ url_for('lobby') }}";
-                    }
+                if(data.status == "Message receive with success" && data.player == "player") {
+                    window.location.href = "{{ url_for('lobby') }}";
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            }).catch(e => console.error(e));
         }
 
-        /* Return to lobby from the server */
-        socket.on('go_to_lobby', function(data) {
-            window.location.href = "{{ url_for('lobby') }}";
+        socket.on('go_to_lobby', function() { window.location.href = "{{ url_for('lobby') }}"; });
+        socket.on('final_message', function() {
+            final_message.innerHTML = "⚠ The room will close at the end of the song.";
         });
 
-        /* Message for when the leader stop the game in the middle */
-        socket.on('final_message', function(data) {
-            final_message.innerHTML = "The room will close at the end of the song.";
-        });
-
-        /* Ask server what is the next URL image */
+        /* Image update */
         function updateURLImage() {
-            fetch("/image", {method: 'POST', headers: { 'Content-Type': 'application/json'}})
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error('Error sending the message.');
-            })
+            fetch("/image", {method:'POST', headers:{'Content-Type':'application/json'}})
+            .then(r => r.ok ? r.json() : Promise.reject())
             .then(data => {
-                console.log('Response of server:', data);
-                if(data.status == "Message receive with success" && hasImage(data.url)) {
+                if(data.status == "Message receive with success" && data.url) {
                     song_img.src = data.url;
-                    song_img.style.display = 'block';
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-        function hasImage(url) {
-            return fetch(url, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error to verify the image:', error);
-                    return false;
-                });
+            }).catch(e => console.error(e));
         }
 
-        /* Message to the server to inform that some people skip the song */
+        /* Listen button */
+        button_listen.onclick = function() { button_listen.style.display = 'none'; };
+
+        /* Skip */
         function skip() {
-            fetch("/skip", {method: 'POST', headers: { 'Content-Type': 'application/json'}})
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error('Error sending the message.');
-            })
-            .then(data => {
-                console.log('Response of server:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            fetch("/skip", {method:'POST', headers:{'Content-Type':'application/json'}})
+            .then(r => r.json())
+            .catch(e => console.error(e));
         }
-
-        /* Button to aprove listen de audio */
-        button_listen.onclick = function() {
-            button_listen.style.display = 'none';
-        };
     </script>
 </body>
 </html>

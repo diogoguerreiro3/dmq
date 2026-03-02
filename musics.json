@@ -595,7 +595,7 @@
             },
             {
                 "name": "Aladdin - One Jump Ahead.mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
@@ -1201,8 +1201,8 @@
             },
             {
                 "name": "Atlantis the Lost Empire - 30 - Atlantis.mp3",
-                "count": 45,
-                "difficulty": 46.66666666666665,
+                "count": 48,
+                "difficulty": 47.91666666666664,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -1657,8 +1657,8 @@
             },
             {
                 "name": "Beauty and the Beast - Prologue (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -1778,7 +1778,7 @@
             },
             {
                 "name": "Big Hero 6 - 13 - Huggable Detective.mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -1994,7 +1994,7 @@
             },
             {
                 "name": "Bolt - Home at Last_Barking at the Moon (Reprise).mp3",
-                "count": 2,
+                "count": 3,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -2057,15 +2057,15 @@
             },
             {
                 "name": "Bolt - Scooter Chase.mp3",
-                "count": 25,
-                "difficulty": 47.99999999999999,
+                "count": 26,
+                "difficulty": 46.153846153846146,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
             {
                 "name": "Bolt - Sing-Along Rhino.mp3",
-                "count": 11,
-                "difficulty": 27.27272727272727,
+                "count": 13,
+                "difficulty": 23.076923076923073,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -2320,8 +2320,8 @@
             },
             {
                 "name": "Brother Bear - Bear Party.mp3",
-                "count": 2,
-                "difficulty": 0.0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -2919,8 +2919,8 @@
             },
             {
                 "name": "Cars 2 - 02 - It's Finn McMissile!.mp3",
-                "count": 32,
-                "difficulty": 56.25,
+                "count": 35,
+                "difficulty": 54.285714285714285,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -3383,8 +3383,8 @@
             },
             {
                 "name": "Cars 3 - McQueen's Wild Ride.mp3",
-                "count": 14,
-                "difficulty": 7.142857142857144,
+                "count": 17,
+                "difficulty": 5.882352941176472,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -3937,8 +3937,8 @@
             },
             {
                 "name": "Coco - Coco - D\u00eda de los Muertos Suite.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -4042,8 +4042,8 @@
             },
             {
                 "name": "Coco - Juanita.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -4098,7 +4098,7 @@
             },
             {
                 "name": "Coco - Plaza de la Cruz.mp3",
-                "count": 5,
+                "count": 6,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -4506,8 +4506,8 @@
             },
             {
                 "name": "Dinosaur - 26 - It Comes With A Pool.mp3",
-                "count": 34,
-                "difficulty": 8.823529411764707,
+                "count": 35,
+                "difficulty": 8.571428571428571,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -4666,8 +4666,8 @@
             },
             {
                 "name": "Dumbo 8 - The Pyramid of Pachyderms.mp3",
-                "count": 12,
-                "difficulty": 91.66666666666666,
+                "count": 13,
+                "difficulty": 92.3076923076923,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -4826,8 +4826,8 @@
             },
             {
                 "name": "Elemental - Elemental.mp3",
-                "count": 8,
-                "difficulty": 62.5,
+                "count": 9,
+                "difficulty": 55.55555555555556,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -4917,7 +4917,7 @@
             },
             {
                 "name": "Elemental - Make Connection.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -4966,8 +4966,8 @@
             },
             {
                 "name": "Elemental - Sh\u00e1sh\u00e0 r \u00edsh\u00e0.mp3",
-                "count": 2,
-                "difficulty": 0.0,
+                "count": 4,
+                "difficulty": 25.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -4980,8 +4980,8 @@
             },
             {
                 "name": "Elemental - Steal The Show.mp3",
-                "count": 48,
-                "difficulty": 77.0833333333333,
+                "count": 53,
+                "difficulty": 77.3584905660377,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -5008,6 +5008,257 @@
             },
             {
                 "name": "Elemental - You Were The Dream.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            }
+        ]
+    },
+    {
+        "movie": "Elio",
+        "studio": "Pixar Animation Studios",
+        "musics": [
+            {
+                "name": "Elio - A Dangerous Game.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - A Distraction.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Abduction.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Activate Supernova.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Another Glordon.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Are We Alone.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Bargaining Chip, Cool!.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Bring Us Your Leader.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Carapace.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Carmesí.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Elio - Debris Field.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Don't Stop Me Now.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Elio - Elio Suite.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Elio.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Escape Attempt.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Escaping Earth.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Father and Son.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Glordon.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Good Feeling.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Elio - He Found the Mint.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Hold My Glorp.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Lava Tubes.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Lord Grigon.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Not Fooled.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Once in a Lifetime.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Elio - Reunion.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Rooftop.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - SkiddoPOP-PUH.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Something's Off.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - Such Great Heights.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Elio - Temporary Replacement.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - The Communiverse.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - The Return.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - The Signal.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Elio - You're the Alpha.mp3",
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
@@ -5294,8 +5545,8 @@
             },
             {
                 "name": "Encanto - We Don't Talk About Bruno (Instrumental).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -5475,8 +5726,8 @@
             },
             {
                 "name": "Fantasia - The Nutcracker Suite, Op. 71A, Chinese Dance (Irwin Kostal Re-Record 1982).mp3",
-                "count": 75,
-                "difficulty": 42.66666666666667,
+                "count": 78,
+                "difficulty": 42.30769230769232,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -5544,8 +5795,8 @@
             },
             {
                 "name": "Fantasia 2000 - 03 - Rhapsody In Blue.mp3",
-                "count": 11,
-                "difficulty": 63.63636363636363,
+                "count": 12,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -5805,8 +6056,8 @@
             },
             {
                 "name": "Finding Dory - Three Hearts (End Title).mp3",
-                "count": 14,
-                "difficulty": 49.99999999999999,
+                "count": 16,
+                "difficulty": 56.25,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -6108,8 +6359,8 @@
             },
             {
                 "name": "Finding Nemo - Whale Pt.II.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -6771,8 +7022,8 @@
             },
             {
                 "name": "Frozen 2 - Christophe Beck, Cast of Frozen 2 - Iduna's Scarf (From _Frozen 2_Score_Audio Only).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -7088,8 +7339,8 @@
             },
             {
                 "name": "Fun and Fancy Free - Ending Titles.mp3",
-                "count": 9,
-                "difficulty": 22.22222222222222,
+                "count": 10,
+                "difficulty": 20.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -7363,8 +7614,8 @@
             },
             {
                 "name": "Hercules 9 - Zero To Hero.mp3",
-                "count": 3,
-                "difficulty": 100.0,
+                "count": 6,
+                "difficulty": 83.33333333333334,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -7412,8 +7663,8 @@
             },
             {
                 "name": "Hercules - The Gospel Truth II (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -7668,8 +7919,8 @@
             },
             {
                 "name": "Inside Out - Free Skating.mp3",
-                "count": 47,
-                "difficulty": 65.95744680851064,
+                "count": 50,
+                "difficulty": 66.0,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -7852,8 +8103,8 @@
             },
             {
                 "name": "Inside Out 2 - Andrea Datzman - Go Team!.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 33.33333333333333,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -8155,8 +8406,8 @@
             },
             {
                 "name": "Lady And The Tramp - La-La-Lu.mp3",
-                "count": 6,
-                "difficulty": 16.666666666666664,
+                "count": 8,
+                "difficulty": 12.499999999999998,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -8211,8 +8462,8 @@
             },
             {
                 "name": "Lady And The Tramp - The Siamese Cat Song.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -8381,8 +8632,8 @@
             },
             {
                 "name": "Lightyear - 08 - Mission Perpetual.mp3",
-                "count": 9,
-                "difficulty": 44.44444444444444,
+                "count": 11,
+                "difficulty": 45.45454545454545,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -8939,8 +9190,8 @@
             },
             {
                 "name": "Luca - Edoardo Benatto - Il gatto e la volpe.mp3",
-                "count": 16,
-                "difficulty": 56.25,
+                "count": 19,
+                "difficulty": 52.63157894736842,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -9065,8 +9316,8 @@
             },
             {
                 "name": "Luca - Quartetto Cetra - Un Bacio A Mezzanotte.mp3",
-                "count": 22,
-                "difficulty": 72.72727272727273,
+                "count": 23,
+                "difficulty": 73.91304347826089,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -9086,8 +9337,8 @@
             },
             {
                 "name": "Luca - Signor Vespa.mp3",
-                "count": 5,
-                "difficulty": 20.0,
+                "count": 6,
+                "difficulty": 16.666666666666664,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -9270,8 +9521,8 @@
             },
             {
                 "name": "Make Mine Music - Make Mine Music.mp3",
-                "count": 38,
-                "difficulty": 36.84210526315789,
+                "count": 41,
+                "difficulty": 34.14634146341463,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -9384,7 +9635,7 @@
             },
             {
                 "name": "Meet the Robinsons - Pop Quiz and the Time Machine Montage.mp3",
-                "count": 1,
+                "count": 2,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -9519,8 +9770,8 @@
             },
             {
                 "name": "Melody Time - Melody Time.mp3",
-                "count": 29,
-                "difficulty": 51.7241379310345,
+                "count": 32,
+                "difficulty": 50.00000000000002,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -9626,8 +9877,8 @@
             },
             {
                 "name": "Moana - Marcy Harriell - More (From MoanaOuttakeAudio Only).mp3",
-                "count": 2,
-                "difficulty": 50.0,
+                "count": 4,
+                "difficulty": 25.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -9991,6 +10242,421 @@
         ]
     },
     {
+        "movie": "Moana 2",
+        "alternative_names": [
+            "Vaiana 2"
+        ],
+        "studio": "Walt Disney Animation Studios",
+        "musics": [
+            {
+                "name": "Moana 2 - An Easy Hop.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Assembling the Crew.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Between Realms.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Beyond (End Credit Version Instrumental).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Beyond (End Credit Version).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Beyond (Instrumental).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Beyond (Reprise).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Beyond.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Can I Get A Chee Hoo (Instrumental).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Can I Get A Chee Hoo.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Change of Course.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Clam Chow.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Finding The Way.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Fire in the Sky.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Get Lost (Instrumental).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Get Lost.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Gotta Chee Hoo It.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Hei Hei Saves the Day.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - It's Go Time.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - It's Me Maui.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Just a Little Different.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Mana Vavau.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Maui Breaks Free.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Meet Matangi.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Missed Connections.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Motufetu.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - My Wish For You (Innocent Warrior).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Nalo.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Out to Sea.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Run and You'll Live.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Sacred Title.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Safe-ish For Now.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Sea Snake Attack.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Stronger Together.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - The Pearly Gate.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - The Plan for the Clam.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - The Wayfinder of Motunui.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - There's Another Way.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Tulou Tagaloa (Sei e Va'ai Mai).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Waves Like Mountains.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - Wayfinders.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - We Know The Way (Te Fenua te Malie).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - We're Back (Instrumental).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - We're Back (Te Vaka Version).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - We're Back.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Welcome to Pouli.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - What Could Be Better Than This (Instrumental).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Moana 2 - What Could Be Better Than This.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Encontrar Um Lar (Te Fenua te Malie) (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana 2 - Errar (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana 2 - Finding The Way (Reprise) (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Grita Chee-Hoo (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana 2 - Mais Longe (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana 2 - Mais Longe (Reprise) (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana 2 - Nuku O Kaiga (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Se Há Melhor Eu Nem Sei (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            },
+            {
+                "name": "Moana 2 - Tuputupu (The Feast) (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "en"
+            },
+            {
+                "name": "Moana 2 - Voltar (Eu Portuguese Soundtrack).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "pt"
+            }
+        ]
+    },
+    {
         "movie": "Monsters University",
         "alternative_names": [
             "Monstros: A Universidade"
@@ -10083,8 +10749,8 @@
             },
             {
                 "name": "Monsters University - 13 - To Scare Class.mp3",
-                "count": 5,
-                "difficulty": 40.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -10708,8 +11374,8 @@
             },
             {
                 "name": "Monsters, Inc - 38 - Fungus_Hall Exit.mp3",
-                "count": 8,
-                "difficulty": 50.0,
+                "count": 11,
+                "difficulty": 45.45454545454545,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -10848,8 +11514,8 @@
             },
             {
                 "name": "Monsters, Inc - If I didn't Have You (EU Portuguese).mp3",
-                "count": 16,
-                "difficulty": 87.50000000000001,
+                "count": 19,
+                "difficulty": 78.94736842105264,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -10917,8 +11583,8 @@
             },
             {
                 "name": "Mulan - 13 - Blossoms.mp3",
-                "count": 3,
-                "difficulty": 100.0,
+                "count": 5,
+                "difficulty": 80.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -10980,8 +11646,8 @@
             },
             {
                 "name": "Mulan - 22 - Save The Cannons.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -11385,8 +12051,8 @@
             },
             {
                 "name": "One Hundred And One Dalmatians - Cruella De Vil (Nonsense Version).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -11597,8 +12263,8 @@
             },
             {
                 "name": "Onward - Dance Fight.mp3",
-                "count": 12,
-                "difficulty": 58.33333333333333,
+                "count": 15,
+                "difficulty": 53.333333333333336,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -11625,7 +12291,7 @@
             },
             {
                 "name": "Onward - Going On A Quest.mp3",
-                "count": 3,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -11893,8 +12559,8 @@
             },
             {
                 "name": "Peter Pan 15 - Big Chief Flying Eagle - I Had a Mother Once.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -12224,7 +12890,7 @@
             },
             {
                 "name": "Pinocchio 23 - Monstro Awakens.mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
@@ -13179,8 +13845,8 @@
             },
             {
                 "name": "Ratatouille - Le Festin (OST Version).mp3",
-                "count": 44,
-                "difficulty": 84.09090909090911,
+                "count": 47,
+                "difficulty": 85.10638297872342,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -14117,8 +14783,8 @@
             },
             {
                 "name": "Saludos Amigos - Pedro (score).mp3",
-                "count": 19,
-                "difficulty": 5.263157894736842,
+                "count": 20,
+                "difficulty": 10.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -14131,8 +14797,8 @@
             },
             {
                 "name": "Saludos Amigos - Saludos Amigos (reprise).mp3",
-                "count": 13,
-                "difficulty": 92.3076923076923,
+                "count": 15,
+                "difficulty": 86.66666666666667,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -14816,8 +15482,8 @@
             },
             {
                 "name": "Soul - Jon Batiste, Celeste - It's All Right (From SoulDuet VersionOfficial Lyric Video).mp3",
-                "count": 5,
-                "difficulty": 40.0,
+                "count": 6,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -15077,8 +15743,8 @@
             },
             {
                 "name": "Strange World - End Credit Suite.mp3",
-                "count": 12,
-                "difficulty": 41.66666666666667,
+                "count": 13,
+                "difficulty": 38.46153846153847,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -15196,8 +15862,8 @@
             },
             {
                 "name": "Strange World - They're The Clades!.mp3",
-                "count": 34,
-                "difficulty": 52.94117647058824,
+                "count": 35,
+                "difficulty": 54.28571428571429,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -16508,8 +17174,8 @@
             },
             {
                 "name": "The Black Cauldron - Apologize & Gurgi Again.mp3",
-                "count": 8,
-                "difficulty": 25.0,
+                "count": 9,
+                "difficulty": 22.22222222222222,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -17009,8 +17675,8 @@
             },
             {
                 "name": "The Fox And The Hound - Appreciate The Lady - Instrumental.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -17037,8 +17703,8 @@
             },
             {
                 "name": "The Fox And The Hound - Big Mama.mp3",
-                "count": 9,
-                "difficulty": 22.22222222222222,
+                "count": 11,
+                "difficulty": 18.181818181818183,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -17389,8 +18055,8 @@
             },
             {
                 "name": "The Good Dinosaur - Run With the Herd.mp3",
-                "count": 13,
-                "difficulty": 30.76923076923078,
+                "count": 14,
+                "difficulty": 28.571428571428587,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -17490,7 +18156,7 @@
             },
             {
                 "name": "The Great Mouse Detective - End Title-GoodBye So Soon.mp3",
-                "count": 3,
+                "count": 4,
                 "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
@@ -17744,8 +18410,8 @@
             },
             {
                 "name": "The Hunchback of Notre Dame - Out There.mp3",
-                "count": 9,
-                "difficulty": 77.77777777777779,
+                "count": 12,
+                "difficulty": 75.0,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -18047,8 +18713,8 @@
             },
             {
                 "name": "The Incredibles - 14 - Bob vs The Omnidroid.mp3",
-                "count": 1,
-                "difficulty": 100.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -18427,8 +19093,8 @@
             },
             {
                 "name": "The Incredibles 2 - 26 - Incredits 2.mp3",
-                "count": 12,
-                "difficulty": 75.0,
+                "count": 13,
+                "difficulty": 69.23076923076923,
                 "difficulty_defualt": "easy",
                 "lang": "un"
             },
@@ -18569,8 +19235,8 @@
             },
             {
                 "name": "The Jungle Book - Monkey Chase (Score).mp3",
-                "count": 8,
-                "difficulty": 62.5,
+                "count": 9,
+                "difficulty": 55.55555555555556,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -19301,8 +19967,8 @@
             },
             {
                 "name": "The Little Mermaid - Part of Your World - Reprise (Eu Portuguese).mp3",
-                "count": 3,
-                "difficulty": 100.0,
+                "count": 6,
+                "difficulty": 83.33333333333334,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -19315,7 +19981,7 @@
             },
             {
                 "name": "The Little Mermaid - Poor Unfortunate Souls - Part 1 (Eu Portuguese).mp3",
-                "count": 4,
+                "count": 5,
                 "difficulty": 100.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
@@ -19466,8 +20132,8 @@
             },
             {
                 "name": "The Princess and the Frog - Down in New Orleans (Prologue).mp3",
-                "count": 1,
-                "difficulty": 0.0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -19522,8 +20188,8 @@
             },
             {
                 "name": "The Princess and the Frog - Ray Laid Low.mp3",
-                "count": 16,
-                "difficulty": 37.5,
+                "count": 17,
+                "difficulty": 41.17647058823529,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -19606,8 +20272,8 @@
             },
             {
                 "name": "The princess and the frog - Friends on the other side (European portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 3,
+                "difficulty": 66.66666666666666,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -19650,8 +20316,8 @@
         "musics": [
             {
                 "name": "The Rescuers - A MDifficult Decision.mp3",
-                "count": 22,
-                "difficulty": 54.54545454545454,
+                "count": 23,
+                "difficulty": 52.17391304347825,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -20441,8 +21107,8 @@
             },
             {
                 "name": "The Three Caballeros - Joe Carioca.mp3",
-                "count": 7,
-                "difficulty": 42.857142857142854,
+                "count": 8,
+                "difficulty": 37.5,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -21599,8 +22265,8 @@
             },
             {
                 "name": "Toy Story 3 - Take Care.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -21662,8 +22328,8 @@
             },
             {
                 "name": "Toy Story 3 - We Belong Together.mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 8,
+                "difficulty": 24.999999999999996,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -21950,8 +22616,8 @@
             },
             {
                 "name": "Treasure Planet - 02 - Solar Surfer.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -22216,8 +22882,8 @@
             },
             {
                 "name": "Treasure Planet - I'm Still Here.mp3",
-                "count": 25,
-                "difficulty": 75.99999999999999,
+                "count": 28,
+                "difficulty": 74.99999999999999,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -22365,8 +23031,8 @@
             },
             {
                 "name": "Turning Red - Nobody Like U.mp3",
-                "count": 14,
-                "difficulty": 71.42857142857143,
+                "count": 17,
+                "difficulty": 70.58823529411765,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -23069,8 +23735,8 @@
             },
             {
                 "name": "WALL-E - Hyperjump.mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 1,
+                "difficulty": 100.0,
                 "difficulty_defualt": "medium",
                 "lang": "un"
             },
@@ -24096,8 +24762,8 @@
         "musics": [
             {
                 "name": "Zootopia - 01 - Shakira - Try Everything.mp3",
-                "count": 24,
-                "difficulty": 75.0,
+                "count": 27,
+                "difficulty": 74.07407407407408,
                 "difficulty_defualt": "easy",
                 "lang": "en"
             },
@@ -24246,6 +24912,183 @@
                 "count": 0,
                 "difficulty": 0,
                 "difficulty_defualt": "hard",
+                "lang": "un"
+            }
+        ]
+    },
+    {
+        "movie": "Zootopia 2",
+        "alternative_names": [
+            "Zootr\u00f3polis 2"
+        ],
+        "studio": "Walt Disney Animation Studios",
+        "musics": [
+            {
+                "name": "Zootopia 2 - A Commuted Relationship - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Big Into Fashion - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Bunny and Overshare - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Cover Story - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Das Goats - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Flash from the Past (Bonus Track) - Michael Giacchino (Original Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Gary a Twain Shall Meet - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Get Out of Lodge - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Hot Fursuit - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Journey to the Journal - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Lizard Lounge (Bonus Track) - Michael Giacchino (Original Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Marsh Market - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Our Differences Don't Make Any Difference - Michael Giacchino.mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Snake Away Pt. 1 - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Snake Away Pt. 2 - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Snaking the Journal - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - The Old Zoo Review - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - The Weak Lynx - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Wall of Judy - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "hard",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Wilde Caught - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - World's Worst Detention - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Zoo - Shakira (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "en"
+            },
+            {
+                "name": "Zootopia 2 - Zootopening - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "easy",
+                "lang": "un"
+            },
+            {
+                "name": "Zootopia 2 - Zootopia 2 Suite - Michael Giacchino (Original Motion Picture Score).mp3",
+                "count": 0,
+                "difficulty": 0,
+                "difficulty_defualt": "medium",
                 "lang": "un"
             }
         ]
@@ -24744,8 +25587,8 @@
             },
             {
                 "name": "The Jungle Book 2 - Right Where I Belong.mp3",
-                "count": 6,
-                "difficulty": 33.33333333333333,
+                "count": 8,
+                "difficulty": 24.999999999999996,
                 "difficulty_defualt": "medium",
                 "lang": "en"
             },
@@ -24814,8 +25657,8 @@
             },
             {
                 "name": "The Jungle Book 2 - Colonel Hathi's March (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 0.0,
                 "difficulty_defualt": "easy",
                 "lang": "pt"
             },
@@ -24984,8 +25827,8 @@
             },
             {
                 "name": "The Prince of Egypt - All I Ever Wanted - Queen's Reprise (Eu Portuguese).mp3",
-                "count": 0,
-                "difficulty": 0,
+                "count": 2,
+                "difficulty": 50.0,
                 "difficulty_defualt": "medium",
                 "lang": "pt"
             },
